@@ -7,6 +7,13 @@ body{
     background-color: #F6F6F6;
 }
 
+.guide{
+    display: flex;
+    flex-flow: row;
+
+}
+
+
 .login-card{
     height: 600px;
     width: 600px;
@@ -29,9 +36,9 @@ body{
     /* background-color: purple; */
 }
 
-/* div {
+div {
     border: 2px solid blue;
-} */
+}
 
 .col-3 {
     display: inline;
@@ -58,3 +65,8 @@ body{
 /* .col-6 > li {
     border: 2px solid green;
 } */
+
+.calendar {
+    border: 2px solid black;
+    grid-area: 0, 0, 7, 5;
+}

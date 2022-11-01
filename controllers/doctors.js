@@ -1,6 +1,5 @@
 const cloudinary = require("../middleware/cloudinary");
 const Doctor = require("../models/Doctor");
-// const Contact = require("../models/OldContacts");
 const Comment = require("../models/Comment");
 const Contact = require("../models/Contact");
 

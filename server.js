@@ -14,6 +14,7 @@ const commentRoutes = require("./routes/comments");
 const doctorRoutes = require("./routes/doctors");
 const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
+const welcomeRoutes = require("./routes/welcome");
 // const directoryRoutes = require("./routes/directory");
 
 
@@ -65,6 +66,7 @@ app.use("/med", medRoutes); //This is post routes for me.
 app.use("/comment", commentRoutes);
 app.use("/doctors", doctorRoutes);
 app.use("/contact", contactRoutes);
+app.use("/welcome", welcomeRoutes);
 // app.use("/directory", directoryRoutes);
 // app.use("/dashboard", dashboardRoutes);
 
