@@ -16,6 +16,7 @@ router.get("/cabinet", ensureAuth, medsController.getCabinet);
 router.get("/contact", ensureAuth, contactController.getContact);
 router.get("/doctors", ensureAuth, doctorsController.getDoctor);
 router.get("/directory", ensureAuth, contactController.getDirectory);
+router.get
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
