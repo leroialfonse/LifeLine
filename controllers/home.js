@@ -7,11 +7,18 @@ module.exports = {
       // let mongoose = require('mongoose')
       // const contacts = await Contact.find({ userId: req.user.id });
       // console.log(req.body)
-
+  
       
       res.render("welcome.ejs");
     } catch (err) {
       console.log(err); 
     }
+  },
+  getCalendar:  (req, res) => {
+   try{ 
+    res.render("calendar.ejs");
+  } catch (err) {
+    console.log(err);
+  }
   },
 };

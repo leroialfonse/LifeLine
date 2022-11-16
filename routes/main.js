@@ -14,6 +14,7 @@ router.get("/dashboard", ensureAuth, medsController.getDashboard);
 router.get("/meds", ensureAuth, medsController.getMed);
 router.get("/cabinet", ensureAuth, medsController.getCabinet);
 router.get("/contact", ensureAuth, contactController.getContact);
+router.get("/calendar", ensureAuth, homeController.getCalendar);
 router.get("/doctors", ensureAuth, doctorsController.getDoctor);
 router.get("/directory", ensureAuth, contactController.getDirectory);
 router.get
