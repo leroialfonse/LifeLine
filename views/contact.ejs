@@ -24,6 +24,11 @@
     <div class="col-6">
       <label for="ul"><h2>Your Doctors</h2></label>
         <ul class="row list-unstyled">
+          <% if (contacts.length === 0) { %>
+            <p> No octors in your contacts. Please add one to save their information.</p>
+            <%} else { %>
+            <!-- <p> Not Allowed </p> -->
+             <% } %> 
           <% for(var i=0; i< contacts.length; i++) {%>
           <!-- <% contacts.forEach( el => { %> -->
             <li class="col-6 justify-content-between mt-5">
@@ -33,8 +38,8 @@
                     <button class="btn btn-primary fa fa-trash" type="submit"></button>
                   </form>                  
                 </li>
-                 <!-- <% }) %> -->
-                 <% } %>
+                <% }) %>
+                <% } %> 
                 </ul>
 
                   </div>
