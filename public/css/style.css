@@ -1,77 +1,125 @@
 
 *{
-    background-color: #F6F6F6;
-    font-family: Verdana, Geneva, Tahoma, sans-serif, 'Open Sans', sans-serif, 'Roboto Serif', serif;
-}
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family:  Inter, Verdana, Tahoma, sans-serif, 'Open Sans', sans-serif, 'Roboto Serif', serif;
 
-body{
-    background-color: steelblue;
+} 
+
+
+/* 
+
+body, .div, .container{
+    background-color: #F3EFF0;
 }
+*/
 
 .guide{
     display: flex;
     flex-flow: row;
-
+    /* padding: 60px; */
 }
 
 
-.login-card{
-    height: 600px;
-    width: 600px;
-}
+ .guide-card {
+    padding: 20px;
+} 
 
+/*
 .main {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 2px solid blue; */
+    margin-top: 240px;
   
 }
+
+/*
 
 .Logo-heart{
     display: flex;
     justify-content: center ;
-    /* border: 4px solid blue; */
     width: 50%;
     height: 80%;
-    /* background-color: purple; */
 }
 
-div {
-    border: 2px solid blue;
+
+.login-card{
+    width: 600px;
+    height: 400px;
+    margin: 220px;
+    position: fixed;
+    top: 120px;
+    right: 120px;
+    bottom: 120px;
+    left: 120px;
+}
+
+.btn{
+
+    height: 60px; 
+    width: 95px;
+    margin-left: 20px;
+    padding-top: 5px;
+}
+
+.ulta{
+    padding-top: 15px;
+}
+
+/*
+div, header, button {
+    border-radius: 20px;
 }
 
 .col-3 {
     display: inline;
-    width: 80%;
-    /* padding: 10%; */
-    /* margin: 5%; */
+    width: 80%; 
 }
 
-.tagline {
-    padding-right: 40px;
-}
+
 .navbar-brand{
     width: 100%;
     padding-left: 20px;
-}
+} 
 
-.bottom-nav {
+/* .bottom-nav {
     display: flex;
     align-self: end;
+} */
+
+
+.oops {
+   margin: 300px;
 }
 
-/* .card-body {
+.tagline{
+    color: blue;
+    margin: 0 40px 0 40px;
+}
+
+div > .mt-5 {
+    padding-right: 50px;      
+    margin-right: 10px;
+}
+
+.welcome{
+    margin-top: -30px;
+}
+ /* .card-body {
     display: flex;
-    /* flex-direction:  wrap; */
-    /* height: 80% ; 
+    flex-direction:  wrap;
+     height: 80% ; 
 } */
 
 /* .col-6 > li {
     border: 2px solid green;
 } */
 
-.calendar {
-    border: 2px solid black;
-    grid-area: 0, 0, 7, 5;
+footer{
+    display: flex;
+    flex-direction: row;
+    border-top: 5px solid blue;
+    width: 80%;
+    justify-self: center;
 }
