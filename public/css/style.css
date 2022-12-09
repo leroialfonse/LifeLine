@@ -1,11 +1,14 @@
 
 *{
+    
     box-sizing: border-box;
     background-color: #fff;
-    font-family:  Inter, Verdana, Tahoma, sans-serif, 'Open Sans', sans-serif, 'Roboto Serif', serif;
-
+    font-family: 'Inter', sans-serif;
 } 
 
+html{
+    font-size: 62.5%;
+}
 
 /* 
 
@@ -123,3 +126,5 @@ footer{
     width: 80%;
     justify-self: center;
 }
+
+/* ///// Calendar Styling ///// */

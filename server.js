@@ -71,7 +71,11 @@ app.use("/welcome", welcomeRoutes);
 // app.use("/dashboard", dashboardRoutes);
 
 
+
+
 //Server Running
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 });
+
+
