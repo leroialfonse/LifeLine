@@ -27,11 +27,10 @@
           <% if (contacts.length === 0) { %>
             <p> No doctors in your contacts. Please add one to save their information.</p>
             <%} else { %>
-            <!-- <p> Not Allowed </p> -->
              <% } %> 
           <% for(var i=0; i< contacts.length; i++) {%>
           <!-- <% contacts.forEach( el => { %> -->
-            <li class="col-6 justify-content-between mt-5">
+            <li class="col-6 justify-content-between mt-5 doctors">
                     <p>Name:<span> <%= el.title %></span></p>
                     <p>Address:<span> <%= el.address %></span></p>
                       <p>Phone:<span> <%= el.phone %></span></p>

@@ -25,8 +25,15 @@
       </div>
       <div class="col-6">
         <label for="ul"><h2>Your Medications</h2>
-        <span>Click to View or Change:</span></label>
         <ul class="row list-unstyled">
+          <% if (meds.length === 0) { %>
+            <p> No meds in your Cabinet. Please add one to save it.</p>
+            <%} else { %>
+            <!-- <p> Not Allowed </p> -->
+        <span>Click to View or Change:</span></label>
+
+             <% } %>   
+             
         <% for(var i=0; i<meds.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/med/<%= meds[i]._id%>">

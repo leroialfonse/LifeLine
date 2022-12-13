@@ -70,8 +70,39 @@ body, .div, .container{
 h1, h2, h3, h4, h5{
     font-weight: 700;
 }
-/*
 
+h1, h2{
+    color: rgb(13,110,253)
+}
+
+
+
+/* Sets a border for images in the med cabinet, to give more form to the page. */
+/* //////////// Come back to this. Trying to adjust the images in the med cabinet. ////////////// */
+.img-fluid{
+    /* border:  1px solid rgba(0, 0, 0, 0.5);
+    height: 10rem;
+    width: 12rem; */
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+}
+
+/* .col-6 > .row{
+    height: 100vh;
+} */
+
+.doctors{
+    border-bottom: 2px solid rgb(13,110,253);
+    height: 25vh;
+}
+
+/* ///////////////////////////////////// */
+
+
+/*///////////// Info panel about Medications in the Med page////////////////// */
+
+/*
 .Logo-heart{
     display: flex;
     justify-content: center ;
@@ -234,6 +265,7 @@ footer{
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;
     background-color: rgb(13,110,253);
+    color: #eee;
 
 
   }
