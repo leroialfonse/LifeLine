@@ -8,7 +8,7 @@
       <!-- Add a line to display a message if there are no items in the list of meds.  -->
       <ul class="row list-unstyled">
         <% if (meds.length === 0) { %>
-          <p> No doctors in your contacts. Please add one to save their information.</p>
+          <p> No medications found. Please add one to save it.</p>
           <%} else { %>
            <% } %> 
         <% for(var i=0; i<meds.length; i++) {%>
@@ -18,8 +18,8 @@
             </a>
           </li>
         <% } %>
-        <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        <button class="btn btn-primary fa fa-edit" type="submit"></button>
+        <button type="submit" class="btn btn-primary fa fa-trash" type="submit"></button>
+        <button type="submit" class="btn btn-primary fa fa-edit" type="submit"></button>
 
         </ul>
     </div>
