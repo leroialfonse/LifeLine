@@ -15,7 +15,7 @@ const doctorRoutes = require("./routes/doctors");
 const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
-// const directoryRoutes = require("./routes/directory");
+const dashboardRoutes = require("./routes/dashboard");
 
 
 //Use .env file in config folder
@@ -68,7 +68,7 @@ app.use("/doctors", doctorRoutes);
 app.use("/contact", contactRoutes);
 app.use("/welcome", welcomeRoutes);
 // app.use("/directory", directoryRoutes);
-// app.use("/dashboard", dashboardRoutes);
+app.use("/dashboard", dashboardRoutes); 
 
 
 
