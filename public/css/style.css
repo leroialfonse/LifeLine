@@ -1,3 +1,4 @@
+/* ///// General Styling ///// */
 
 *{
     
@@ -6,6 +7,11 @@
     font-family: 'Inter', sans-serif;
 } 
 
+.container{
+ margin: auto;
+}
+
+/* Wraps the Index Login in a container for sizing. */
 .box{
     display: flex;
     flex-direction: column;
@@ -13,22 +19,22 @@
     height: 50vh;
 }
 
-a{
+/* Contols the appearance of links */
+a,
+a:hover{
     text-decoration: none;
 }
 
-a:hover {
+ a:hover {
     color:firebrick;
-}
+} 
 
+/* Sets the size of form elements, to better fit my planned asthetic. */
 .col-6 > form{
     width: 75%;
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* border: 2px solid red; */
-    /* padding: 10px; */
-    /* margin: 5px; */
 }
+
+
 /* html{
     font-size: 62.5%;
 } */
@@ -40,6 +46,7 @@ body, .div, .container{
 }
 */
 
+/* Sets the display of guide elements, so that they fit the page better. */
 .guide{
     display: flex;
     flex-flow: row;
@@ -51,16 +58,18 @@ body, .div, .container{
     padding: 20px;
 } 
 
-
+/* Sets the size and display of the login card. */
 .login-main {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 60px;
     margin: 20px auto;
-  
 }
 
+h1, h2, h3, h4, h5{
+    font-weight: 700;
+}
 /*
 
 .Logo-heart{
@@ -121,7 +130,7 @@ div, header, button {
 }
 
 .tagline{
-    color: blue;
+    color: rgb(13,110,253);
     margin: 0 40px 0 40px;
 }
 
@@ -148,7 +157,7 @@ footer{
     /* display: flex; */
     /* flex: end; */
     margin-top: 20px;
-    border-top: 5px solid blue;
+    border-top: 5px solid rgb(13,110,253);
     width: 80%;
     /* justify-self: center; */
 }
@@ -157,56 +166,50 @@ footer{
 
 
 /* ///// Calendar Styling /////  */
-/* 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-  }   */
   
   .over{
     display:flex;
-    /* margin: 5px auto; */
-    width: 100vw;
+    margin: 5px auto;
+    width: 90vw;
     height: 100vh;
     flex-direction: row;
-    border: 5px solid red;
-    padding: 20px;
+    padding: 15px;
+    margin-top: 20px;
 
   }
 
-  main{
-    padding: 5px;
-  }
-  .containerO {
+  .contained {
     /* position: relative;
-    top: 20px;
-    width: 80vw;
-    height: 100vh; */
-    background-color: #12121f;
+    top: 20px; */
+    width: 70vw;
+    height: 70vh;
+    /* background-color: #12121f; */
     color: #eee;
     display: flex;
-    /* justify-content: center;
+    justify-content: center;
     align-items: center;
-    align-self: center; */
+    align-self: center; 
+    /* border: 5px solid orange; */
+    background-color: lightslategray    ;
+    /* padding: 20px; */
 
  
   }
   
-   .calendar {
-    width: 45rem;
-    height: 52rem;
+   /* .calendar {
+    width: 500px;
+    height: 300px;
     background-color: #222227;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
     border: 5px solid purple;
+    padding: 10px;
 
-  } 
+  }  */
  
   .month {
     width: 100%;
-    height: 12rem;
-    background-color: blue;
+    /* height: 12rem; */
+    background-color: rgb(13,110,253);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -219,6 +222,8 @@ footer{
   .month i {
     font-size: 2.5rem;
     cursor: pointer;
+    background-color: rgb(13,110,253);
+
 
   }
    
@@ -228,6 +233,8 @@ footer{
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;
+    background-color: rgb(13,110,253);
+
 
   }
   
@@ -237,11 +244,15 @@ footer{
   }
   
   .weekdays {
-    width: 100%;
+    /* width: 100%; */
     height: 5rem;
     padding: 0 0.4rem;
     display: flex;
     align-items: center;
+    background-color: rgb(13,110,253);
+    color: #eee;
+    justify-content: center;
+
   }
   
   .weekdays div {
@@ -253,6 +264,7 @@ footer{
     justify-content: center;
     align-items: center;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    background-color: rgb(13,110,253);
   }
   
   .days {
@@ -260,24 +272,28 @@ footer{
     display: flex;
     flex-wrap: wrap;
     padding: 0.2rem;
+    /* background-color: #8080FF; */
+    justify-content: center;
   }
   
   .days div {
     font-size: 1.4rem;
     margin: 0.3rem;
     width: calc(40.2rem / 7);
-    height: 5rem;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    transition: background-color 0.2s;
-    border-radius: 6px;
+    transition: background-color .6s;
+    /* border-radius: 6px; */
+    background-color: rgb(13,110,253);
+
   }
   
   .days div:hover:not(.today) {
-    background-color: #262626;
-    border: 0.2rem solid #777;
+    background-color: lightslategray;
+    border: 0.2rem solid #eee;
     cursor: pointer;
   }
   
@@ -287,5 +303,5 @@ footer{
   }
   
   .today {
-    background-color: blue;
+    background-color: rgb(13,110,253);
   }
