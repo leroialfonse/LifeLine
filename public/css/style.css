@@ -120,7 +120,7 @@ h1, h2{
     right: 120px;
     bottom: 120px;
     left: 120px;
-}
+} */
 
 .btn{
 
@@ -154,6 +154,17 @@ div, header, button {
     display: flex;
     align-self: end;
 } */
+
+.medInfo {
+  display: flex;
+  flex-direction: row;
+  border : 2px solid green;
+}
+
+.form-label{
+  display: flex;
+  flex-direction: row;
+}
 
 
 .oops {

@@ -8,9 +8,11 @@
       <div class="row justify-content-between">
         <form
           class="col-1"
-          action="/med/likeMed/<%= med.id %>?_method=PUT"
+          action="/med/deleteMed/<%= med.id %>?_method=DELETE"
           method="POST"
         >
+        <button class="btn btn-primary fa fa-trash" type="submit"></button>
+        
         </form>
         <%if(med.user == user.id){ %>
         <form
@@ -24,13 +26,16 @@
       </div>
     </div>
     <div class="col-3 mt-5 medInfo">
-      <label for="caption" class="form-label">Dosage:</label>
-      <p><%= med.caption %></p>
+      <label for="caption" class="form-label">Dosage: </label>
+      <p><%= med.caption %></p></n>
     </div>
-    <div class="col-3 mt-5">
-      <label for="provider" class="form-label">Prescribing Physician:</label>
+    <div class="col-3 mt-5 medInfo">
+
+      <label for="provider" class="form-label">Prescribing Physician: </label>
       <a href="/directory"><p><%= med.provider %></p></a>
     </div>
+
+    
     <div class="mt-5">
       <h2>Add a note:</h2>
       <form action="/comment/createComment/<%=med._id%>" method="POST">
