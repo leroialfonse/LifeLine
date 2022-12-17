@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/dashboard");
+    return res.redirect("/login");
   }
   res.render("login", {
     title: "Login",
@@ -39,7 +39,7 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/dashboard");
+      res.redirect(req.session.returnTo || "/welcome");
     });
   })(req, res, next);
 };
@@ -85,20 +85,24 @@ exports.postSignup = (req, res, next) => {
   });
 
   const user = new User({
-    userName: req.body.userName,
+    // Taking out username to omit from autofill. Don't want usernames for this app. 
+    // userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
   });
 
   User.findOne(
-    { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+    { $or: [{ email: req.body.email }, //{ userName: req.body.userName }
+    ] },
     (err, existingUser) => {
       if (err) {
         return next(err);
       }
       if (existingUser) {
         req.flash("errors", {
-          msg: "Account with that email address or username already exists.",
+          msg: "An Account with that email address already exists.",
+          //Old code that incluedes reference to username, which has been removed.
+          // msg: "Account with that email address or username already exists.",
         });
         return res.redirect("../signup");
       }
@@ -110,7 +114,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/dashboard");
+          res.redirect("/welcomeS");
         });
       });
     }
