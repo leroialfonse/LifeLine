@@ -1,4 +1,5 @@
 <%- include('partials/header') -%>
+
 <!-- <link rel="stylesheet" href="/css/calendar.css" /> -->
 <div class="over">
 
@@ -17,12 +18,16 @@
 	<div class="contained">
       <div class="calendar">
         <div class="month">
-          <i class="fas fa-angle-left prev"></i>
+			<i class="fas fa-angle-left prev"></i>
+			<!-- trying to get the month buttons to change. -->
+          <!-- <i onclick="previousMonth()" class="fas fa-angle-left prev"></i> -->
           <div class="date">
-            <h1> Calendar Stand-in </h1>  
-            <p></p>
+            <h1><%= new Date().toLocaleDateString('en-us', {month: 'long'}) %></h1>  
+            <p><%= new Date().toLocaleDateString('en-us', {weekday: 'long', day: 'numeric'}) %></p>  
           </div>
-          <i class="fas fa-angle-right next"></i>
+			<!-- trying to get the month buttons to change. -->
+          <!-- <i onclick="nextMonth()" class="fas fa-angle-right next"></i> -->
+			<i  class="fas fa-angle-right next"></i>
         </div>
         <div class="weekdays">
           <div>Sun</div>
@@ -85,6 +90,5 @@
 
 
 
-	<script src="C:\Users\brand\OneDrive\Desktop\LifeLine\bub\script.js"></script>
 
 <%- include('partials/footer') -%>

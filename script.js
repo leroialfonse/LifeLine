@@ -1,31 +1,41 @@
+
+// Call the Date object of javascript to get date time, etc.
 const date = new Date();
+//check in the console... lol
+// console.log(date)
 
-const renderCalendar = () => {
-  date.setDate(1);
 
-  const monthDays = document.querySelector(".days");
 
-  const lastDay = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
+// const renderCalendar = () => {
+  //   date.setDate(1);
+  
+  //   const monthDays = document.querySelector(".days");
+  
+  //   const lastDay = new Date(
+  //     date.getFullYear(),
+  //     date.getMonth() + 1,
+  //     0
+  //   ).getDate();
+  
+  //   const prevLastDay = new Date(
+  //     date.getFullYear(),
+  //     date.getMonth(),
+  //     0
+  //   ).getDate();
+  
+  //   const firstDayIndex = date.getDay();
+  
+  //   const lastDayIndex = new Date(
+  //     date.getFullYear(),
+  //     date.getMonth() + 1,
+  //     0
+  //   ).getDay();
+  
+  //   const nextDays = 7 - lastDayIndex - 1;
+// Use Date.getMonth to get current month index in a 0 base index of the year. 
+// const month = date.getMonth();
+// Turn that into an array of the year, that includes all the months.
 
-  const prevLastDay = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    0
-  ).getDate();
-
-  const firstDayIndex = date.getDay();
-
-  const lastDayIndex = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDay();
-
-  const nextDays = 7 - lastDayIndex - 1;
 
   const months = [
     "January",
@@ -42,41 +52,46 @@ const renderCalendar = () => {
     "December",
   ];
 
-  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+// Set up a function to control the month prev - next arrows??? 
+// Html approach. changed in the EJS. 
 
-  document.querySelector(".date p").innerHTML = new Date().toDateString();
+// Get the month title of the calendar and name it the month that it currently is. 
+  // document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
-  let days = "";
+  // And get the date by selecting the p and change into the current date as a String. 
+  // document.querySelector(".date p").innerHTML = new Date().toDateString();
 
-  for (let x = firstDayIndex; x > 0; x--) {
-    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
-  }
+//   let days = "";
 
-  for (let i = 1; i <= lastDay; i++) {
-    if (
-      i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
-    ) {
-      days += `<div class="today">${i}</div>`;
-    } else {
-      days += `<div>${i}</div>`;
-    }
-  }
+//   for (let x = firstDayIndex; x > 0; x--) {
+//     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+//   }
 
-  for (let j = 1; j <= nextDays; j++) {
-    days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
-  }
-};
+//   for (let i = 1; i <= lastDay; i++) {
+//     if (
+//       i === new Date().getDate() &&
+//       date.getMonth() === new Date().getMonth()
+//     ) {
+//       days += `<div class="today">${i}</div>`;
+//     } else {
+//       days += `<div>${i}</div>`;
+//     }
+//   }
 
-document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-});
+//   for (let j = 1; j <= nextDays; j++) {
+//     days += `<div class="next-date">${j}</div>`;
+//     monthDays.innerHTML = days;
+//   }
+// };
 
-document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-});
+// document.querySelector(".prev").addEventListener("click", () => {
+//   date.setMonth(date.getMonth() - 1);
+//   renderCalendar();
+// });
 
-renderCalendar();
+// document.querySelector(".next").addEventListener("click", () => {
+//   date.setMonth(date.getMonth() + 1);
+//   renderCalendar();
+// });
+
+// renderCalendar();

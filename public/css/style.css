@@ -266,12 +266,15 @@ footer{
     margin-bottom: 1rem;
     background-color: rgb(13,110,253);
     color: #eee;
+    margin: 0;
 
 
   }
   
   .month p {
+    background-color: rgb(13,110,253);
     font-size: 1.6rem;
+    margin: 0;
 
   }
   
@@ -323,12 +326,14 @@ footer{
 
   }
   
+  /* Give today's date a different color so that it stands out. */
   .days div:hover:not(.today) {
     background-color: lightslategray;
     border: 0.2rem solid #eee;
     cursor: pointer;
   }
   
+  /* Fade out the days not in the current month */
   .prev-date,
   .next-date {
     opacity: 0.5;
