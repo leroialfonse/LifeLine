@@ -1,6 +1,7 @@
 <%- include('partials/header') -%>
 
 <!-- <link rel="stylesheet" href="/css/calendar.css" /> -->
+
 <div class="over">
 
 	<div class="main">
@@ -28,6 +29,9 @@
 			<!-- trying to get the month buttons to change. -->
           <!-- <i onclick="nextMonth()" class="fas fa-angle-right next"></i> -->
 			<i  class="fas fa-angle-right next"></i>
+			<!-- <% function nextMonth(){
+				date.setMonth(date.getMonth() + 1);
+			} %> -->
         </div>
         <div class="weekdays">
           <div>Sun</div>
@@ -87,8 +91,5 @@
     </div>
 	
 </div>
-
-
-
 
 <%- include('partials/footer') -%>

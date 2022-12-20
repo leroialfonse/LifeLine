@@ -1,3 +1,6 @@
+header('Content-Type: application-javascript')
+
+import calendar from 'calendar';
 
 // Call the Date object of javascript to get date time, etc.
 const date = new Date();
@@ -6,34 +9,34 @@ const date = new Date();
 
 
 
-// const renderCalendar = () => {
-  //   date.setDate(1);
+const renderCalendar = () => {
+    date.setDate(1);
   
-  //   const monthDays = document.querySelector(".days");
+    const monthDays = document.querySelector(".days");
   
-  //   const lastDay = new Date(
-  //     date.getFullYear(),
-  //     date.getMonth() + 1,
-  //     0
-  //   ).getDate();
+    const lastDay = new Date(
+      date.getFullYear(),
+      date.getMonth() + 1,
+      0
+    ).getDate();
   
-  //   const prevLastDay = new Date(
-  //     date.getFullYear(),
-  //     date.getMonth(),
-  //     0
-  //   ).getDate();
+    const prevLastDay = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      0
+    ).getDate();
   
-  //   const firstDayIndex = date.getDay();
+    const firstDayIndex = date.getDay();
   
-  //   const lastDayIndex = new Date(
-  //     date.getFullYear(),
-  //     date.getMonth() + 1,
-  //     0
-  //   ).getDay();
+    const lastDayIndex = new Date(
+      date.getFullYear(),
+      date.getMonth() + 1,
+      0
+    ).getDay();
   
-  //   const nextDays = 7 - lastDayIndex - 1;
+    const nextDays = 7 - lastDayIndex - 1;
 // Use Date.getMonth to get current month index in a 0 base index of the year. 
-// const month = date.getMonth();
+const month = date.getMonth();
 // Turn that into an array of the year, that includes all the months.
 
 
@@ -89,9 +92,13 @@ const date = new Date();
 //   renderCalendar();
 // });
 
-// document.querySelector(".next").addEventListener("click", () => {
-//   date.setMonth(date.getMonth() + 1);
-//   renderCalendar();
-// });
+function nextMonth(){
+document.querySelector(".next").addEventListener("click", () => {
+  date.setMonth(date.getMonth() + 1);
+  renderCalendar();
+});
+}
 
-// renderCalendar();
+
+renderCalendar();
+}
