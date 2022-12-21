@@ -1,5 +1,4 @@
 <%- include('partials/header') -%>
-
 <!-- <link rel="stylesheet" href="/css/calendar.css" /> -->
 
 <div class="over">
@@ -46,7 +45,7 @@
 			<!-- trying to get the month buttons to change. -->
           <!-- <i onclick="nextMonth()" class="fas fa-angle-right next"></i> -->
 		  <!-- .............. Make the Arrows href? that link to the next month???..................... -->
-			<a href="" ><i  class="fas fa-angle-right next"></i> </a>
+			<i onclick=" date.setMonth(date.getMonth() + 1)"  class="fas fa-angle-right next"></i> 
 			<!-- <% function nextMonth(){
 				date.setMonth(date.getMonth() + 1);
 			} %> -->

@@ -16,7 +16,7 @@ module.exports = {
   },
   getCalendar:  (req, res) => {
    try{ 
-    res.render("calendar.ejs");
+    res.render("calendar");
   } catch (err) {
     console.log(err);
   }
