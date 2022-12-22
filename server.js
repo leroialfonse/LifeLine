@@ -17,7 +17,6 @@ const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
 
-
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
@@ -36,6 +35,8 @@ app.use(express.static("public"));
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// getting th script from public to access the calendar functions.
+// app.use(express.static(path.join(__dirname, "public")));
 
 //Logging
 app.use(logger("dev"));
@@ -77,7 +78,7 @@ app.use("/dashboard", dashboardRoutes);
 app.get("/calendar",  (request, response)=> {
   response.sendFile(__dirname + "/calendar.html");
   
-})
+});
 
 
  
