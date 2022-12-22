@@ -355,9 +355,9 @@ footer{
 
   }
   
-  /* Give today's date a different color so that it stands out. */
+/* Give the days a hover color. */
   .days div:hover:not(.today) {
-    background-color: lightslategray;
+    background-color: rgb(4, 29, 54);
     border: 0.2rem solid #eee;
     cursor: pointer;
   }
@@ -369,5 +369,5 @@ footer{
   }
   
   .today {
-    background-color: rgb(13,110,253);
+    background-color: rgb(72, 228, 16);
   }
