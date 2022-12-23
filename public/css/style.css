@@ -5,6 +5,7 @@
     box-sizing: border-box;
     background-color: #fff;
     font-family: 'Inter', sans-serif;
+    font-size: 1rem;
 } 
 
 .container{
@@ -117,37 +118,41 @@ h1, h2{
 
 /*///////////// Info panel about Medications in the Med page////////////////// */
 
-/*
+/* Likely not needed with ems and rems. 
 .Logo-heart{
+  border: 2px solid green;
     display: flex;
-    justify-content: center ;
-    width: 50%;
+    justify-content: center ;SSS
+    width: 50%;S
     height: 80%;
-}
-
+} 
+*/
 
 .login-card{
-    width: 600px;
-    height: 400px;
-    margin: 220px;
-    position: fixed;
-    top: 120px;
-    right: 120px;
-    bottom: 120px;
-    left: 120px;
-} */
+  
+  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
+  border-radius: 6px;
+  width: 85%;
+  padding: .5em;
+  margin: 0 auto;
+ 
+} 
 
+
+/* remember! em looks for font size of the container. If not found, defaults 16px, the default font size for browsers.  to  em = 16 * whatever em you want ( 5 in this case) = for 80px.   */
 .btn{
 
-    height: 60px; 
-    width: 95px;
-    margin-left: 20px;
-    padding-top: 5px;
+    /* height: 60px;  */
+    width: 45%;
+    margin: 1px;
+    padding: .5em;
 }
 
-.ulta{
+/* extra class for the button on login card, login.  */
+/* .ulta{
+  border: 2px solid orange;
     padding-top: 15px;
-}
+} */
 
 /*
 div, header, button {
