@@ -34,8 +34,16 @@
                     <p>Name:<span> <%= el.title %></span></p>
                     <p>Address:<span> <%= el.address %></span></p>
                       <p>Phone:<span> <%= el.phone %></span></p>
-                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
-                  </form>                  
+
+                      <!-- Trying to get the delete button working. Smh. -->
+                      <form
+          action="/contacts/deleteContact/<%= contacts.id %>?_method=DELETE"
+          method="POST"
+          class="col-3"></form>
+        
+                  </form> 
+                  <button class="btn btn-primary fa fa-trash" type="submit"></button>
+
                 </li>
                 <% }) %>
                 <% } %> 

@@ -9,7 +9,7 @@
 } 
 
 .container{
- margin: auto;
+ /* margin:  0 auto; */
 }
 
 /* Wraps the Index Login in a container for sizing. */
@@ -46,20 +46,18 @@ body, .div, .container{
     background-color: #F3EFF0;
 }
 */
- header > .nav-item > li{
+ header{
+  border-bottom: 2px solid  rgba(13,110,253,.5);
+ 
+}
 
-  display: flex;
-  text-decoration: double;
-  flex-direction: row;
-  justify-content: center;
-  color: purple;
-  /* border: 2px solid green; */
-  /* padding: 5px;
-   */
-   /* margin: 5px; */
-   /* width: 100px;
-   height: 10px;
-   padding: 10px; */
+
+.nav-item{
+  /* margin: .5em; */
+  text-align: center;
+  font-weight: 700;
+  padding: .5em;
+  /* color:rgb(72, 228, 16); */
 }
 
 /* Sets the display of guide elements, so that they fit the page better. */
@@ -195,8 +193,10 @@ div, header, button {
 }
 
 .tagline{
+  display:flex;
+  flex-direction: row;
     color: rgb(13,110,253);
-    margin: 0 40px 0 40px;
+    margin: .5em;
 }
 
 div > .mt-5 {
