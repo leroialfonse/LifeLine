@@ -48,28 +48,28 @@ body, .div, .container{
 */
  header{
   border-bottom: 2px solid  rgba(13,110,253,.5);
+  font-size: .5rem;
  
 }
 
 
 .nav-item{
-  /* margin: .5em; */
   text-align: center;
   font-weight: 700;
-  padding: .5em;
+  padding: .1rem;
   /* color:rgb(72, 228, 16); */
 }
+
 
 /* Sets the display of guide elements, so that they fit the page better. */
 .guide{
     display: flex;
     flex-flow: row;
-    /* padding: 60px; */
 }
 
 
  .guide-card {
-    padding: 20px;
+    padding: 1rem;
 } 
 
 /* Sets the size and display of the login card. */
@@ -184,10 +184,12 @@ div, header, button {
   flex-direction: row;
 }
 
-.cabinet {
+/* .cabinet {
   height: 400px;
   padding: 100%;
-}
+} */
+
+
 .oops {
    margin: 300px;
 }
@@ -227,6 +229,14 @@ footer{
     /* justify-self: center; */
 }
 
+.footer-nav > ul{
+  display: flex;
+  flex-direction: row;
+  list-style: "|  ";
+  justify-content: space-evenly;
+  font-size: .2rem;
+  padding: 1rem;
+}
 /* ///// Calendar Styling ///// */
 
 

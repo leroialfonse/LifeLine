@@ -45,13 +45,21 @@ createContact: async (req, res) => {
   deleteContact: async (req, res)=>{
     try{
   // Find contact by id
-  let contact = await Contact.find({ UserId: req.UserId });
+  // const contacts = await Contact.find({ userId: req.user.id });
+  const contacts = await Contact.findById({ _id: req.params.id });
+
+  
+  console.log(req.params);
+
   // Delete the contact from the db
+        // await Contact.remove({ _id: req.params.id });
         await Contact.remove({ _id: req.params.id });
-        console.log('Deleted Contact!');
+
+        console.log(contact.id)
+        console.log('Deleted');
         res.json('Deleted Contact');
     res.redirect("/contact");
-}catch(err){
+}catch(err){ 
     res.redirect("/contact");
     }
 },

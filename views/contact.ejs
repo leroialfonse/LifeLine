@@ -2,8 +2,11 @@
 <div class="container">
   <div class="row mt-5">
       <div class="col-6">
-          <!-- <div class="mt-5"> -->
-            <h2>Add a New Doctor</h2>
+
+        <!-- form in a card to include an image, for asthetics. -->
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Add a New Doctor</h2>
             <form action="/contact/createContact"  method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">Doctor Name</label>
@@ -17,9 +20,39 @@
               <label for="phone" class="form-label">Phone Number</label>
               <input type="text" class="form-control" id="phone" name="phone">
           <!-- </div> -->
+
           <button type="submit" class="btn btn-primary" value="submit">Submit</button>
-        </form>
+        </form> <br>
+
+        <br>
+        <p class="card-text">Use this form to add your doctors to your contacts list.</p>
+            
+            <!-- Use some date() object to give a last added line.  -->
+            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          </div>
+          <img src="imgs/SmileDoc3.jpg" class="card-img-bottom" alt="card-img-bottom">
+        </div>
+
+
+          <!-- <div class="mt-5"> -->
+            <!-- <h2>Add a New Doctor</h2>
+            <form action="/contact/createContact"  method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Doctor Name</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="phone" name="phone"> -->
+          <!-- </div> -->
+          <!-- <button type="submit" class="btn btn-primary" value="submit">Submit</button> -->
+        <!-- </form> -->
       </div>
+
     </div>
     <div class="col-6">
       <label for="ul"><h2>Your Doctors</h2></label>
@@ -28,21 +61,29 @@
             <p> No doctors in your contacts. Please add one to save their information.</p>
             <%} else { %>
              <% } %> 
-          <% for(var i=0; i< contacts.length; i++) {%>
-          <!-- <% contacts.forEach( el => { %> -->
+          <!-- <% for(var i=0; i< contacts.length; i++) {%> -->
+          <% contacts.forEach( el => { %>  
             <li class="col-6 justify-content-between mt-5 doctors">
                     <p>Name:<span> <%= el.title %></span></p>
                     <p>Address:<span> <%= el.address %></span></p>
                       <p>Phone:<span> <%= el.phone %></span></p>
 
                       <!-- Trying to get the delete button working. Smh. -->
-                      <form
-          action="/contacts/deleteContact/<%= contacts.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"></form>
-        
-                  </form> 
-                  <button class="btn btn-primary fa fa-trash" type="submit"></button>
+
+          
+                  <%if(contacts.user == user.id){ %>
+                    <form
+                      action="/contact/deleteContact/<%= contacts.id %>?_method=DELETE"
+                      method="POST"
+                      class="col-3"
+                    >
+                    
+                    </form>
+                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
+
+                    <%}%>
+                   <button class="btn btn-secondary fa fa-trash" type="submit" ></button> 
+
 
                 </li>
                 <% }) %>

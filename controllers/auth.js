@@ -60,6 +60,8 @@ exports.getSignup = (req, res) => {
   if (req.user) {
     return res.redirect("/welcome");
   }
+  // Send user to signup if not found as a user
+
   res.render("signup", {
     title: "Create Account",
   });
@@ -114,7 +116,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/welcomeS");
+          res.redirect("/welcome");
         });
       });
     }

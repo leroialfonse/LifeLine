@@ -55,20 +55,21 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  },
-  likeMed: async (req, res) => {
-    try {
-      await Med.findOneAndUpdate(
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 },
-        }
-      );
-      console.log("Likes +1");
-      res.redirect(`/med/${req.params.id}`);
-    } catch (err) {
-      console.log(err);
-    }
+  // },
+  // // Change to make a number of days taken/week counter
+  // likeMed: async (req, res) => {
+  //   try {
+  //     await Med.findOneAndUpdate(
+  //       { _id: req.params.id },
+  //       {
+  //         $inc: { likes: 1 },
+  //       }
+  //     );
+  //     console.log("Likes +1");
+  //     res.redirect(`/med/${req.params.id}`);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
   },
   deleteMed: async (req, res) => {
     try {

@@ -6,14 +6,6 @@
       <h2><%= med.title %></h2>
       <img class="img-fluid" src="<%= med.image%>" />
       <div class="row justify-content-between">
-        <form
-          class="col-1"
-          action="/med/deleteMed/<%= med.id %>?_method=DELETE"
-          method="POST"
-        >
-        <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        
-        </form>
         <%if(med.user == user.id){ %>
         <form
           action="/med/deleteMed/<%= med.id %>?_method=DELETE"
@@ -21,6 +13,9 @@
           class="col-3"
         >
           <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <!-- edit button -->
+          <button class="btn btn-primary fa fa-edit" type="submit"></button>
+
         </form>
         <%}%>
       </div>

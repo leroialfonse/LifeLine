@@ -14,6 +14,8 @@ module.exports = {
       console.log(err); 
     }
   },
+
+  // May not need for html calendar routing. But, I still want auth.... come back to this. 
   getCalendar:  (req, res) => {
    try{ 
     res.render("calendar");
