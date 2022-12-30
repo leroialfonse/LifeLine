@@ -58,7 +58,7 @@ exports.logout = (req, res) => {
 
 exports.getSignup = (req, res) => {
   if (req.user) {
-    return res.redirect("/welcome");
+    return res.redirect("/signup");
   }
   // Send user to signup if not found as a user
 
