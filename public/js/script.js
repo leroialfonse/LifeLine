@@ -99,10 +99,14 @@ document.querySelector(".next").addEventListener("click", () => {
   renderCalendar();
 });
 
-document.querySelector(".dateline").addEventListener("click", () => {
-  
-})
+// document.querySelector(".days").addEventListener("click", newEvent)
 
+
+
+  document.querySelector('.days').addEventListener('click', () => {
+    '#modelWindow'.modal('show');
+ 
+  })
 
 
 
