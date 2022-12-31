@@ -61,7 +61,7 @@
             <p> No doctors in your contacts. Please add one to save their information.</p>
             <%} else { %>
              <% } %> 
-          <!-- <% for(var i=0; i< contacts.length; i++) {%> -->
+            
           <% contacts.forEach( el => { %>  
             <li class="col-6 justify-content-between mt-5 doctors">
                     <p>Name:<span> <%= el.title %></span></p>
@@ -87,7 +87,7 @@
 
                 </li>
                 <% }) %>
-                <% } %> 
+                
                 </ul>
 
                   </div>
