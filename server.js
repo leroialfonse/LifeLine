@@ -28,7 +28,7 @@ require("./config/passport")(passport);
 //Connect To Database 
 // (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
 // connectDB();
-client.connect(err => {
+connectDB(err => {
   if(err){ console.error(err); return false;}
   // connection to mongo is successful, listen for requests
   app.listen(process.env.PORT, () => {
