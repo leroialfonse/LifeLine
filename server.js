@@ -28,12 +28,11 @@ require("./config/passport")(passport);
 //Connect To Database 
 // (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
 // connectDB();
-connectDB(err => {
-  if(err){ console.error(err); return false;}
-  // connection to mongo is successful, listen for requests
-  app.listen(process.env.PORT, () => {
-      console.log("listening for requests!");
+connectDB().then(() => {
+  app.listen(PORT, () => {
+      console.log("listening for requests");
   })
+});
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -94,6 +93,6 @@ app.get("/calendar",  (request, response)=> {
 //Server Running (If not using cyclic.) Remeber to reenable if not using cyclic for hosting. 
 // app.listen(process.env.PORT, () => {
 //   console.log("Server is running, you better catch it!");
-});
+// });
 
 
