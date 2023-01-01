@@ -16,7 +16,7 @@ const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
-const PORT = process.env.PORT || 8900
+const PORT = process.env.PORT || 3000
 
 
 //Use .env file in config folder
