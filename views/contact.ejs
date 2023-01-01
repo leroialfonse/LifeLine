@@ -68,21 +68,22 @@
                     <p>Address:<span> <%= el.address %></span></p>
                       <p>Phone:<span> <%= el.phone %></span></p>
 
-                      <!-- Trying to get the delete button working. Smh. -->
 
           
-                  <%if(contacts.user == user.id){ %>
-                    <form
-                      action="/contact/deleteContact/<%= contacts.id %>?_method=DELETE"
+                  <!-- <%if(contacts.user == user.id){ %> -->
+                  <form
+                      action="/contact/deleteContact/<%= contact.id %>?_method=DELETE"
                       method="POST"
                       class="col-3"
                     >
-                    
-                    </form>
-                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                    <button class="btn btn-secondary fa fa-trash" type="submit" ></button>
 
-                    <%}%>
-                   <button class="btn btn-secondary fa fa-trash" type="submit" ></button> 
+                    </form>
+                    
+                    <!-- <%}%> -->
+                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                 
+
 
 
                 </li>

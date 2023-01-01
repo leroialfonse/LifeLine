@@ -16,6 +16,8 @@ const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
+const PORT = process.env.PORT || 8900
+
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -23,8 +25,15 @@ require("dotenv").config({ path: "./config/.env" });
 // Passport config
 require("./config/passport")(passport);
 
-//Connect To Database
-connectDB();
+//Connect To Database 
+// (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
+// connectDB();
+client.connect(err => {
+  if(err){ console.error(err); return false;}
+  // connection to mongo is successful, listen for requests
+  app.listen(process.env.PORT, () => {
+      console.log("listening for requests!");
+  })
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -82,9 +91,9 @@ app.get("/calendar",  (request, response)=> {
 
 
  
-//Server Running
-app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
+//Server Running (If not using cyclic.) Remeber to reenable if not using cyclic for hosting. 
+// app.listen(process.env.PORT, () => {
+//   console.log("Server is running, you better catch it!");
 });
 
 

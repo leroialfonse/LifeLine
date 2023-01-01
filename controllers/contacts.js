@@ -45,8 +45,8 @@ createContact: async (req, res) => {
   deleteContact: async (req, res)=>{
     try{
   // Find contact by id
-  // const contacts = await Contact.find({ userId: req.user.id });
-  const contacts = await Contact.findById({ _id: req.params.id });
+  const contacts = await Contact.find({ userId: req.user.id });
+  // const contacts = await Contact.findById({ _id: req.params.id });
 
   
   console.log(req.params);
@@ -55,7 +55,7 @@ createContact: async (req, res) => {
         // await Contact.remove({ _id: req.params.id });
         await Contact.remove({ _id: req.params.id });
 
-        console.log(contact.id)
+        console.log(_id)
         console.log('Deleted');
         res.json('Deleted Contact');
     res.redirect("/contact");
