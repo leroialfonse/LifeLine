@@ -45,158 +45,20 @@
   />
   </head>
   <body>
-    <header class="container">
-      <nav class="navbar navbar-expand-xl navbar-light bg-light">
-        <div class="container-fluid">
-          <img class="fav" src="imgs/Smallish.png" alt="LifeLine Heart">
-        <a class="navbar-brand" href="/welcome">LifeLine</a>
-        <span class="justify-content-left tagline">Organization for Peace of Mind</span>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse show" id="navbarWithDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/welcome">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/calendar">Your Calendar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/dashboard">Add a Medicine</a>
-              </li>  
-              <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/cabinet">Medicine Cabinet</a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/contact">Your Doctors</a>
-              </li>
-              <li class="nav-item"> 
-                <a class="nav-link btn-outline-primary" href="/signup">Create Account</a>
-              </li> 
-              <li class="nav-item"> 
-                <a class="nav-link btn-outline-primary" href="/logout">Logout</a>
-              </li>   
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-  
+    
 
-	
-<!-- ParkerLewis -->
-<link rel="stylesheet" href="/css/style.css" />
-
-<div class="over">
-
-	<div class="main">
-		<div class="guide-card">
-            <img src="imgs/contemplate.jpg" class="card-img-top" alt="card-img-top">
-            <div class="card-body">
-              <h3 class="card-title">Maintain your Schedule</h3>
-              <p class="card-text"><p>Use the calendar to keep track of your upcoming appointments, or to track any event you need to. Just click on a day to add an event.</p>
-              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-            </div>
-          </div>
-	</div> 
-	<div class="contained">
-      <div class="calendar">
-        <div class="month">
-			<i class="fas fa-angle-left prev"></i>
-			<!-- trying to get the month buttons to change. -->
-          <div class="date">
-            <h1></h1>  
-            <p></p>  
-          </div>
-		 
-			<!-- trying to get the month buttons to change. -->
-          <!-- <i onclick="nextMonth()" class="fas fa-angle-right next"></i> -->
-		  <!-- .............. Make the Arrows href? that link to the next month???..................... -->
-			<i  class="fas fa-angle-right next"></i> 
-			<!-- <% function nextMonth(){
-				date.setMonth(date.getMonth() + 1);
-			} %> -->
-        </div>
-        <div class="weekdays">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
-        </div>
-        <div class="days">
-			<div class="prev-date">26</div>
-			<div class="prev-date">27</div>
-			<div class="prev-date">28</div>
-			<div class="prev-date">29</div>
-			<div class="prev-date">30</div>
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
-			<div>7</div>
-			<div>8</div>
-			<div class="today">9</div>
-			<div>10</div>
-			<div>11</div>
-			<div>12</div>
-			<div>13</div>
-			<div>14</div>
-			<div>15</div>
-			<div>16</div>
-			<div>17</div>
-			<div>18</div>
-			<div>19</div>
-			<div>20</div>
-			<div>21</div>
-			<div>22</div>
-			<div>23</div>
-			<div>24</div>
-			<div>25</div>
-			<div>26</div>
-			<div>27</div>
-			<div>28</div>
-			<div>29</div>
-			<div>30</div>
-			<div>31</div>
-			<div class="next-date">1</div>
-			<div class="next-date">2</div>
-			<div class="next-date">3</div>
-			<div class="next-date">4</div>
-			<div class="next-date">5</div>
-			<div class="next-date">6</div>
-		</div>
-
-      </div>
-    </div>
-
-    <div class="modal fade" id="event">
-            <div class="modal-dialog modal-sm vertical-align-center">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Heading</h4>
-                </div>
-                <div class="modal-body">
-                    Body text here
-                </div>
-                <div class="modal-footer">
-                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <!-- the trigger for the modal popup. keep figuring.  -->
-        <!-- <a href=".days" data-toggle="modal" data-target="#event">Add Event</a> -->
-
-
-      
+    <template>
+      <b-row>
+        <b-col md="auto">
+          <b-calendar v-model="value" @context="onContext" locale="en-US"></b-calendar>
+        </b-col>
+        <b-col>
+          <p>Value: <b>'{{ value }}'</b></p>
+          <p class="mb-0">Context:</p>
+          <pre class="small">{{ context }}</pre>
+        </b-col>
+      </b-row>
+    </template>
 
 	
 </div>
