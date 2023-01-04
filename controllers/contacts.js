@@ -45,11 +45,12 @@ createContact: async (req, res) => {
   deleteContact: async (req, res)=>{
     try{
   // Find contact by id
-  const contacts = await Contact.find({ userId: req.user.id });
-  // const contacts = await Contact.findById({ _id: req.params.id });
+  // const contacts = await Contact.find({ userId: req.user.id });
+  console.log(req.body)
+  const contacts = await Contact.findOneAndDelete({ _id: req.params.id });
 
   
-  console.log(req.params);
+  console.log(req.id);
 
   // Delete the contact from the db
         // await Contact.remove({ _id: req.params.id });

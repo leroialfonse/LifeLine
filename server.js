@@ -16,7 +16,7 @@ const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8900
 
 
 //Use .env file in config folder
@@ -27,12 +27,12 @@ require("./config/passport")(passport);
 
 //Connect To Database 
 // (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
-// connectDB();
-connectDB().then(() => {
-  app.listen(PORT, () => {
-      console.log("listening for requests!");
-  })
-});
+connectDB();
+// connectDB().then(() => {
+//   app.listen(PORT, () => {
+//       console.log("listening for requests!");
+//   })
+// });
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -90,9 +90,9 @@ app.get("/calendar",  (request, response)=> {
 
 
  
-//Server Running (If not using cyclic.) Remeber to reenable if not using cyclic for hosting. 
-// app.listen(process.env.PORT, () => {
-//   console.log("Server is running, you better catch it!");
-// });
+// Server Running (If not using cyclic.) Remeber to reenable if not using cyclic for hosting. 
+app.listen(process.env.PORT, () => {
+  console.log("Server is running, you better catch it!");
+});
 
 

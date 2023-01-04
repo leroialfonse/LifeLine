@@ -7,7 +7,7 @@ module.exports = {
       // let mongoose = require('mongoose')
       // const contacts = await Contact.find({ userId: req.user.id });
       // console.log(req.body)
-  
+      
       
       res.render("welcome.ejs");
     } catch (err) {
