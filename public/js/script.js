@@ -1,3 +1,31 @@
+// ///////////// Delete for doctors??? //////////////////////////
+const deleteBtn = document.querySelectorAll('.del')
+
+
+Array.from(deleteBtn).forEach((el)=>{
+  el.addEventListener('click', deleteTodo)
+})
+
+async function deleteContact(){
+  const contactId = this.parentNode.dataset.id
+  try{
+      const response = await fetch('contact/deleteContact', {
+          method: 'delete',
+          headers: {'Content-type': 'application/json'},
+          body: JSON.stringify({
+                  'contactFromFile': contactId
+              // 'todoIdFromJSFile': todoId
+          })
+      })
+      const data = await response.json()
+      console.log(data)
+      location.reload()
+  }catch(err){
+      console.log(err)
+  }
+}
+
+
 // Call the Date object of javascript to get date time, etc.
 const date = new Date();
 //check in the console... lol

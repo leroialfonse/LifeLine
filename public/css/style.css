@@ -94,9 +94,8 @@ h1, h2{
 /* Sets a border for images in the med cabinet, to give more form to the page. */
 /* //////////// Come back to this. Trying to adjust the images in the med cabinet. ////////////// */
 .img-fluid{
-    /* border:  1px solid rgba(0, 0, 0, 0.5);
-    height: 10rem;
-    width: 12rem; */
+    height: 2em;
+    width: 2em; 
     display: flex;
     flex-direction: row;
     flex-shrink: 1;
@@ -116,12 +115,12 @@ h1, h2{
 
 /*///////////// Info panel about Medications in the Med page////////////////// */
 
-/* Likely not needed with ems and rems. 
+/* Maybe not needed.. 
 .Logo-heart{
   border: 2px solid green;
     display: flex;
     justify-content: center ;SSS
-    width: 50%;S
+    width: 50%;
     height: 80%;
 } 
 */
@@ -256,8 +255,8 @@ footer{
   .contained {
     /* position: relative;
     top: 20px; */
-    width: 70vw;
-    height: 70vh;
+    /* width: 70vw;
+    height: 70vh; */
     /* background-color: #12121f; */
     color: #eee;
     display: flex;
@@ -265,8 +264,9 @@ footer{
     align-items: center;
     align-self: center; 
     /* border: 5px solid orange; */
-    background-color: lightslategray    ;
+    background-color: lightslategray;
     /* padding: 20px; */
+    border: rgb(13,110,253);
 
  
   }
@@ -282,7 +282,7 @@ footer{
   }  */
  
   .month {
-    width: 100%;
+    /* width: 100%; */
     /* height: 12rem; */
     background-color: rgb(13,110,253);
     display: flex;
@@ -347,7 +347,7 @@ footer{
   }
   
   .days {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-wrap: wrap;
     padding: 0.2rem;
@@ -359,7 +359,7 @@ footer{
     font-size: 1.4rem;
     margin: 0.3rem;
     width: calc(40.2rem / 7);
-    height: 80px;
+    height: 4em;
     display: flex;
     justify-content: center;
     align-items: center;
