@@ -18,7 +18,7 @@ router.get("/contact", ensureAuth, contactController.getContact);
 // app.get("/calendar", ensureAuth, homeController.getCalendar);
 //Trying to get html.
 app.get("/calendar", ensureAuth);
-router.get("/doctors", ensureAuth, doctorsController.getDoctor);
+router.get("/doctor", ensureAuth, doctorsController.getDoctor);
 router.get("/directory", ensureAuth, contactController.getDirectory);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);

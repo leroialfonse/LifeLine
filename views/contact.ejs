@@ -67,15 +67,17 @@
              <% } %> 
             
           <% contacts.forEach( el => { %>  
-            <li class="col-6 justify-content-between mt-5 doctors">
+            <li class="col-6 justify-content-between mt-5 doctors" data-id='<%el._id%>'>
                     <p>Name:<span> <%= el.title %></span></p>
                     <p>Address:<span> <%= el.address %></span></p>
                       <p>Phone:<span> <%= el.phone %></span></p>
+                  <span class="del"> delete</span>
 
+                
 
           
                   <!-- <%if(contacts.user == user.id){ %> -->
-                  <!-- <form
+                   <form
                       action="/contact/deleteContact/<%= contact.id %>?_method=DELETE"
                       method="POST"
                       class="col-3"
@@ -83,10 +85,10 @@
 
                     </form>
                     
-                    <!-- <%}%> 
-                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
-                    -->
-
+                     <%}%>
+                    <button class="btn btn-primary fa fa-trash del" type="submit"></button>
+                    
+ -->
 
 
                 </li>
