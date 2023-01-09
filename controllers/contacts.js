@@ -6,21 +6,19 @@ const cloudinary = require("../middleware/cloudinary");
 
 
 module.exports = {
-getDirectory: async (req, res) => {
-    try {
-      const contacts = await Contact.find().sort({ createdAt: "desc" }).lean();
-      res.render("directory.ejs", { contacts: contacts });
-    } catch (err) {
-      console.log(err);
-    }
-  },
+// getDirectory: async (req, res) => {
+//     try {
+//       const contacts = await Contact.find().sort({ createdAt: "desc" }).lean();
+//       res.render("directory.ejs", { contacts: contacts });
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   },
 getContact: async (req, res) => {
     try {
       let mongoose = require('mongoose')
       const contacts = await Contact.find({ userId: req.user.id });
       console.log(req.body)
-
-      
       res.render("contact.ejs", {  contacts: contacts, user: req.user, });
     } catch (err) {
       console.log(err); 
@@ -48,10 +46,10 @@ createContact: async (req, res) => {
     try{
   // Find contact by id
   // const contacts = await Contact.find({ userId: req.user.id });
-   await Contact.findOneAndDelete({ _id: req.params.contactFromFile });
+   await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
   // Delete the contact from the db
         // await Contact.remove({ _id: req.params.id });
-        await Contact.remove({ _id: req.params.contactFromFile });
+        await Contact.findByIdAndRemove({ _id: req.params.contactFromFile });
 
         // console.log(_id)
         console.log('Deleted');

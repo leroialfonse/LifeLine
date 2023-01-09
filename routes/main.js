@@ -19,7 +19,7 @@ router.get("/contact", ensureAuth, contactController.getContact);
 //Trying to get html.
 app.get("/calendar", ensureAuth);
 router.get("/doctor", ensureAuth, doctorsController.getDoctor);
-router.get("/directory", ensureAuth, contactController.getDirectory);
+// router.get("/directory", ensureAuth, contactController.getDirectory);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);

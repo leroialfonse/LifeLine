@@ -43,9 +43,28 @@
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  </head>
-  <body>
-    <header class="container">
+
+  <!-- Off the Shelf Calendar solution. Learn this, build your own later... -->
+  <script src='fullcalendar/dist/index.global.js'></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+      });
+      calendar.render();
+    });
+
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.global.min.js"></script>
+
+</head>
+  <!-- <body> -->
+
+    <!-- original header piece. -->
+ <header class="container"> 
       <nav class="navbar navbar-expand-xl navbar-light bg-light">
         <div class="container-fluid">
           <img class="fav" src="imgs/Smallish.png" alt="LifeLine Heart">
@@ -84,8 +103,17 @@
     </header>
   
 
+    <!-- Off the shelf Calendar solution.  -->
+
+    <body>
+      <section>
+      <div id='calendar'></div>
+      </section>
+    <!-- </body> -->
+    
+
 	
-<!-- ParkerLewis -->
+<!-- ParkerLewis
 <link rel="stylesheet" href="/css/style.css" />
 
 <div class="over">
@@ -96,18 +124,18 @@
             <div class="card-body">
               <h3 class="card-title">Maintain your Schedule</h3>
               <p class="card-text"><p>Use the calendar to keep track of your upcoming appointments, or to track any event you need to. Just click on a day to add an event.</p>
-              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> 
             </div>
           </div>
 	</div> 
 	<div class="contained">
 <b-calendar></b-calendar>
 
-    <!--  -->
+    <!--  
       <div class="calendar">
         <div class="month">
 			<i class="fas fa-angle-left prev"></i>
-			<!-- trying to get the month buttons to change. -->
+			<!-- trying to get the month buttons to change. 
           <div class="date">
             <h1></h1>  
             <p></p>  
@@ -115,11 +143,11 @@
 		 
 			<!-- trying to get the month buttons to change. -->
           <!-- <i onclick="nextMonth()" class="fas fa-angle-right next"></i> -->
-		  <!-- .............. Make the Arrows href? that link to the next month???..................... -->
+		  <!-- .............. Make the Arrows href? that link to the next month???..................... 
 			<i  class="fas fa-angle-right next"></i> 
 			<!-- <% function nextMonth(){
 				date.setMonth(date.getMonth() + 1);
-			} %> -->
+			} %> -
         </div>
         <div class="weekdays">
           <div>Sun</div>
@@ -175,8 +203,8 @@
 			<div class="next-date">6</div>
 		</div>
 
-      </div>
-    </div>
+      </div> -->
+    <!-- </div>
 
     <div class="modal fade" id="event">
             <div class="modal-dialog modal-sm vertical-align-center">
@@ -193,7 +221,7 @@
                 </div>
               </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- the trigger for the modal popup. keep figuring.  -->
         <!-- <a href=".days" data-toggle="modal" data-target="#event">Add Event</a> -->

@@ -1,10 +1,21 @@
 // ///////////// Delete for doctors??? //////////////////////////
 const deleteBtn = document.querySelectorAll('.del')
 
+const addEvent = document.querySelectorAll('.days')
 
 Array.from(deleteBtn).forEach((el)=>{
-  el.addEventListener('click', deleteTodo)
+  el.addEventListener('click', deleteContact)
 })
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth'
+  });
+  calendar.render();
+});
+
 
 async function deleteContact(){
   const contactId = this.parentNode.dataset.id
