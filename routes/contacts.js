@@ -6,12 +6,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/:id", ensureAuth, contactController.getContact);
 
-router.post("/createContact", contactController.createContact);
+router.post("/createContact", ensureAuth, contactController.createContact);
 
-// original line
-// router.delete("/deleteContact/:id", contactController.deleteContact);
-// Trying to delete a contact where I am.
-router.delete("/deleteContact", contactController.deleteContact);
+router.put("/editContact/:id", contactController.editContact);
+
+router.delete("/deleteContact/:id", contactController.deleteContact);
 
 
 module.exports = router

@@ -1,12 +1,12 @@
 // ///////////// Delete for doctors??? //////////////////////////
-const deleteBtn = document.querySelectorAll('.del')
 
 const addEvent = document.querySelectorAll('.days')
 
-Array.from(deleteBtn).forEach((el)=>{
-  el.addEventListener('click', deleteContact)
-})
 
+modal.onclick = function() {
+  modal('show')
+}
+$('#exampleModalCenter').modal('show')
 
  document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');

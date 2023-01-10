@@ -5,6 +5,7 @@ const cloudinary = require("../middleware/cloudinary");
 
 
 
+
 module.exports = {
 // getDirectory: async (req, res) => {
 //     try {
@@ -41,23 +42,34 @@ createContact: async (req, res) => {
     }
   },
   deleteContact: async (req, res)=>{
-    console.log(req.body.contactFromFile)
-  
     try{
   // Find contact by id
-  // const contacts = await Contact.find({ userId: req.user.id });
-   await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
+   let contact = await Contact.findById({ _id: req.params.id });
+  //  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
   // Delete the contact from the db
-        // await Contact.remove({ _id: req.params.id });
-        await Contact.findByIdAndRemove({ _id: req.params.contactFromFile });
+    await Contact.remove({ _id: req.params.id });
 
         // console.log(_id)
         console.log('Deleted');
-        res.json('Deleted Contact');
     res.redirect("/contact");
 }catch(err){ 
     res.redirect("/contact");
     }
+},
+editContact: async (req, res)=>{
+  try{
+// Find contact by id
+ let contact = await Contact.findById({ _id: req.params.id });
+//  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
+// Delete the contact from the db
+  await Contact.updateOne({ _id: req.params.id });
+
+      // console.log(_id)
+      console.log('Updated');
+  res.redirect("/contact");
+}catch(err){ 
+  res.redirect("/contact");
+  }
 },
 
 }
