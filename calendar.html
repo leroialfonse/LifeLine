@@ -11,6 +11,9 @@
       sizes="60x60"
       href="/imgs/SmallHeart.png"
     />
+
+<link rel="stylesheet" href="/css/style.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -46,6 +49,17 @@
 
   <!-- Off the Shelf Calendar solution. Learn this, build your own later... -->
   <script src='fullcalendar/dist/index.global.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.global.js.map"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/package.json"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/LICENSE.md"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.js.map"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.d.ts"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.cjs"></script>
+
   <script>
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -106,46 +120,46 @@
     <!-- Off the shelf Calendar solution.  -->
 
     <body>
-      <section>
-      <div id='calendar'></div>
-      </section>
-    <!-- </body> -->
-    
+      
 
 	
-<!-- ParkerLewis
-<link rel="stylesheet" href="/css/style.css" />
+
 
 <div class="over">
 
-	<div class="main">
 		<div class="guide-card">
             <img src="imgs/contemplate.jpg" class="card-img-top" alt="card-img-top">
             <div class="card-body">
-              <h3 class="card-title">Maintain your Schedule</h3>
+              <h3 class="card-title">Maintain your Schedule SOmetimes</h3>
               <p class="card-text"><p>Use the calendar to keep track of your upcoming appointments, or to track any event you need to. Just click on a day to add an event.</p>
-              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> 
             </div>
-          </div>
-	</div> 
-	<div class="contained">
-<b-calendar></b-calendar>
+    </div>
+          
+    <section class="calendar">
+    <div  id='calendar'></div>
+    </section> 
 
-    <!--  
+  
+	</div> 
+</body>
+  
+<!-- <div class="contained">
+
+    
       <div class="calendar">
         <div class="month">
 			<i class="fas fa-angle-left prev"></i>
-			<!-- trying to get the month buttons to change. 
+			 trying to get the month buttons to change. 
           <div class="date">
             <h1></h1>  
             <p></p>  
           </div>
 		 
-			<!-- trying to get the month buttons to change. -->
-          <!-- <i onclick="nextMonth()" class="fas fa-angle-right next"></i> -->
-		  <!-- .............. Make the Arrows href? that link to the next month???..................... 
+			- trying to get the month buttons to change.
+          <i onclick="nextMonth()" class="fas fa-angle-right next"></i> 
+		  .............. Make the Arrows href? that link to the next month???..................... 
 			<i  class="fas fa-angle-right next"></i> 
-			<!-- <% function nextMonth(){
+			 <% function nextMonth(){
 				date.setMonth(date.getMonth() + 1);
 			} %> -
         </div>
@@ -203,8 +217,8 @@
 			<div class="next-date">6</div>
 		</div>
 
-      </div> -->
-    <!-- </div>
+      </div> 
+     </div>
 
     <div class="modal fade" id="event">
             <div class="modal-dialog modal-sm vertical-align-center">
@@ -221,10 +235,10 @@
                 </div>
               </div>
             </div>
-        </div> -->
+        </div> 
 
-        <!-- the trigger for the modal popup. keep figuring.  -->
-        <!-- <a href=".days" data-toggle="modal" data-target="#event">Add Event</a> -->
+         the trigger for the modal popup. keep figuring.  
+     <a href=".days" data-toggle="modal" data-target="#event">Add Event</a> -->
 
 
       
