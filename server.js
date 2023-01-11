@@ -43,8 +43,7 @@ app.use(express.static("public"));
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// getting th script from public to access the calendar functions.
-// app.use(express.static(path.join(__dirname, "public")));
+
 
 //Logging
 app.use(logger("dev"));
