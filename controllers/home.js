@@ -2,6 +2,8 @@
 
 // const Contact = require('../models/Contact')
 // const User = require('../models/User')
+const Med = require('../models/Med')
+
 
 module.exports = {
   getIndex: (req, res) => {
@@ -12,7 +14,7 @@ module.exports = {
       let mongoose = require('mongoose')
       // const contact = await Contact.find({ userId: req.user.id });
       // console.log(req.user)
-      res.render("welcome.ejs", {user: req.user});
+      res.render("welcome.ejs", {meds: req.meds, user: req.user});
     } catch (err) {
       console.log(err); 
     }
