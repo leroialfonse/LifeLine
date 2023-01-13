@@ -1,40 +1,14 @@
 // ///////////// Delete for doctors??? //////////////////////////
-const deleteBtn = document.querySelectorAll('.del')
-
-const addEvent = document.querySelectorAll('.days')
-
-Array.from(deleteBtn).forEach((el)=>{
-  el.addEventListener('click', deleteContact)
-})
+const dayBtn = document.querySelectorAll('.days')
+ Array.from(dayBtn).forEach((el) => 
+{el.addEventListener('click', newEvent
+ )})
 
 
- document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth'
-  });
-  calendar.render();
-});
+  function newEvent() {
 
-
-async function deleteContact(){
-  const contactId = this.parentNode.dataset.id
-  try{
-      const response = await fetch('contact/deleteContact', {
-          method: 'delete',
-          headers: {'Content-type': 'application/json'},
-          body: JSON.stringify({
-                  'contactFromFile': contactId
-              // 'todoIdFromJSFile': todoId
-          })
-      })
-      const data = await response.json()
-      console.log(data)
-      location.reload()
-  }catch(err){
-      console.log(err)
+    alert('now add the ability to store an event, bruh!')
   }
-}
 
 
 // Call the Date object of javascript to get date time, etc.
@@ -142,10 +116,10 @@ document.querySelector(".next").addEventListener("click", () => {
 
 
 
-  document.querySelector('.days').addEventListener('click', () => {
-    '#modelWindow'.modal('show');
+  // document.querySelector('.days').addEventListener('click', () => {
+  //   '#modelWindow'.modal('show');
  
-  })
+  // })
 
 
 

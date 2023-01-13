@@ -4,10 +4,38 @@
            <!-- <div class="col-6"> -->
                <div class="welcome ">
                  <h2>Welcome to LifeLine</h2>
-                 <h5>Have You Taken Your Meds Today?</h5>
-  <p>Being mindful and remembering to take your medications exactly as prescribed are the keys to maintaining your good health. If you haven't already, please be sure to take your medications today. When you're done, don't forget to update your <a href="/calendar">calendar!</a> You can also set or update your calendar to track your upcoming appointments.</p>    
+                 <h5><%= user.userName %>, Have You Taken Your Meds Today?</h5>
+  <p>Being mindful and remembering to take your medications exactly as prescribed are the keys to maintaining your good health. If you haven't already, <strong>please be sure</strong> to take your medications today. When you're done, don't forget to update your <a href="/calendar">calendar!</a> You can also set or update your calendar to track your upcoming appointments.</p>    
+
+
+  <div class="guide-card tracker col">
+    <div class="row g-0">
+      <div class="col-5 col-sm-4">
+        <img fetchpriority = "high" src="imgs/medsPile.jpg" class="img-fluid w-100" alt="card-horizontal-image">
+      </div>
+      <div class="col-7 col-sm-8">
+        <div class="card-body">
+          <h5 class="card-title">Today's Medications</h5>
+
+          <% for(var i=0; i<meds; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/med/<%= meds.title %> ">
+              </a>
+          <!-- <button class="btn btn-primary fa fa-trash" type="submit"></button> -->
+          <!-- <button class="btn btn-primary fa fa-edit" type="submit"></button> -->
+  
+            </li>
+          <% } %>
+          <p class="card-text">Which medications are due to take today?</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="guide">
+    
        <div class="guide-card col-6">
             <img src="imgs/SmileDoc1.jpg" class="card-img-top" alt="card-img-top">
             <div class="card-body">
@@ -24,7 +52,11 @@
               <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
             </div>
           </div>
-               </div>
+    </div>
+
+    <div class="tracker">
+
+    </div>
            </div>
        </div>
 <!-- <form action="welcome/getContact"  method="GET">
