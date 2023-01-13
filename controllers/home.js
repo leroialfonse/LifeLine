@@ -1,13 +1,13 @@
 // May not need. Considering the use of linking a username to Stuff that I'm doing in the app. 
 
 // const Contact = require('../models/Contact')
-// const User = require('../models/User')
+const User = require('../models/User')
 const Med = require('../models/Med')
 
 
 module.exports = {
   getIndex: (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {user: req.user});  
   },
   getHome: async (req, res) => {
     try {

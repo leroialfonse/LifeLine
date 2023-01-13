@@ -7,7 +7,7 @@ const dayBtn = document.querySelectorAll('.days')
 
   function newEvent() {
 
-    console.log("did it")
+    alert('now add the ability to store an event, bruh!')
   }
 
 
