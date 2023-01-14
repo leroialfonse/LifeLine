@@ -1,8 +1,6 @@
 // ///////////// Delete for doctors??? //////////////////////////
-const dayBtn = document.querySelectorAll('.days')
- Array.from(dayBtn).forEach((el) => 
-{el.addEventListener('click', newEvent
- )})
+
+const addEvent = document.querySelectorAll('.days')
 
 
   function newEvent() {
@@ -116,10 +114,10 @@ document.querySelector(".next").addEventListener("click", () => {
 
 
 
-  // document.querySelector('.days').addEventListener('click', () => {
-  //   '#modelWindow'.modal('show');
+  document.querySelector('.days').addEventListener('click', () => {
+    '#modelWindow'.modal('show');
  
-  // })
+  })
 
 
 
