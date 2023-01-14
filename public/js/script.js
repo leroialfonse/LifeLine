@@ -1,11 +1,48 @@
-// ///////////// Delete for doctors??? //////////////////////////
-
-const addEvent = document.querySelectorAll('.days')
+// ///////////// Delete for doctors??? /////////////////////////
 
 
-  function newEvent() {
 
+// MODAL from ALpine JS.
+
+function articleSearch() {
+  return {
+    isLoading: false,
+    isOpen: false,
+    articleSearch: 0,
+    url: "",
+    article: null,
+    fetchArticle() {
+      this.isLoading = true;
+
+      fetch(`https://jsonplaceholder.typicode.com/posts/${this.articleSearch}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data)
+          this.isLoading = false;
+          this.article = data;
+
+          window.history.pushState("", "", this.url);
+        })
+        .catch((err) => console.log("ERROR", err));
+    },
+    closeArticle() {
+      window.history.back();
+      this.isOpen = false;
+      this.articleSearch = 0;
+      this.url = "";
+      this.article = null;
+    }
+  };
+}
+
+ document.querySelector('.days').addEventListener('click', newEvent
+ )
+
+// const modal = document.querySelector('#exampleModal');
+  function newEvent() { 
     alert('now add the ability to store an event, bruh!')
+    document.querySelector('#notice').innerText = 
+    `${user.userName}`
   }
 
 
@@ -109,16 +146,5 @@ document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
 });
-
-// document.querySelector(".days").addEventListener("click", newEvent)
-
-
-
-  document.querySelector('.days').addEventListener('click', () => {
-    '#modelWindow'.modal('show');
- 
-  })
-
-
 
 renderCalendar();
