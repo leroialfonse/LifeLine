@@ -2,116 +2,116 @@
 
 *{
     
-    box-sizing: border-box;
-    background-color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
 } 
 
-/* .container{
- margin:  0 auto;
-} */
+.container{
+padding: 2rem;
+margin:  0 auto;
+} 
 
 /* Wraps the Index Login in a container for sizing. */
 .box{
-    display: flex;
-    flex-direction: column;
-    margin: 100px auto;
-    height: 50vh;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  height: 50vh;
 }
 
 /* Contols the appearance of links */
 a,
 a:hover{
-    text-decoration: none;
+  text-decoration: none;
 }
 
- a:hover {
-    color:rgb(34, 89, 178);
+a:hover {
+  color:rgb(34, 89, 178);
 } 
 
 /* Sets the size of form elements, to better fit my planned asthetic. */
 .col-6 > form{
-    width: 75%;
+  width: 75%;
 }
 
 
 /* html{
-    font-size: 62.5%;
+  font-size: 62.5%;
 } */
 
 /* 
-
 body, .div, .container{
-    background-color: #F3EFF0;
+  background-color: #F3EFF0;
 }
 */
- header{
-  border-bottom: 2px solid  rgba(13,110,253,.5);
-  font-size: .5rem;
- 
+header{
+border-bottom: 2px solid  rgba(13,110,253,.5);
+font-size: .5rem;
+
 }
 
 
 .nav-item{
-  text-align: center;
-  font-weight: 700;
-  padding: .1rem;
-  /* color:rgb(72, 228, 16); */
+text-align: center;
+font-weight: 700;
+padding: .1rem;
+/* color:rgb(72, 228, 16); */
 }
 
 
 /* Sets the display of guide elements, so that they fit the page better. */
-.over{
-    display: flex;
-    flex-direction: row;
+.guide{
+  display: flex;
+  flex-flow: row;
 }
 
 
- .guide-card {
-    padding: 1rem;
-    width: 40%;
-} 
+.guide-card {
+  margin: 5px;
+  padding: 1.5rem;
+  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
 
+} 
 
 /* Sets the size and display of the login card. */
 .login-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-top: 60px; */
-    margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  margin: 20px auto;
 }
 
 h1, h2, h3, h4, h5{
-    font-weight: 700;
+  font-weight: 700;
 }
 
 h1, h2{
-    color: rgb(13,110,253)
+  color: rgb(13,110,253)
 }
 
 
 
 /* Sets a border for images in the med cabinet, to give more form to the page. */
 /* //////////// Come back to this. Trying to adjust the images in the med cabinet. ////////////// */
-.img-fluid{
-    /* border:  1px solid rgba(0, 0, 0, 0.5);
-    height: 10rem;
-    width: 12rem; */
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 1;
-}
+/* .img-fluid{ */
+  /* border:  1px solid rgba(0, 0, 0, 0.5);
+  height: 10rem;
+  width: 12rem; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-shrink: 1; */
+/* } */
 
 /* .col-6 > .row{
-    height: 100vh;
+  height: 100vh;
 } */
 
 .doctors{
-    border-bottom: 2px solid rgb(13,110,253);
-    height: 25vh;
+  border-bottom: 2px solid rgb(13,110,253);
+  height: 25vh;
 }
 
 /* ///////////////////////////////////// */
@@ -121,284 +121,281 @@ h1, h2{
 
 /* Likely not needed with ems and rems. 
 .Logo-heart{
-  border: 2px solid green;
-    display: flex;
-    justify-content: center ;SSS
-    width: 50%;S
-    height: 80%;
+border: 2px solid green;
+  display: flex;
+  justify-content: center ;SSS
+  width: 50%;S
+  height: 80%;
 } 
 */
 
 .login-card{
-  
-  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-  border-radius: 6px;
-  width: 85%;
-  padding: .5em;
-  margin: 0 auto;
- 
+
+box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
+border-radius: 6px;
+width: 85%;
+padding: .5em;
+margin: 0 auto;
+
 } 
 
 
 /* remember! em looks for font size of the container. If not found, defaults 16px, the default font size for browsers.  to  em = 16 * whatever em you want ( 5 in this case) = for 80px.   */
 .btn{
 
-    /* height: 60px;  */
-    width: 45%;
-    margin: 1px;
-    padding: .5em;
+  /* height: 60px;  */
+  width: 45%;
+  margin: 1px;
+  padding: .5em;
 }
 
 /* extra class for the button on login card, login.  */
 /* .ulta{
-  border: 2px solid orange;
-    padding-top: 15px;
+border: 2px solid orange;
+  padding-top: 15px;
 } */
 
 /*
 div, header, button {
-    border-radius: 20px;
+  border-radius: 20px;
 }
-
 .col-3 {
-    display: inline;
-    width: 80%; 
+  display: inline;
+  width: 80%; 
 } */
-
-
-.navbar-brand{
-    /* padding: .5rem; */
-    font-weight: 700;
-} 
-
-/* .fav{
-  border: 2px solid black;
-} */
-
+/* .navbar-brand{
+  width: 1%;
+  padding-left: 1rem;
+}  */
 /* .bottom-nav {
-    display: flex;
-    align-self: end;
+  display: flex;
+  align-self: end;
 } */
 
 .medInfo {
-  display: flex;
-  flex-direction: row;
-  /* border : 2px solid green; */
+display: flex;
+flex-direction: row;
+/* border : 2px solid green; */
 }
 
 .form-label{
-  display: flex;
-  flex-direction: row;
+display: flex;
+flex-direction: row;
 }
 
 /* .cabinet {
-  height: 400px;
-  padding: 100%;
+height: 400px;
+padding: 100%;
 } */
 
 
 .oops {
-   margin: 300px;
+ margin: 300px;
 }
 
 .tagline{
-  display:flex;
-  flex-direction: row;
-    color: rgb(13,110,253);
-    margin: .5em;
+display:flex;
+flex-direction: row;
+  color: rgb(13,110,253);
+  margin: .5em;
 }
 
 div > .mt-5 {
-    padding-right: 50px;      
-    margin-right: 10px;
+  padding-right: 50px;      
+  margin-right: 10px;
 }
 
 .welcome{
-    margin-top: -30px;
+  margin-top: 10px;
+}
+
+.welcome > h2{
+margin: 1rem;
+}
+
+.welcome > p{
+  border: 0 1px 1px  solid gray;
 }
 
 .tracker{
-  border: 2px solid brown;
-  
+  width: 100%;
+  margin: 5px
 }
- /* .card-body {
-    display: flex;
-    flex-direction:  wrap;
-     height: 80% ; 
+/* .card-body {
+  display: flex;
+  flex-direction:  wrap;
+   height: 80% ; 
 } */    
 
 /* .col-6 > li {
-    border: 2px solid green;
+  border: 2px solid green;
 } */
 
 footer{
-    /* margin-top: 40px auto; */
-    /* display: flex; */
-    /* flex: end; */
-    margin-top: 20px;
-    border-top: 5px solid rgb(13,110,253);
-    width: 80%;
-    /* justify-self: center; */
+
+  margin-top: 3rem;
+  border-top: 5px solid rgb(13,110,253);
+  width: 80%;
+
 }
 
 .footer-nav > ul{
-  display: flex;
-  flex-direction: row;
-  list-style: "|  ";
-  justify-content: space-evenly;
-  font-size: .2rem;
-  padding: 1rem;
+display: flex;
+flex-direction: row;
+list-style: " | ";
+justify-content: space-between;
+font-size: .2rem;
+padding: 1rem;
 }
+
 /* ///// Calendar Styling ///// */
 
 
 /* ///// Calendar Styling /////  */
-  
-  .over{
-    display:flex;
-    /* margin: 5px auto; */
-    /* width: 90vw;
-    height: 100vh; */
 
-    border: 2px solid green;
-    flex-direction: row;
-    /* padding: 15px; */
-    margin-top: 20px;
+.over{
+  display:flex;
+  margin: 5px auto;
+  width: 90vw;
+  height: 100vh;
+  flex-direction: row;
+  padding: 2rem;
+  margin-top: 20px;
 
-  }
+}
 
-  /* /*.contained {
-    /* position: relative;
-    top: 20px; 
-    width: 70vw;
-    height: 70vh;
-    /* background-color: #12121f; 
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center; 
-    /* border: 5px solid orange; 
-    background-color: lightslategray    ;
-    /* padding: 20px; 
+.contained {
+  width: 70vw;
+  height: 70vh;
+  /* background-color: #12121f; */
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center; 
+  /* border: 5px solid orange; */
+  background-color: lightslategray    ;
+  /* padding: 20px; */
 
+
+
+}
+
+  .calendar {
+  /* width: 500px;
+  height: 300px; */
+  /* background-color: #222227; */
+  /* box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4); */
+  border: 2px solid rgba(10,30,200,.2);
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
+  /* border: 5px solid purple; */
+  /* padding: 10px; */
+  /* border: 2px solid rgba(10,30,200,.2) */
+}  
+
+.month {
+  width: 100%;
+  background-color: rgb(13,110,253);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+
+}
+
+.month i {
+  font-size: 2.5rem;
+  cursor: pointer;
+  background-color: rgb(13,110,253);
+
+
+}
  
-  }
-  
-   /* .calendar {
-    width: 500px;
-    height: 300px;
-    background-color: #222227;
-    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-    border: 5px solid purple;
-    padding: 10px;
-
-  }  
- 
-  .month {
-    width: 100%;
-    /* height: 12rem; 
-    background-color: rgb(13,110,253);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    text-align: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-
-  }
-  
-  .month i {
-    font-size: 2.5rem;
-    cursor: pointer;
-    background-color: rgb(13,110,253);
+ .month h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+  background-color: rgb(13,110,253);
+  color: #eee;
+  margin: 0 auto;
 
 
-  }
-   
-   .month h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-    background-color: rgb(13,110,253);
-    color: #eee;
-    margin: 0;
+}
 
+.month p {
+  background-color: rgb(13,110,253);
+  font-size: 1.6rem;
+  margin: 0 auto;
 
-  }
-  
-  .month p {
-    background-color: rgb(13,110,253);
-    font-size: 1.6rem;
-    margin: 0;
+}
 
-  }
-  
-  .weekdays {
-    /* width: 100%; 
-    height: 5rem;
-    padding: 0 0.4rem;
-    display: flex;
-    align-items: center;
-    background-color: rgb(13,110,253);
-    color: #eee;
-    justify-content: center;
+.weekdays {
+  /* width: 100%; */
+  height: 5rem;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+  background-color: rgb(13,110,253);
+  color: #eee;
+  justify-content: center;
 
-  }
-  
-  .weekdays div {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    width: calc(44.2rem / 7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    background-color: rgb(13,110,253);
-  }
-  
-  .days {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.2rem;
-    /* background-color: #8080FF; 
-    justify-content: center;
-  }
-  
-  .days div {
-    font-size: 1.4rem;
-    margin: 0.3rem;
-    width: calc(40.2rem / 7);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    transition: background-color .6s;
-    /* border-radius: 6px; 
-    background-color: rgb(13,110,253);
+}
 
-  }
-  
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  background-color: rgb(13,110,253);
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+  /* background-color: #8080FF; */
+  justify-content: center;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  width: calc(40.2rem / 7);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  transition: background-color .6s;
+  /* border-radius: 6px; */
+  background-color: rgb(13,110,253);
+
+}
+
 /* Give the days a hover color. */
-  /* .days div:hover:not(.today) {
-    background-color: rgb(4, 29, 54);
-    border: 0.2rem solid #eee;
-    cursor: pointer;
-  } */
-  
-  /* Fade out the days not in the current month 
-  .prev-date,
-  .next-date {
-    opacity: 0.5;
-  }
-  
-  .today {
-    background-color: rgb(72, 228, 16);
-  } 
+.days div:hover {
+  background-color: rgb(4, 29, 54);
+  border: 0.2rem solid #eee;
+  cursor: pointer;
+}
 
-  */
+/* Fade out the days not in the current month */
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.today {
+  /* background-color: rgb(4, 29, 54); */
+  border: 5px solid rgb(72, 228, 16);
+}
