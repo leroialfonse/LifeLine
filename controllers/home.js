@@ -1,7 +1,7 @@
 // May not need. Considering the use of linking a username to Stuff that I'm doing in the app. 
 
 // const Contact = require('../models/Contact')
-const User = require('../models/User')
+// const User = require('../models/User')
 const Med = require('../models/Med')
 
 
@@ -14,7 +14,7 @@ module.exports = {
       let mongoose = require('mongoose')
       // const contact = await Contact.find({ userId: req.user.id });
       // console.log(req.user)
-      res.render("welcome.ejs", {meds: req.meds, user: req.user});
+      res.render("welcome.ejs", {user: req.user});
     } catch (err) {
       console.log(err); 
     }
