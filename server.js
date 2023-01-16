@@ -16,6 +16,7 @@ const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
+const calendarRoutes = require("./routes/calendar");
 const PORT = process.env.PORT || 8900
 
 
@@ -75,17 +76,14 @@ app.use("/comment", commentRoutes);
 app.use("/doctors", doctorRoutes);
 app.use("/contact", contactRoutes);
 app.use("/welcome", welcomeRoutes);
+app.use("/calendar", calendarRoutes);
+// app.use("/calendar", mainRoutes );
 // app.use("/directory", directoryRoutes);
 app.use("/dashboard", dashboardRoutes); 
 
 
 
-// Trying to get calendar as an html....
-// This might work!! figure out CSS and javascripting now. 
-app.get("/calendar",  (request, response)=> {
-  response.sendFile(__dirname + "/calendar.html");
-  
-});
+
 
 
  

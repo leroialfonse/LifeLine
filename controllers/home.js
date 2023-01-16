@@ -22,12 +22,14 @@ module.exports = {
   },
 
   // May not need for html calendar routing. But, I still want auth.... come back to this. 
-  getCalendar:  (req, res) => {
-   try{ 
-    res.render("calendar");
-  } catch (err) {
-    console.log(err);
-  }
-  },
+  // getCalendar: async (req, res) => {
+  //   console.log(req.body)
+  //  try{ 
+  //   res.render("calendar.ejs");
+  //   console.log(req.body)
+  // } catch (err) {
+  //   console.log(err);
+  // }
+  // },
 
 };

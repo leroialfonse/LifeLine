@@ -7,14 +7,6 @@ const cloudinary = require("../middleware/cloudinary");
 
 
 module.exports = {
-// getDirectory: async (req, res) => {
-//     try {
-//       const contacts = await Contact.find().sort({ createdAt: "desc" }).lean();
-//       res.render("directory.ejs", { contacts: contacts });
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   },
 getContact: async (req, res) => {
     try {
       let mongoose = require('mongoose')
