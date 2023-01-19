@@ -5,10 +5,11 @@ const contactController = require("../controllers/contacts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/:id", ensureAuth, contactController.getContact);
-
+// Trying out mayanwolfe solution for deleting contats
+router.get('/remove/:id', contactController.deleteContact)
 router.post("/createContact", ensureAuth, contactController.createContact);
 
-router.put("/editContact/:id", contactController.editContact);
+router.post("/editContact/:id", contactController.editContact);
 
 router.delete("/deleteContact/:id", contactController.deleteContact);
 

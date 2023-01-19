@@ -13,13 +13,17 @@ const MedSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  caption: {
+  dosage: {
     type: String,
     required: true,
   },
-  provider: {
+  contact: {
     type: String,
     required: true,
+  },
+  comment: {
+    type: String,
+    required: false
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,

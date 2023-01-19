@@ -6,6 +6,8 @@ const contactsController = require("../controllers/contacts")
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Med Routes - simplified for now
+router.get("/", ensureAuth, directoryController.getDirectory);
+
 router.get("/:id", ensureAuth, contactsController.getContact);
 
 router.post("/createContact",  contactsController.createContact);

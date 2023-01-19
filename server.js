@@ -17,6 +17,7 @@ const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
 const calendarRoutes = require("./routes/calendar");
+const directoryRoutes = require("./routes/directory");
 const PORT = process.env.PORT || 8900
 
 
@@ -78,7 +79,7 @@ app.use("/contact", contactRoutes);
 app.use("/welcome", welcomeRoutes);
 app.use("/calendar", calendarRoutes);
 // app.use("/calendar", mainRoutes );
-// app.use("/directory", directoryRoutes);
+app.use("/directory", directoryRoutes);
 app.use("/dashboard", dashboardRoutes); 
 
 

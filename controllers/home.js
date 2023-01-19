@@ -2,8 +2,8 @@
 // May not need. Considering the use of linking a username to Stuff that I'm doing in the app. 
 
 // const Contact = require('../models/Contact')
-const User = require('../models/User')
-const Med = require('../models/Med')
+const User = require('../models/User');
+const Med = require("../models/Med");
 
 
 module.exports = {
@@ -15,9 +15,20 @@ module.exports = {
       let mongoose = require('mongoose')
       // const contact = await Contact.find({ userId: req.user.id });
       // console.log(req.user)
+      // const meds = await Med.find().sort({ createdAt: "desc" }).lean();
+      const meds = await Med.findById(req.params.id);
       res.render("welcome.ejs", {meds: req.meds, user: req.user});
     } catch (err) {
       console.log(err); 
+    }
+  },
+  getMed: async (req, res) => {
+    try {
+      const meds = await Med.findById(req.params.id);
+      const comments = await Comment.find({med: req.params.id}).sort({ createdAt: "desc" }).lean();
+      res.render("med.ejs", { med: med, user: req.user, comments: comments });
+    } catch (err) {
+      console.log(err);
     }
   },
 

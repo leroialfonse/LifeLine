@@ -20,14 +20,19 @@
         <%}%>
       </div>
     </div>
-    <div class="col-3 mt-5 medInfo">
-      <label for="caption" class="form-label">Dosage: </label>
-      <p><%= med.caption %></p></n>
-    </div>
-    <div class="col-3 mt-5 medInfo">
+    <div class="col- mt-2 medInfo">
+      <ul>
+      <label for="dosage" class="form-label">Dosage: </label>
+      <p><%= med.dosage %></p></n>
+      <label for="comment" class="form-label">Notes: </label>
+      <p><%= med.comments %></p></n>
 
-      <label for="provider" class="form-label">Prescribing Physician: </label>
-      <a href="/directory"><p><%= med.provider %></p></a>
+    <!-- </div>
+    <div class="col-3 mt-5 medInfo"> -->
+
+      <label for="contact" class="form-label">Prescribing Physician: </label>
+      <a href="/contact/:id"><p><%= med.contact %></p></a>
+      </ul>
     </div>
 
     

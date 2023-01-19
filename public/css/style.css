@@ -3,17 +3,17 @@
 *{
     
   box-sizing: border-box;
+  background-color: #fff;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
 } 
 
-/* Set color of all contained here */
-/* body{} */
-
-
 .container{
+display: flex;
+flex-direction: column;
 padding: 2rem;
 margin:  0 auto;
+border: 2px solid green;
 } 
 
 /* Wraps the Index Login in a container for sizing. */
@@ -80,6 +80,9 @@ width: fit-content;
 
 } 
 
+.card {
+  /* border:rgb(34, 89, 178); */
+}
 /* Sets the size and display of the login card. */
 .login-main {
   display: flex;
@@ -201,8 +204,14 @@ padding: 100%;
 .tagline{
 display:flex;
 flex-direction: row;
-  color: rgb(13,110,253);
-  margin: .5em;
+color: rgb(161, 27, 27);
+margin: .5em;
+font-style: italic;
+}
+
+aside{
+  border: 2px solid blue;
+  width: 60%;
 }
 
 div > .mt-5 {
@@ -409,3 +418,28 @@ padding: 1rem;
 
 /* Media Queries */
 
+@media (max-width: 1030px){
+}
+
+
+/* /Creates hamburger on mobile/ */
+@media screen and (max-width: 480px) {
+        #desktop {
+            display:none;
+        }
+}
+
+/* /Removes hamburger on desktops/ */
+@media screen and (min-width:1025px) {
+    #mobile {
+            display:none;
+        }
+}
+
+/* /Defaults to hamburger on any other size/ */
+@media (min-width: 479px) and (max-width: 1024px) {
+  #screen {
+            display:flex;
+            flex-direction: column
+        }
+}

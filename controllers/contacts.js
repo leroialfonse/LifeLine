@@ -48,18 +48,40 @@ createContact: async (req, res) => {
     res.redirect("/contact");
     }
 },
+// deleteContact: async (req, res)=>{
+//   const id = req.params.id
+//       try{
+//     // Find contact by id
+//       await Contact.findByIdAndDelete(id);
+//       console.log(result)
+//         res.redirect('/contact');
+//       } catch (err) {
+//         if (err) return res.status(500).send(err)
+//       }
+//     },
+    //  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
+    // Delete the contact from the db
 editContact: async (req, res)=>{
+  const id = req.params.id
+  console.log(req.params.id)
   try{
+  
 // Find contact by id
- let contact = await Contact.findById({ _id: req.params.id });
+ await Contact.findByIdAndUpdate(
+  id, {
+      title: req.body.title,
+      address: req.body.address,
+      phone: req.body.phone
+    });
 //  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
 // Delete the contact from the db
-  await Contact.updateOne({ _id: req.params.id });
+  // /await Contact.updateOne({ _id: req.params.id });
 
       // console.log(_id)
       console.log('Updated');
   res.redirect("/contact");
 }catch(err){ 
+  if (err) return res.status(500).send(err)
   res.redirect("/contact");
   }
 },

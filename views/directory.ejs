@@ -1,34 +1,46 @@
 <%- include('partials/header') -%>
-<div class="oops">
+<!-- <div class="oops">
 
   <h1>Please excuse our Dust!</h1>
 
   <p>This page is under re-construction. <a href="/welcome">Go back home.</a></p>
-  
-  <!-- <div class="row justify-content-center mt-5">
-  <h1>Your HealthCare Providers</h1>
-  <p>A look at your care team.</p>
-  </div>
-  <div class="mt-5">
-    <h1>Your Doctors</h1>
-    <ul>
-    <% contacts.forEach( el => { %>
-            <li class='contactItem' data-id='<%=el.title%>'>
-                <span <%= el.title %> </span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
-  </div>
-  <div class="mt-5">
-  <form action="/directory/createContact" method='POST'>
-    <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-    <input type="submit">
-</form>
-  </div>
-  <div class="row justify-content-center mt-5">
-      <a class="btn btn-primary" href="/dashboard">Add a Medication</a>
-      <a class="btn btn-outline-primary" href="/contact">Your Doctors</a>
-    </div>  -->
 </div>  
+   -->
+  <!-- <div class="col">
+  <h1>Your HealthCare Providers</h1>
+  <p>A Full look at your care team.</p>
+
+  </div> -->
+  <div class="container">
+  <h1>Your HealthCare Providers</h1>
+  <p>A Full look at your care team.</p>
+
+    <% contacts.forEach( el => { %>  
+      <ul>
+      <li class="col-6 justify-content-between mt-5 doctors" data-id='<%el._id%>'>
+      <p>Name: <span> <%= el.title %></span></p>
+      <p>Address: <span> <%= el.address %></span></p>
+      <p>Phone: <span> <%= el.phone %></span></p>
+        <a href="/edit/<%= el._id %>">Edit</a>
+        <a href="/edit/remove/<%= el._id %>">Remove</a>
+
+             <form
+                action="/contact/deleteContact/<%= el._id %>?_method=DELETE"
+                method="POST"
+                class="col-3"
+              >
+              <button class="btn btn-primary fa fa-trash" type="submit"></button>
+              </form>
+              <span><form class="col-3" action="/contact/editContact/<%= el._id %>" method="GET"
+                class="col-3"></form>
+              <button class="btn btn-secondary fa fa-edit" type="submit"></button></span>
+            <!-- Toying with the idea of using a modal popup to edit entries. Refer to my MedMinder for edits and searches. -->
+              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Launch demo modal / future edit button.
+              </button> -->
+          </li>
+          <% }) %>
+          
+          </ul>
+  </div>
 <%- include('partials/footer') -%>
