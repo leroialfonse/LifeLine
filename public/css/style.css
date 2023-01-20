@@ -188,6 +188,13 @@ div, header, button {
   padding-right: 1rem;
   margin-right: 200px;
 } 
+
+.fav{
+  height: 80px;
+}
+.navbar-custom{
+background-color: rgb(13,110,253);
+}
 /* .bottom-nav {
   display: flex;
   align-self: end;
@@ -217,7 +224,7 @@ padding: 100%;
 .tagline{
 display:flex;
 flex-direction: row;
-color: rgb(161, 27, 27);
+color: rgb(240, 62, 45);
 margin: .5em;
 font-style: italic;
 }
@@ -262,7 +269,7 @@ footer{
 
   margin-top: 3rem;
   border-top: 5px solid rgb(13,110,253);
-  width: 80%;
+  width: 100%;
 
 }
 
@@ -272,7 +279,7 @@ flex-direction: row;
 list-style: " | ";
 justify-content: space-between;
 font-size: .2rem;
-padding: 1rem;
+padding: 3rem;
 }
 
 /* ///// Calendar Styling ///// */
