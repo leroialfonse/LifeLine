@@ -1,8 +1,5 @@
 <%- include('partials/header') -%>
 
-<!--/////////////////////// cyclic launch is successful!! Get the calendar figured out, fix contact page. Then youre there!! /////////////////////////////////////-->
-
-
 <div class="container">
 
   <div class="row mt-5">
@@ -32,7 +29,7 @@
             <!-- Use some date() object to give a last added line.  -->
             <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
           </div>
-          <img src="imgs/SmileDoc3.jpg" class="card-img-bottom" alt="card-img-bottom">
+          <img src="imgs/SmileDoc2.jpg" class="card-img-bottom" alt="card-img-bottom">
         </div>
       <!-- </div> -->
     </div>
@@ -50,19 +47,18 @@
                     <p>Name:<span> <%= el.title %></span></p>
                     <p>Address:<span> <%= el.address %></span></p>
                     <p>Phone:<span> <%= el.phone %></span></p>
-                <a href="/edit/<%= el._id %>">Edit</a>
-                <a href="/edit/remove/<%= el._id %>">Remove</a>
-
+                <!-- <a href="/edit/remove/<%= el._id %>">Remove</a> -->
+                    <!-- <div class="col-3"> -->
                    <form
                       action="/contact/deleteContact/<%= el._id %>?_method=DELETE"
                       method="POST"
-                      class="col-3"
+                  
                     >
                     <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                    
                     </form>
-                    <span><form class="col-3" action="/contact/editContact/<%= el._id %>" method="GET"
-                      class="col-3"></form>
-                    <button class="btn btn-secondary fa fa-edit" type="submit"></button></span>
+                 <a href="/edit/<%= el._id %>"><button class="btn btn-secondary fa fa-edit col-3" type="submit"></button></a>
+                </div>
                   <!-- Toying with the idea of using a modal popup to edit entries. Refer to my MedMinder for edits and searches. -->
                     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                       Launch demo modal / future edit button.

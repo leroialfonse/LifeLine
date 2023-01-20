@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<div class="col">
+
+    <label for="ul"><h2>Your Doctors</h2></label>
+      <ul class="row list-unstyled">
+        <% if (contacts.length === 0) { %>
+          <p> No doctors in your contacts. Please add one to save their information.</p>
+          <%} else { %>
+           <% } %> 
+          
+        <% contacts.forEach( el => { %>  
+          <li class="col-6 justify-content-between mt-5 doctors" data-id='<%el._id%>'>
+                  <p>Name:<span> <%= el.title %></span></p>
+                  <p>Address:<span> <%= el.address %></span></p>
+                  <p>Phone:<span> <%= el.phone %></span></p>
+              <a href="/edit/<%= el._id %>">Edit</a>
+              <a href="/edit/remove/<%= el._id %>">Remove</a>
+
+              <% }) %>
+              
+              </ul>
+
+                </div>

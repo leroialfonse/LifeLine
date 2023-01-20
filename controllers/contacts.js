@@ -63,12 +63,20 @@ createContact: async (req, res) => {
     // Delete the contact from the db
 editContact: async (req, res)=>{
   const id = req.params.id
-  console.log(req.params.id)
+
   try{
-  
+  await Contact.findByIdAndUpdate(
+    id, {
+      title: req.body.title,
+      address: req.body.address,
+      phone: req.body.phone
+    }
+  )
+  let contact = await Contact.findById({ _id: req.params.id });
+  console.log(req.params)
 // Find contact by id
- await Contact.findByIdAndUpdate(
-  id, {
+ await Contact.updateOne(
+  contact, {
       title: req.body.title,
       address: req.body.address,
       phone: req.body.phone

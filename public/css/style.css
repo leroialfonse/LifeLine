@@ -56,14 +56,20 @@ font-size: .5rem;
 
 }
 
+header > ul {
+  border: 2px solid orange; 
+}
 
 .nav-item{
-text-align: center;
-font-weight: 700;
-width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+/* text-align: center; */
+/* width: fit-content; */
 /* padding: .1rem; */
 /* color:rgb(72, 228, 16); */
+
 }
+
 
 
 /* Sets the display of guide elements, so that they fit the page better. */
@@ -117,6 +123,12 @@ h1, h2{
   height: 100vh;
 } */
 
+.cabinetMed{
+  box-shadow: 0 2px 0  rgb(13,110,253);
+  max-height: 280px;
+  max-width: 320px;
+  padding: 30px;
+}
 .doctors{
   border-bottom: 2px solid rgb(13,110,253);
   height: 25vh;
@@ -171,9 +183,10 @@ div, header, button {
   display: inline;
   width: 80%; 
 } */
-/*   .navbar-brand{
+   .navbar-brand{
   width: 1%;
-  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 200px;
 } 
 /* .bottom-nav {
   display: flex;

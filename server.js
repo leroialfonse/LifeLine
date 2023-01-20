@@ -18,6 +18,7 @@ const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
 const calendarRoutes = require("./routes/calendar");
 const directoryRoutes = require("./routes/directory");
+const editRoutes = require("./routes/edit");
 const PORT = process.env.PORT || 8900
 
 
@@ -80,7 +81,9 @@ app.use("/welcome", welcomeRoutes);
 app.use("/calendar", calendarRoutes);
 // app.use("/calendar", mainRoutes );
 app.use("/directory", directoryRoutes);
-app.use("/dashboard", dashboardRoutes); 
+app.use("/dashboard", dashboardRoutes);
+app.use("/edit", editRoutes);
+
 
 
 
