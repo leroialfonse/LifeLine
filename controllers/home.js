@@ -26,7 +26,7 @@ module.exports = {
     try {
       const meds = await Med.findById(req.params.id);
       const comments = await Comment.find({med: req.params.id}).sort({ createdAt: "desc" }).lean();
-      res.render("med.ejs", { med: med, user: req.user, comments: comments });
+      res.render("med.ejs", { meds: req.meds, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
     }
