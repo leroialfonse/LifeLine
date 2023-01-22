@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const upload = require("../middleware/multer");
 const contactController = require("../controllers/contacts");
-const homeController = require("../controllers/Home")
+const homeController = require("../controllers/home")
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/:id", ensureAuth, contactController.getContact);
