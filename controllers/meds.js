@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Med = require("../models/Med");
-const Comment = require("../models/Comment")
+const Comment = require("../models/Comment");
+const Contact = require("../models/Contact");
 
 module.exports = {
   getDashboard: async (req, res) => {
@@ -9,6 +10,16 @@ module.exports = {
       res.render("dashboard.ejs", { meds: meds});
     } catch (err) {
       console.log(err);
+    }
+  },
+  getHome: async (req, res) => {
+    try {
+      let mongoose = require('mongoose')
+      // const contact = await Contact.find({ userId: req.user.id });
+      // console.log(req.user)
+      res.render("welcome.ejs", {meds: req.meds, user: req.user});
+    } catch (err) {
+      console.log(err); 
     }
   },
   getCabinet: async (req, res) => {
@@ -46,8 +57,8 @@ module.exports = {
         title: req.body.title,
         image: result.secure_url,
         cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        provider: req.body.provider,
+        dosage: req.body.dosage,
+        contact: req.body.contact,
         user: req.user.id,
       });
       console.log("Med has been added!");

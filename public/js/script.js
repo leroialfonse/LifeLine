@@ -1,6 +1,28 @@
 // ///////////// Delete for doctors??? /////////////////////////
 
+// Get time since last meds check 
 
+let start = Date.now();
+  
+// Task for which we want to calculate the 
+// time taken / time elapsed from the start 
+// of the process to end of that process
+  
+
+function greeting(){
+    console.log("Hey Geeks");
+}
+greeting();
+  
+// get the end time
+let end = Date.now();
+  
+// elapsed time in milliseconds
+let elapsed = end - start;   
+  
+// converting milliseconds to seconds 
+// by dividing 1000
+console.log(elapsed/1000);
 
 // MODAL from ALpine JS.
 

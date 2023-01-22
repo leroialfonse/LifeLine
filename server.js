@@ -16,6 +16,9 @@ const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
 const welcomeRoutes = require("./routes/welcome");
 const dashboardRoutes = require("./routes/dashboard");
+const calendarRoutes = require("./routes/calendar");
+const directoryRoutes = require("./routes/directory");
+const editRoutes = require("./routes/edit");
 const PORT = process.env.PORT || 8900
 
 
@@ -27,12 +30,12 @@ require("./config/passport")(passport);
 
 //Connect To Database 
 // (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
-connectDB();
-// connectDB().then(() => {
-//   app.listen(PORT, () => {
-//       console.log("listening for requests!");
-//   })
-// });
+// connectDB();
+connectDB().then(() => {
+  app.listen(PORT, () => {
+      console.log("listening for requests!");
+  })
+});
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -75,17 +78,16 @@ app.use("/comment", commentRoutes);
 app.use("/doctors", doctorRoutes);
 app.use("/contact", contactRoutes);
 app.use("/welcome", welcomeRoutes);
-// app.use("/directory", directoryRoutes);
-app.use("/dashboard", dashboardRoutes); 
+app.use("/calendar", calendarRoutes);
+// app.use("/calendar", mainRoutes );
+app.use("/directory", directoryRoutes);
+app.use("/dashboard", dashboardRoutes);
+app.use("/edit", editRoutes);
 
 
 
-// Trying to get calendar as an html....
-// This might work!! figure out CSS and javascripting now. 
-app.get("/calendar",  (request, response)=> {
-  response.sendFile(__dirname + "/calendar.html");
-  
-});
+
+
 
 
  

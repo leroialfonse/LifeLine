@@ -3,9 +3,9 @@
        <div class="row mt-5">
            <!-- <div class="col-6"> -->
                <div class="welcome ">
-                 <h2>Welcome to LifeLine</h2>
+<h2>Welcome to LifeLine</h2>
 
-                 <h5><%= user.userName%>, Have You Taken Your Meds Today?</h5>
+                 <h5><%= user.userName %>, Have You Taken Your Meds Today?</h5>
   <p>Being mindful and remembering to take your medications exactly as prescribed are the keys to maintaining your good health. If you haven't already, <strong>please be sure</strong> to take your medications today. When you're done, don't forget to update your <a href="/calendar">calendar!</a> You can also set or update your calendar to track your upcoming appointments.</p>    
 
 
@@ -17,18 +17,35 @@
       <div class="col-7 col-sm-8">
         <div class="card-body">
           <h5 class="card-title">Today's Medications</h5>
+          <p class="card-text">Which medications are due to take today? Remember to check it off once you have taken it.</p>
 
-          <% for(var i=0; i<meds; i++) {%>
-            <li class="col-6 justify-content-between mt-5">
-              <a href="/med/<%= meds.title %> ">
-              </a>
-          <!-- <button class="btn btn-primary fa fa-trash" type="submit"></button> -->
-          <!-- <button class="btn btn-primary fa fa-edit" type="submit"></button> -->
+          <!-- Meds list?  -->
+          <ul class="row list-unstyled">
+        
+          <% if (meds.length === 0) { %>
+            <p> There are no medications currently in your Cabinet. Please <a href="/dashboard">add one</a>
+            to save it.</p>
+            <%} else { %>
+             <!-- WOrking aboce..... 
+            
+            
+            --> 
   
-            </li>
-          <% } %>
-          <p class="card-text">Which medications are due to take today?</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+            <!-- WOrking on getting  the below to work. -->
+        <% meds.forEach(( el, index) =>  {%>
+          <!-- <if ( index > 2 ) { %> -->
+            <li class="col-6 mt-0" data-id='<%el._id%>'><a href="/cabinet"><input type="checkbox"><%= el.title %></a>
+            <!-- <%= el.dosage %> -->
+          </li>
+          <br>
+        <% })%>
+        <% }%>
+        
+        </ul>
+
+
+          <p class="card-text"><small class="text-muted"> <button class="btn btn-warning taken">Meds Taken today</button> Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>

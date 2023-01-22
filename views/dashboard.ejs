@@ -1,11 +1,11 @@
 <%- include('partials/header') -%>
 <div class="container">
   <div class="row mt-5">
-      <div class="col-6">
+      <div class="col-6 guide-card">
 
 
         <!-- form in a card to include an image, for asthetics. -->
-        <div class="card">
+        <!-- <div class="card"> -->
           <div class="card-body">
             <h2 class="card-title">Add a New Medication</h2>
             <form action="/med/createMed" enctype="multipart/form-data" method="POST">
@@ -14,12 +14,12 @@
                   <input type="text" class="form-control" id="title" name="title">
               </div>
               <div class="mb-3">
-                <label for="caption" class="form-label">Dosage and Notes</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
+                <label for="dosage" class="form-label">Dosage and Notes</label>
+                <textarea class="form-control" id="dosage" name="dosage"></textarea>
               </div>
               <div class="mb-3">
-                <label for="provider" class="form-label">Prescribing Physician</label>
-                <input type="text" class="form-control" id="provider" name="provider">
+                <label for="contact" class="form-label">Prescribing Physician</label>
+                <input type="text" class="form-control" id="contact" name="contact">
               </div>
               <div class="mb-3">
                 <label for="imgUpload" class="form-label">Photo of Medication and Label</label>
@@ -27,47 +27,23 @@
               </div>
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
-      </div>
-        </form> <br>
+      <!-- </div> -->
+         <br>
 
-        <br>
         <p class="card-text">Use this form to add your medications to your medicine cabinet.</p>
             
             <!-- Use some date() object to give a last added line. ? -->
             <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
           </div>
-          <img src="imgs/SmileDoc3.jpg" class="card-img-bottom" alt="card-img-bottom">
+          <img src="imgs/Meds1.jpg" class="card-img-bottom" alt="card-img-bottom">
         </div>
+      <div class="col">
 
-        <!-- Old form format.  -->
-            <!-- <h2>Add a New Medication:</h2>
-            <form action="/med/createMed" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Medication Name</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Dosage and Notes</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="provider" class="form-label">Prescribing Physician</label>
-                <input type="text" class="form-control" id="provider" name="provider">
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Photo of Medication and Label</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
-      </div> -->
-      <div class="col-6">
-
-        
         <label for="ul"><h2>Your Medications</h2>
         <ul class="row list-unstyled">
           <% if (meds.length === 0) { %>
-            <p> No medications in your Cabinet. Please add one to save it.</p>
+            <p> No medications in your Cabinet. Please <a href="/dashboard">add one</a>
+              one to save it.</p>
             <%} else { %>
             <!-- <p> Not Allowed </p> -->
         <span>Click to View or Change:</span></label>
@@ -77,7 +53,7 @@
         <% for(var i=0; i<meds.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/med/<%= meds[i]._id%>">
-              <img class="img-fluid" src="<%= meds[i].image%>">
+              <img class="img-fluid cabinetMed" src="<%= meds[i].image%>">
             </a>
         <!-- <button class="btn btn-primary fa fa-trash" type="submit"></button> -->
         <!-- <button class="btn btn-primary fa fa-edit" type="submit"></button> -->
