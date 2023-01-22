@@ -30,12 +30,12 @@ require("./config/passport")(passport);
 
 //Connect To Database 
 // (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
-connectDB();
-// connectDB().then(() => {
-//   app.listen(PORT, () => {
-//       console.log("listening for requests!");
-//   })
-// });
+// connectDB();
+connectDB().then(() => {
+  app.listen(PORT, () => {
+      console.log("listening for requests!");
+  })
+});
 
 //Using EJS for views
 app.set("view engine", "ejs");

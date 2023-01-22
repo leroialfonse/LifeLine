@@ -37,35 +37,13 @@
           </div>
           <img src="imgs/Meds1.jpg" class="card-img-bottom" alt="card-img-bottom">
         </div>
-
-        <!-- Old form format.  -->
-            <!-- <h2>Add a New Medication:</h2>
-            <form action="/med/createMed" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Medication Name</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="dosage" class="form-label">Dosage and Notes</label>
-                <textarea class="form-control" id="dosage" name="dosage"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="provider" class="form-label">Prescribing Physician</label>
-                <input type="text" class="form-control" id="provider" name="provider">
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Photo of Medication and Label</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
-      </div> -->
       <div class="col">
 
         <label for="ul"><h2>Your Medications</h2>
         <ul class="row list-unstyled">
           <% if (meds.length === 0) { %>
-            <p> No medications in your Cabinet. Please add one to save it.</p>
+            <p> No medications in your Cabinet. Please <a href="/dashboard">add one</a>
+              one to save it.</p>
             <%} else { %>
             <!-- <p> Not Allowed </p> -->
         <span>Click to View or Change:</span></label>
