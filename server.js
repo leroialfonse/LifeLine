@@ -92,8 +92,11 @@ app.use("/edit", editRoutes);
 
  
 // Server Running (If not using cyclic.) Remeber to reenable if not using cyclic for hosting. 
-app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
-});
+// app.listen(process.env.PORT, () => {
+//   console.log("Server is running, you better catch it!");
+// });
 
+
+
+  
 
