@@ -19,7 +19,7 @@
             </div>
             <div class="mb-3">
               <label for="phone" class="form-label">Phone Number</label>
-              <input type="texr" class="form-control" id="phone" name="phone" placeholder="(XXX)-XXX-XXXX">
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="(XXX)-XXX-XXXX">
           <!-- </div> -->
           <button type="submit" class="btn btn-primary" value="submit">Submit</button>
         </form> <br>
@@ -54,10 +54,9 @@
                       method="POST"
                   
                     >
-                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                    <button class="btn btn-primary fa fa-trash col" type="submit"></button>
                     
-                    </form>
-                 <a href="/edit/<%= el._id %>"><button class="btn btn-secondary fa fa-edit col-3" type="submit"></button></a>
+                 </form><a href="/edit/<%= el._id %>"><button class="btn btn-secondary fa fa-edit col" type="submit"></button></a>
                 </div>
                   <!-- Toying with the idea of using a modal popup to edit entries. Refer to my MedMinder for edits and searches. -->
                     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
