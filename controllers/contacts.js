@@ -48,17 +48,17 @@ createContact: async (req, res) => {
     res.redirect("/contact");
     }
 },
-// deleteContact: async (req, res)=>{
-//   const id = req.params.id
-//       try{
-//     // Find contact by id
-//       await Contact.findByIdAndDelete(id);
-//       console.log(result)
-//         res.redirect('/contact');
-//       } catch (err) {
-//         if (err) return res.status(500).send(err)
-//       }
-//     },
+deleteContact: async (req, res)=>{
+  const id = req.params.id
+      try{
+    // Find contact by id
+      await Contact.findByIdAndDelete(id);
+      console.log(result)
+        res.redirect('/contact');
+      } catch (err) {
+        if (err) return res.status(500).send(err)
+      }
+    },
     //  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
     // Delete the contact from the db
 editContact: async (req, res)=>{
