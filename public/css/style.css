@@ -5,23 +5,25 @@
   box-sizing: border-box;
   background-color: #fff;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  /* Generalized sizing for responsiveness. */
+  /* font-size: 62.25%; */
+  /* font-size: 1rem; */
 } 
-
+/* 
 .container{
 display: flex;
 flex-direction: column;
 padding: 2rem;
 margin:  0 auto;
-/* border: 2px solid green; */
-} 
+/* border: 2px solid green; 
+}
 
 /* Wraps the Index Login in a container for sizing. */
 .box{
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  margin: 20px auto;
+  /* margin: 20px auto; */
   /* height: 50vh; */
 }
 
@@ -52,12 +54,16 @@ body, .div, .container{
 */
 header{
 border-bottom: 2px solid  rgba(13,110,253,.5);
-font-size: .5rem;
+/* font-size: 1rem;*/
 
 }
 
 header > ul {
   border: 2px solid orange; 
+}
+
+ul{
+  /* border: 2px solid green; */
 }
 
 .nav-item{
@@ -75,12 +81,13 @@ header > ul {
 /* Sets the display of guide elements, so that they fit the page better. */
 .guide{
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
+
 }
 
 
 .guide-card {
-  margin: 5px;
+  margin: .5rem;
   padding: 1.5rem;
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
 
@@ -94,8 +101,8 @@ header > ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
-  margin: 20px auto;
+  /* margin-top: 60px; */
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5{
@@ -126,12 +133,12 @@ h1, h2{
 .cabinetMed{
   box-shadow: 0 2px 0  rgb(13,110,253);
   max-height: 280px;
-  max-width: 320px;
-  padding: 30px;
+  max-width: 10%;
+  padding: 1em;
 }
 .doctors{
   border-bottom: 2px solid rgb(13,110,253);
-  height: 25vh;
+  /* height: 25vh; */
 }
 
 /* ///////////////////////////////////// */
@@ -164,16 +171,16 @@ margin: 0 auto;
 .btn{
 
   /* height: 60px;  */
-  width: 45%;
+  /* width: 45%;
   margin: 1px;
-  padding: .5em;
+  padding: .5em; */
 }
 
 /* extra class for the button on login card, login.  */
-/* .ulta{
-border: 2px solid orange;
-  padding-top: 15px;
-} */
+ /* .btn{
+  display: inline;
+  max-width: 15%;
+}  */
 
 /*
 div, header, button {
@@ -201,9 +208,15 @@ background-color: rgb(13,110,253);
 } */
 
 .medInfo {
-display: flex;
-flex-direction: row;
-/* border : 2px solid green; */
+/* display: flex;
+flex-direction: row; */
+border : 2px solid green;
+padding: 2rem;
+}
+
+.medImgBlock{
+  border: 2px solid orange;
+  padding: 1rem;
 }
 
 .form-label{
@@ -244,17 +257,12 @@ div > .mt-5 {
   margin-top: 10px;
 }
 
-.welcome > h2{
-margin: 1rem;
-}
-
-.welcome > p{
-  border: 0 1px 1px  solid gray;
-}
 
 .tracker{
   width: 100%;
-  margin: 5px
+  margin: 20px auto;
+  padding: 1rem;
+  /* margin: 5px */
 }
 /* .card-body {
   display: flex;
@@ -268,9 +276,10 @@ margin: 1rem;
 
 footer{
 
+  max-height: 20%;
   margin-top: 3rem;
   border-top: 5px solid rgb(13,110,253);
-  width: 100%;
+  /* width: 100%; */
 
 }
 
@@ -279,11 +288,10 @@ display: flex;
 flex-direction: row;
 list-style: " | ";
 justify-content: space-between;
-font-size: .2rem;
+/* font-size: .2rem; */
 padding: 3rem;
-}
+} */
 
-/* ///// Calendar Styling ///// */
 
 
 /* ///// Calendar Styling /////  */
@@ -351,7 +359,7 @@ padding: 3rem;
 }
  
  .month h1 {
-  font-size: 3rem;
+  /* font-size: 3rem; */
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -365,7 +373,7 @@ padding: 3rem;
 
 .month p {
   background-color: rgb(13,110,253);
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
   margin: 0 auto;
 
 }
@@ -383,7 +391,7 @@ padding: 3rem;
 }
 
 .weekdays div {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: 400;
   letter-spacing: 0.1rem;
   width: calc(44.2rem / 7);
@@ -404,7 +412,7 @@ padding: 3rem;
 }
 
 .days div {
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   margin: 0.3rem;
   width: calc(40.2rem / 7);
   height: 80px;
@@ -439,28 +447,30 @@ padding: 3rem;
 
 /* Media Queries */
 
-@media (max-width: 1030px){
+@media screen and (max-width: 600px){
+  div{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 1rem;
+    /* align-content: center; */
+  }
+
+  .guide-card{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  }
+
+  .guide-card > .tracker > .img-fluid{
+    display: none;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px){
+
 }
 
+/*  */
 
-/* /Creates hamburger on mobile/ */
-@media screen and (max-width: 480px) {
-        #desktop {
-            display:none;
-        }
-}
-
-/* /Removes hamburger on desktops/ */
-@media screen and (min-width:1025px) {
-    #mobile {
-            display:none;
-        }
-}
-
-/* /Defaults to hamburger on any other size/ */
-@media (min-width: 479px) and (max-width: 1024px) {
-  #screen {
-            display:flex;
-            flex-direction: column
-        }
-}
+/* */

@@ -60,10 +60,10 @@ module.exports = {
                     phone: req.body.phone
                 },
                )
-               res.redirect('/');
+               res.redirect('/contact');
             } catch (err) {
                 if (err) return res.status(500).send(err)
-                res.redirect('/');
+                res.redirect('/contact');
             }
         }
     }

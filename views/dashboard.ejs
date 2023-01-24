@@ -5,7 +5,6 @@
 
 
         <!-- form in a card to include an image, for asthetics. -->
-        <!-- <div class="card"> -->
           <div class="card-body">
             <h2 class="card-title">Add a New Medication</h2>
             <form action="/med/createMed" enctype="multipart/form-data" method="POST">
@@ -27,13 +26,10 @@
               </div>
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
-      <!-- </div> -->
          <br>
 
         <p class="card-text">Use this form to add your medications to your medicine cabinet.</p>
             
-            <!-- Use some date() object to give a last added line. ? -->
-            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
           </div>
           <img src="imgs/Meds1.jpg" class="card-img-bottom" alt="card-img-bottom">
         </div>
@@ -42,11 +38,10 @@
         <label for="ul"><h2>Your Medications</h2>
         <ul class="row list-unstyled">
           <% if (meds.length === 0) { %>
-            <p> No medications in your Cabinet. Please <a href="/dashboard">add one</a>
-              one to save it.</p>
+            <p> No medications in your Cabinet. Please add one to save it.</p>
             <%} else { %>
             <!-- <p> Not Allowed </p> -->
-        <span>Click to View or Change:</span></label>
+        <span>Click to View or Change:</span>
 
              <% } %>   
              
