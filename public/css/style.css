@@ -4,7 +4,7 @@
     
   box-sizing: border-box;
   background-color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif, Verdana, Tahoma, sans-serif;
   /* Generalized sizing for responsiveness. */
   /* font-size: 62.25%; */
   /* font-size: 1rem; */
@@ -20,10 +20,11 @@ margin:  0 auto;
 
 /* Wraps the Index Login in a container for sizing. */
 .box{
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  /* margin: 20px auto; */
+  /* display: flex;
+  flex-direction: column; */
+  padding: 1rem;
+  margin: 100px auto;
+  font-size: 1rem;
   /* height: 50vh; */
 }
 
@@ -54,7 +55,7 @@ body, .div, .container{
 */
 header{
 border-bottom: 2px solid  rgba(13,110,253,.5);
-/* font-size: 1rem;*/
+font-size: 1rem;
 
 }
 
@@ -160,9 +161,9 @@ border: 2px solid green;
 
 box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
 border-radius: 6px;
-width: 85%;
+min-width: 30%;
 padding: .5em;
-margin: 0 auto;
+margin: 20 auto;
 
 } 
 
@@ -171,8 +172,8 @@ margin: 0 auto;
 .btn{
 
   /* height: 60px;  */
-  /* width: 45%;
-  margin: 1px;
+   min-width: 45%;
+  /* margin: 1px;
   padding: .5em; */
 }
 
@@ -243,11 +244,6 @@ margin: .5em;
 font-style: italic;
 }
 
-aside{
-  border: 2px solid blue;
-  width: 60%;
-}
-
 div > .mt-5 {
   padding-right: 50px;      
   margin-right: 10px;
@@ -257,7 +253,10 @@ div > .mt-5 {
   margin-top: 10px;
 }
 
-
+.img-fluid{
+  height: auto;
+  width: auto;
+}
 .tracker{
   width: 100%;
   margin: 20px auto;
@@ -295,6 +294,7 @@ padding: 3rem;
 
 
 /* ///// Calendar Styling /////  */
+/* */
 
 .over{
   display:flex;
@@ -325,6 +325,32 @@ padding: 3rem;
 
 }
 
+/*  */
+/* .over{
+  display:flex;
+  flex-direction: row;
+  align-content: center;
+
+  margin: 5px auto;
+  
+
+  /* flex-direction: row; */
+  /* padding: 5rem; */
+  /* margin-top: 20px; 
+
+}
+*/
+.contained {
+  width: 50%;
+  height: 50%;
+  order: 2;
+  /* background-color: #12121f; */
+  color: #eee;
+  display: flex;
+  background-color: lightslategray    ;
+  /* padding: 20px; */
+
+}
   .calendar {
   /* width: 500px;
   height: 300px; */
@@ -463,9 +489,6 @@ padding: 3rem;
     justify-self: center;
   }
 
-  .guide-card > .tracker > .img-fluid{
-    display: none;
-  }
 }
 @media (min-width: 601px) and (max-width: 900px){
 
