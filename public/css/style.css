@@ -79,11 +79,11 @@ ul{
 
 
 /* Sets the display of guide elements, so that they fit the page better. */
-.guide{
+/* .guide{
   display: flex;
   flex-direction: row;
 
-}
+} */
 
 
 .guide-card {
@@ -315,8 +315,8 @@ padding: 3rem;
 }
 
 .contained {
-  width: 70vw;
-  height: 70vh;
+  width: 50%;
+  height: 50vh;
   /* background-color: #12121f; */
   color: #eee;
   display: flex;
@@ -454,16 +454,76 @@ padding: 3rem;
 /* Media Queries */
 
 @media all and (max-width: 600px){
+
   div{
     display: flex;
     flex-direction: column;
-    flex-grow: 3;
-    justify-content: center;
     /* align-content: center; */
   }
-}
-@media (min-width: 601px) and (max-width: 900px){
 
+  .tracker{
+    display: flex;
+  }
+
+  .tracker > .row > .list-unstyled{
+    border: 2px solid red;
+  }
+
+  .trackerImg {
+    display: none;
+    padding: 1rem;
+
+  }
+
+  /* .guide{
+    display: flex;
+    align-content: space-between;
+  } */
+
+  .guide-card{
+    width: 100%;
+    justify-self: center;
+  }
+
+  .over{
+    display: flex;
+
+  }
+
+  .calendar,
+  .contained{
+    /* flex: .5;
+     */
+display: none;
+    }
+}
+
+
+@media (min-width: 601px)  {
+  .guide{
+    display: flex;
+    flex-direction: row;
+  
+  }
+
+  .calCard {
+    width: 60%;
+  }
+  /* .over{
+    display: flex;
+    flex-direction: row;
+  } */
+
+
+  .calendar,
+  .contained{
+    border: 2px solid red;
+    /* flex-grow: 1; */
+    padding: 1rem;
+    height: 50%;
+    width: 100%;
+    /* flex-grow:1; */
+  }
 }
 
 /*  */
