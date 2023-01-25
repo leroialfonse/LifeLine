@@ -4,7 +4,7 @@
     
   box-sizing: border-box;
   background-color: #fff;
-  font-family: 'Inter', sans-serif, Verdana, Tahoma, sans-serif;
+  font-family: 'Inter', sans-serif;
   /* Generalized sizing for responsiveness. */
   /* font-size: 62.25%; */
   /* font-size: 1rem; */
@@ -20,11 +20,10 @@ margin:  0 auto;
 
 /* Wraps the Index Login in a container for sizing. */
 .box{
-  /* display: flex;
-  flex-direction: column; */
-  padding: 1rem;
-  margin: 100px auto;
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  /* margin: 20px auto; */
   /* height: 50vh; */
 }
 
@@ -55,7 +54,7 @@ body, .div, .container{
 */
 header{
 border-bottom: 2px solid  rgba(13,110,253,.5);
-font-size: 1rem;
+/* font-size: 1rem;*/
 
 }
 
@@ -89,7 +88,7 @@ ul{
 
 .guide-card {
   margin: .5rem;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
 
 } 
@@ -132,9 +131,7 @@ h1, h2{
 } */
 
 .cabinetMed{
-  box-shadow: 0 2px 0  rgb(13,110,253);
-  max-height: 280px;
-  max-width: 10%;
+  max-height: 250px;
   padding: 1em;
 }
 .doctors{
@@ -142,6 +139,11 @@ h1, h2{
   /* height: 25vh; */
 }
 
+.doc{
+  margin: 20px auto;
+  padding: 2rem;
+
+}
 /* ///////////////////////////////////// */
 
 
@@ -161,21 +163,21 @@ border: 2px solid green;
 
 box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
 border-radius: 6px;
-min-width: 30%;
+width: 85%;
 padding: .5em;
-margin: 20 auto;
+margin: 0 auto;
 
 } 
 
 
 /* remember! em looks for font size of the container. If not found, defaults 16px, the default font size for browsers.  to  em = 16 * whatever em you want ( 5 in this case) = for 80px.   */
-.btn{
+/* .btn{
 
   /* height: 60px;  */
-   min-width: 45%;
-  /* margin: 1px;
-  padding: .5em; */
-}
+  /* width: 45%;
+  margin: 1px;
+  padding: .5em; 
+} */
 
 /* extra class for the button on login card, login.  */
  /* .btn{
@@ -244,6 +246,11 @@ margin: .5em;
 font-style: italic;
 }
 
+aside{
+  border: 2px solid blue;
+  width: 60%;
+}
+
 div > .mt-5 {
   padding-right: 50px;      
   margin-right: 10px;
@@ -253,15 +260,15 @@ div > .mt-5 {
   margin-top: 10px;
 }
 
-.img-fluid{
-  height: auto;
-  width: auto;
+/* */
+
+.welcome > p{
+  border: 0 1px 1px  solid gray;
 }
+
 .tracker{
   width: 100%;
-  margin: 20px auto;
-  padding: 1rem;
-  /* margin: 5px */
+  margin: 5px
 }
 /* .card-body {
   display: flex;
@@ -294,7 +301,6 @@ padding: 3rem;
 
 
 /* ///// Calendar Styling /////  */
-/* */
 
 .over{
   display:flex;
@@ -325,32 +331,6 @@ padding: 3rem;
 
 }
 
-/*  */
-/* .over{
-  display:flex;
-  flex-direction: row;
-  align-content: center;
-
-  margin: 5px auto;
-  
-
-  /* flex-direction: row; */
-  /* padding: 5rem; */
-  /* margin-top: 20px; 
-
-}
-*/
-.contained {
-  width: 50%;
-  height: 50%;
-  order: 2;
-  /* background-color: #12121f; */
-  color: #eee;
-  display: flex;
-  background-color: lightslategray    ;
-  /* padding: 20px; */
-
-}
   .calendar {
   /* width: 500px;
   height: 300px; */
@@ -473,22 +453,14 @@ padding: 3rem;
 
 /* Media Queries */
 
-@media screen and (max-width: 600px){
+@media all and (max-width: 600px){
   div{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 3;
     justify-content: center;
-    padding: 1rem;
     /* align-content: center; */
   }
-
-  .guide-card{
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-  }
-
 }
 @media (min-width: 601px) and (max-width: 900px){
 

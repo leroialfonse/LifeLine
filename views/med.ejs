@@ -2,7 +2,7 @@
 
 <div class="container">
   <!-- <div class="row justify-content-center mt-5 medImgBlock" > -->
-    <div class="col">
+    <div class="col mt-5">
       <h2><%= med.title %></h2>
       <img class="img-fluid" src="<%= med.image%>" />
       <div class="row justify-content-between">
@@ -16,8 +16,11 @@
           <!-- edit button -->
 
         </form>
-        <button class="btn btn-primary fa fa-edit " type="submit"></button>
+        <button class="btn btn-primary fa fa-edit col-9" type="submit"></button>
+        <a href="/deleteMed/<%= med._id%>">delteRun</a>
 
+        <!-- <a href="/editMed/remove/<%= this._id %>"><button class="btn btn-secondary fa fa-trash" type="submit"></button></a> -->
+        <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a>
         <%}%>
       </div>
     </div>

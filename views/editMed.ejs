@@ -3,19 +3,19 @@
 <div class="doc">
   <div class="col-6 justify-content-center">
 
-    <label for="ul"><h2>Edit Doctor Information</h2></label>
+    <label for="ul"><h2>Edit Medication Information</h2></label>
       <ul class="row list-unstyled justify-content-between col-6 mt-5 docEdit">
-        <% if (contacts.length === 0) { %>
-          <p> No doctors in your contacts. Please add one to save their information.</p>
+        <% if (meds.length === 0) { %>
+          <p> No medications in your cabinet. Please add one to save it.</p>
           <%} else { %>
            <% } %> 
           
-        <% contacts.forEach( el => { %>  
+        <% meds.forEach( el => { %>  
           
           <li data-id='<%el._id%>'>
-            <% if (el._id == idContact ) { %>
+            <% if (el._id == idMed ) { %>
               <br>
-            <form action="/edit/update/<%= el._id%>" method="POST">
+            <form action="/editMed/update/<%= el._id%>" method="POST">
               <label for="title">Change Name:</label>
               <input type="text" name="title" value="<%= el.title %>">
               <label for="phone">Change Number:</label>
@@ -23,7 +23,7 @@
               <label for="address">Change Address:</label>
               <input type="text" name="address" value="<%= el.address %>">
               <button btn-primary class="btn-primary fa fa-check" type="submit"></button>
-              <a href="/contact">Cancel</a>
+              <a href="back">Cancel</a>
             </form>
             <br>
           </li>
@@ -35,8 +35,8 @@
                                 <div><%= el.address %></div>
                                 <div><%= el.phone %></div>
 
-                                <a href="/edit/<%= el._id %>">Edit</a>
-                                <a href="/edit/remove/<%= el._id %>">Remove</a>
+                                <a href="/editMed/<%= el._id %>">Edit</a>
+                                <a href="/editMed/remove/<%= el._id %>">Remove</a>
                             </li>
                             <br>
                             <% } %>
