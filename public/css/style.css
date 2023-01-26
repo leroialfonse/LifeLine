@@ -270,6 +270,10 @@ div > .mt-5 {
   width: 100%;
   margin: 5px
 }
+
+.trackerImg{
+  padding: 1rem;
+}
 /* .card-body {
   display: flex;
   flex-direction:  wrap;
@@ -452,6 +456,19 @@ padding: 3rem;
 
 
 /* Media Queries */
+/* @media all and (max-width: 390px){
+  div{
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; 
+  }
+
+    .trackerImg {
+    display: none;
+
+  } */
+
+/* } */
 
 @media all and (max-width: 600px){
 
@@ -461,19 +478,12 @@ padding: 3rem;
     /* align-content: center; */
   }
 
-  .tracker{
-    display: flex;
-  }
 
-  .tracker > .row > .list-unstyled{
-    border: 2px solid red;
-  }
 
-  .trackerImg {
+   .trackerImg {
     display: none;
-    padding: 1rem;
 
-  }
+  } 
 
   /* .guide{
     display: flex;
@@ -487,41 +497,67 @@ padding: 3rem;
 
   .over{
     display: flex;
+    flex-direction: row;
 
   }
 
+  .contained,
   .calendar,
-  .contained{
-    /* flex: .5;
-     */
-display: none;
+  .month,
+  .month i,
+  .month h1,
+  .month p,
+  .weekdays,
+  .weekdays div,
+  .days,
+  .days div,
+  .prev-date,
+  .next-date{
+    height: 10vh;
+    width: 10vw;
+    }
+
+    footer > nav{
+      display: none;
     }
 }
 
 
 @media (min-width: 601px)  {
+
+
   .guide{
     display: flex;
     flex-direction: row;
   
   }
 
-  .calCard {
-    width: 60%;
-  }
-  /* .over{
+  .over{
     display: flex;
     flex-direction: row;
-  } */
+    padding-top: 10rem;
+    justify-content: space-between;
+    }
+
+   .over > section{
+
+    width: 100%;
+  } 
+  .calCard {
+    width: 50%;
+    margin-left: 5rem;
+  }
+ 
 
 
   .calendar,
   .contained{
-    border: 2px solid red;
+
+    /* border: 2px solid red; */
     /* flex-grow: 1; */
     padding: 1rem;
-    height: 50%;
-    width: 100%;
+    /* height: 50%;
+    width: 100%; */
     /* flex-grow:1; */
   }
 }
