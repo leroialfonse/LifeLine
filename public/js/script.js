@@ -1,40 +1,39 @@
-// ///////////// Delete for doctors??? /////////////////////////
+// // Bootstrap Modal
 
-// Get time since last meds check 
+// var myModal = document.getElementById('myModal')
+// var myInput = document.getElementById('myInput')
 
-// let start = Date.now();
-  
-// Task for which we want to calculate the 
-// time taken / time elapsed from the start 
-// of the process to end of that process
-// document.querySelector('.taken').addEventListener('click', greeting)
+// myModal.addEventListener('shown.bs.modal', function () {
+//   myInput.focus()
+// })
 
-// function greeting(){
-//     console.log("Hey Geeks");
+// // Bootstrap Modal
 
-// let start = Date.now();
 
-//     // get the end time
-// let end = Date.now();
-  
-// // elapsed time in milliseconds
-// let elapsed = end - start;   
-  
-// // converting milliseconds to seconds 
-// // by dividing 1000
-// console.log(elapsed/1000);
-// }
-// greeting();
-  
-// get the end time
-// let end = Date.now();
-  
-// // elapsed time in milliseconds
-// let elapsed = end - start;   
-  
-// // converting milliseconds to seconds 
-// // by dividing 1000
-// console.log(elapsed/1000);
+let min = 0;
+let sec = 0;
+
+function myTimer() {
+  timer.innerHTML = `Last taken ${min}` + ` minutes` + ` and ${sec}` + ` seconds ago`;
+  sec++;
+  if (sec >= 60) {
+    sec = 0;
+    min++;
+  }
+}
+
+
+//Start the timer
+document.addEventListener('click', () => {
+  setInterval(myTimer, 1000);
+}, { once: true });
+{/* <div id="timer">click somewhere</div> */}
+
+document.querySelector('.days').addEventListener('click', newEvent)
+function newEvent(){
+  alert('add a function')
+}
+
 
 
 

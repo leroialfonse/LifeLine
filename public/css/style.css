@@ -272,8 +272,8 @@ div > .mt-5 {
   margin: 5px
 }
 
-.trackerImg{
-  padding: 1rem;
+.trackerList{
+  overflow: auto;
 }
 /* .card-body {
   display: flex;
@@ -300,69 +300,58 @@ flex-direction: row;
 list-style: " | ";
 justify-content: space-between;
 /* font-size: .2rem; */
-padding: 3rem;
-} */
+padding: 1rem;
+} 
 
 
 
 /* ///// Calendar Styling /////  */
 
-.over{
+/* .over{
   display:flex;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   /*
   width: 90vw;
   height: 90vh; */
   /* flex-direction: row;
   padding: 5rem; */
-  /* margin-top: 20px; */
+  /* margin-top: 20px; 
 
-}
+} */
 
 .contained {
-  /* width: 10%;
-  height: 50%; */
-  /* background-color: #12121f; */
+  width: 100%;
+  height: 100vh;
   color: #eee;
   display: flex;
-  /* justify-content: center;
+   justify-content: center;
   align-items: center;
-  align-self: center;  */
-  /* border: 5px solid orange; */
-  /* background-color: lightslategray    ; */
-  /* padding: 20px; */
-
-
-
+  /* align-self: center;   */
 }
 
   .calendar {
-  /* width: 500px;
-  height: 300px; */
-  /* background-color: #222227; */
-  /* box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4); */
+  width: 45rem;
+  height: 52rem; 
   border: 2px solid rgba(10,30,200,.2);
   border-radius: 6px;
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-  /* border: 5px solid purple; */
-  /* padding: 10px; */
-  /* border: 2px solid rgba(10,30,200,.2) */
 }  
 
 .month {
   width: 100%;
+  height: 12rem;
   background-color: rgb(13,110,253);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem;
+  padding: 0 2rem;
   text-align: center;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 
 }
 
 .month i {
-  font-size: 2.5rem;
+  font-size: 2.5rem;      
   cursor: pointer;
   background-color: rgb(13,110,253);
 
@@ -370,39 +359,39 @@ padding: 3rem;
 }
  
  .month h1 {
-  /* font-size: 3rem; */
+  font-size: 3rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  margin-bottom: 1rem;
-  background-color: rgb(13,110,253);
-  color: #eee;
-  margin: 0 auto;
-
-
+  /* margin-bottom: 1rem; */
+  /* mine */
+   background-color: rgb(13,110,253);
+ color: #eee; 
+ margin: 0 auto;
 }
 
 .month p {
+  /* mine */
   background-color: rgb(13,110,253);
-  /* font-size: 1.6rem; */
+  font-size: 1.6rem;
+  /* mine */
   margin: 0 auto;
-
 }
 
 .weekdays {
-  /* width: 100%; */
-  height: 5rem;
+  width: 100%;
+  height: 4rem;
   padding: 0 0.4rem;
   display: flex;
   align-items: center;
-  background-color: rgb(13,110,253);
-  color: #eee;
-  justify-content: center;
-
+  /* mine */
+   background-color: rgb(13,110,253);
+  /*color: #eee;*
+  justify-content: center; */
 }
 
 .weekdays div {
-  /* font-size: 1.5rem; */
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.1rem;
   width: calc(44.2rem / 7);
@@ -410,29 +399,34 @@ padding: 3rem;
   justify-content: center;
   align-items: center;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  /* mine */
   background-color: rgb(13,110,253);
 }
 
 .days {
   width: 100%;
+  /* mine  */
+  /* max-width: 100%; */
   display: flex;
   flex-wrap: wrap;
   padding: 0.2rem;
   /* background-color: #8080FF; */
-  justify-content: center;
+  /* mine */
+  /* justify-content: center; */
 }
 
 .days div {
-  /* font-size: 1.4rem; */
+  font-size: 1.4rem;
   margin: 0.3rem;
   width: calc(40.2rem / 7);
-  height: 80px;
+  height: 5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-items: left;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
   transition: background-color .6s;
-  /* border-radius: 6px; */
+  /* border: 1px solid rgb(13,110,253); */
+  /* mine */
   background-color: rgb(13,110,253);
 
 }
@@ -473,11 +467,11 @@ padding: 3rem;
 
 @media all and (max-width: 600px){
 
-  div{
+  /* div{
     display: flex;
     flex-direction: column;
     /* align-content: center; */
-  }
+  } */
 
 
 
@@ -486,23 +480,28 @@ padding: 3rem;
 
   } 
 
-  /* .guide{
+  .guide{
     display: flex;
     align-content: space-between;
-  } */
+  }
 
   .guide-card{
     width: 100%;
     justify-self: center;
   }
 
-  .over{
+  /* .over{
     display: flex;
     flex-direction: row;
 
-  }
+  } */
 
-  .contained,
+  /* .calDate{
+    height: 1rem;
+    width: 100%;
+  } */
+
+  /* .contained,
   .calendar,
   .month,
   .month i,
@@ -514,14 +513,14 @@ padding: 3rem;
   .days div,
   .prev-date,
   .next-date{
-    height: 10vh;
-    width: 10vw;
-    }
+    height: 1rem;
+    width: 1rem;
+    } */
 
     footer > nav{
       display: none;
     }
-}
+/* } */
 
 
 @media (min-width: 601px)  {
@@ -533,21 +532,27 @@ padding: 3rem;
   
   }
 
-  .over{
+  .container-fluid{
     display: flex;
     flex-direction: row;
     padding-top: 2rem;
     /* justify-content: space-evenly; */
     }
-
-   .over > section{
+    .calendly{
+      padding: 10rem;
+    }
+   /* .over > section{
     width: 70%;
-  } 
-  .calCard {
-    width: 50%;
-    margin-left: 5%;
+  }  */
+  section .calCard {
+    width: 60%;
+    /* margin-left: 5%; */
   }
  
+  section .calDate{
+    width: 70%;
+    /* padding: 1rem auto; */
+  }
 
 
   .calendar,
@@ -570,12 +575,15 @@ padding: 3rem;
   }
   section .calCard{
     display: none;
-    /* width: 80%; */
   }
 
-  section  .calDate,
+  /* section
   .calendar, .contained{
   width: 100%;
+  } */
+
+  .calDate{
+    margin-top: 1rem;
   }
 }
 /*  */

@@ -52,6 +52,10 @@
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Popper for Bootstrap
+<script></script>
+  <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2"> -->
   </head>
   <body>
     <header>
@@ -77,8 +81,21 @@
               <li class="nav-item">
                 <a class="nav-link btn-outline-primary" href="/cabinet">Medicine Cabinet</a>
               </li> 
-              <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/contact">Your Doctors</a>
+              <li class="dropdown">
+                <!-- Trying a dropdown on this option. -->
+                <!-- <div class="dropdown"> -->
+                <li class="nav-item"><button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Doctors
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="/contact">Your Doctors</a></li>
+                    <li><a class="dropdown-item" href="/edit">Edit Contacts</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                <!-- </div> -->
+                <!-- Trying a dropdown on this option. -->
+                <!-- <a class="nav-link btn-outline-primary" href="/contact">Your Doctors</a> -->
+              </li>
               </li>
               <li class="nav-item"> 
                 <a class="nav-link btn-outline-primary" href="/signup">Create Account</a>

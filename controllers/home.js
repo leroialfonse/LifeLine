@@ -14,7 +14,7 @@ module.exports = {
     try {
       let mongoose = require('mongoose')
       const meds = await Med.find();
-      res.render("home.ejs", {meds: meds, user: req.user});
+      res.render("home.ejs", {meds: meds, med: meds, user: req.user});
     } catch (err) {
       console.log(err); 
     }
