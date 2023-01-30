@@ -10,6 +10,7 @@
 
 
   <div class="guide-card tracker">
+    
   <!-- Trying agin -->
     <div class="card">
   <div class="row g-0">
@@ -19,42 +20,25 @@
     <div class="col-7 col-sm-8">
       <div class="card-body">
         <h5 class="card-title">Today's Medications</h5>
-        <p class="card-text">Which medications are due to take today? Remember to check it off once you have taken it.</p>
+        <p class="card-text">Which medications are due due due to take today? Remember to check it off once you have taken it.</p>
         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
         <ul class="row list-unstyled">
           <% if (meds.length === 0) { %>
             <p> There are no medications currently in your Cabinet. Please <a href="/dashboard">add one</a>
             to save it.</p>
-            <%} else { %>
-             <!-- A different, bootstrap checkbox form. ..... -->
-           
+            <%} else { %>   
    
-  
-
-            <!-- WOrking on getting  the below to work. -->
-            <!-- <%if(med.user == user.id){ %> -->
-
         <% meds.forEach(( el, index) =>  {%>
-          <!-- <if ( index > 2 ) { %> -->
             <div class="form-check trackerList">
               <input class="form-check-input" type="checkbox" value="<%el._id%>" data-id="<% el._id %>" id="formCheckDefault">
               <label class="form-check-label" for="formCheckDefault"><a href="med/<%= meds._id %>"><%= el.title %></a></label>
             </div>
-            <!-- <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="formCheckChecked" checked="">
-              <label class="form-check-label" for="formCheckChecked">Checked checkbox</label>
-            </div> -->
-                        
-            <!-- <li class="col-6 mt-0" data-id='<%el._id%>'><a href="/cabinet"><input type="checkbox"><%= el.title %></a> -->
-            <!-- <%= el.dosage %> -->
           </li>
           <br>
         <% })%>
         <% }%>
-        <!-- <% }%> -->
         </ul>
-
 
           <p class="card-text"><small class="text-muted"> <button class="btn btn-warning taken">Meds Taken</button></small></p>
          <small><div id="timer"></div></small> 
@@ -63,60 +47,9 @@
     </div>
   </div>
 </div>
+  </div>  
 
 <!-- Trying again -->
-
-<!-- 
-    <div class="row g-0">
-      <div class="col-5 col-sm-4">
-        <img src="imgs/medsPile.jpg" class="card-horizontal-image  trackerImg" alt="card-horizontal-image">
-      </div>
-      <div class="col-7 col-sm-8">
-        <div class="card-body">
-          <h5 class="card-title">Today's Medications</h5>
-          <p class="card-text">Which medications are due to take today? Remember to check it off once you have taken it.</p>
-
-          <!-- Meds list?  -->
-          <ul class="row list-unstyled">
-          <% if (meds.length === 0) { %>
-            <p> There are no medications currently in your Cabinet. Please <a href="/dashboard">add one</a>
-            to save it.</p>
-            <%} else { %>
-             <!-- A different, bootstrap checkbox form. ..... -->
-           
-   
-  
-
-            <!-- WOrking on getting  the below to work. -->
-            <!-- <%if(med.user == user.id){ %> -->
-
-        <% meds.forEach(( el, index) =>  {%>
-          <!-- <if ( index > 2 ) { %> -->
-            <div class="form-check trackerList">
-              <input class="form-check-input" type="checkbox" value="<%el._id%>" data-id="<% el._id %>" id="formCheckDefault">
-              <label class="form-check-label" for="formCheckDefault"><a href="med/<%= meds._id %>"><%= el.title %></a></label>
-            </div>
-            <!-- <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="formCheckChecked" checked="">
-              <label class="form-check-label" for="formCheckChecked">Checked checkbox</label>
-            </div> -->
-                        
-            <!-- <li class="col-6 mt-0" data-id='<%el._id%>'><a href="/cabinet"><input type="checkbox"><%= el.title %></a> -->
-            <!-- <%= el.dosage %> -->
-          </li>
-          <br>
-        <% })%>
-        <% }%>
-        <!-- <% }%> -
-        </ul>
-
-
-          <p class="card-text"><small class="text-muted"> <button class="btn btn-warning taken">Meds Taken</button></small></p>
-         <small><div id="timer"></div></small>  -->
-        </div>
-      </div>
-    </div>
-  </div>
 
 
   <div class="container-fluid">

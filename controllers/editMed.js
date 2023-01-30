@@ -27,16 +27,28 @@ module.exports = {
       },
       deleteMed: async (req, res)=>{
         try{
-      // Find contact by id
-       let med = await Med.findById({ _id: req.params.id });
+
+          // from meds.js
+  // // Find med by id
+  // let med = await Med.findById({ _id: req.params.id });
+  // // Delete image from cloudinary
+  // await cloudinary.uploader.destroy(med.cloudinaryId);
+  // // Delete med from db
+  // await Med.remove({ _id: req.params.id });
+  //         // from meds js
+
+      // Find med by id
+       let med = await Med.findByIdAndDelete({ _id: req.params.id });
+       // Destroy the cloudinary image
+       await cloudinary.uploader.destroy(med.cloudinaryId);
       // Delete the med from the db
         await Med.remove({ _id: req.params.id });
     
             // console.log(_id)
             console.log('Deleted');
-        res.redirect("back");
+        res.redirect("/cabinet");
     }catch(err){ 
-        res.redirect("back");
+        res.redirect("/cabinet");
         }
     },
     updateMed: async (req,res) => {
