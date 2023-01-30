@@ -18,6 +18,8 @@ margin:  0 auto;
 /* border: 2px solid green; 
 }
 
+
+/* May not be needed as of Sunday, 1/29/23 */
 /* Wraps the Index Login in a container for sizing. */
  .box{
   width: 100%;
@@ -44,6 +46,7 @@ a:hover {
 
 /* Sets the size of form elements, to better fit my planned asthetic. */
 .col-6 > form{
+  border: 2px solid orange;
   width: 75%;
 }
 
@@ -61,12 +64,20 @@ header{
 border-bottom: 2px solid  rgba(13,110,253,.5);
 /* width: 100%; */
 /* font-size: 1rem;*/
+/* color: rgb(13,110,253); */
 
 }
 
-.nav-item{
-  /* display: flex;
-  justify-content: flex-end; */
+.navbar ul{
+  /* width: 100%;
+  border: 2px solid green; */
+}
+.nav-item > a{
+   /* display: flex;
+   justify-items: center; */
+   /* width: 100%; */
+   /* border: 2px solid green; */
+   /* justify-content: flex-end; */
 /* text-align: center; */
 /* width: fit-content; */
 /* padding: .1rem; */
@@ -99,19 +110,28 @@ border-bottom: 2px solid  rgba(13,110,253,.5);
   /* border:rgb(34, 89, 178); */
 }
 /* Sets the size and display of the login card. */
+
+.login-container{
+  /* height: 100vh;  */
+  width: 50%;
+}
+
 .login-card{
   /* display: flex; 
    align-items: center; 
-   justify-content: center; 
+   justify-content: center; */
   border-radius: 6px;
   /* font-size: 1rem; */
   /* width: 60%; */
-  width: 85%;
-  padding: 1rem;
+  /* width: 50%; */
+  padding: 2rem;
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
   margin: 100px auto;
 } 
 
+.loginCardBody{
+  width: 50%;
+}
 
 h1, h2, h3, h4, h5{
   font-weight: 700;
@@ -216,15 +236,14 @@ div, header, button {
     height: 80%;
   /* width: 1%; */
   /* padding-right: 1rem; */
-  margin-right: 200px;
+  margin-right: 150px;
 } 
 
 .fav{
   height: 80px;
 }
-.navbar-custom{
-background-color: rgb(13,110,253);
-}
+.navbar .nav-item{
+align-self: center;}
 /* .bottom-nav {
   display: flex;
   align-self: end;
@@ -293,32 +312,39 @@ div > .mt-5 {
 .trackerList{
   /* overflow: auto; */
 }
-/* .card-body {
-  display: flex;
-  flex-direction:  wrap;
-   height: 80% ; 
+ .card-body {
+  justify-self: center;
+  align-self: center;
+  border: 2px solid green;
+  /* display: flex;
+  flex-direction:  wrap; */
+   /* height: 80% ;  */
 } 
+
+
+*/
 
 /* .col-6 > li {
   border: 2px solid green;
-} */
+} */ul
 
 footer{
 
-  max-height: 20%;
-  margin-top: 3rem;
-  border-top: 5px solid rgb(13,110,253);
+  /* max-height: 20%; */
+  /* margin-top: 5rem; */
+  /* border-top: 5px solid rgb(13,110,253); */
   /* width: 100%; */
 
 }
 
 .footer-nav > ul{
+  border-top: 5px solid rgb(13,110,253);
 display: flex;
 flex-direction: row;
 list-style: " | ";
 justify-content: space-between;
 /* font-size: .2rem; */
-padding: 1rem;
+padding: 2rem;
 } 
 
 
@@ -487,6 +513,7 @@ padding: 1rem;
  } 
 */ 
 
+
 @media all and (max-width: 600px){
 
   /* div{
@@ -495,7 +522,14 @@ padding: 1rem;
     /* align-content: center; 
   } */
 
+  .login-card img{ 
+    display: none;
+  
+  }
 
+  .loginCardBody{
+    width: 100%;
+  }
 
    .trackerImg {
     display: none;
