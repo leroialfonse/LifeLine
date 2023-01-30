@@ -17,7 +17,7 @@ module.exports = {
       let mongoose = require('mongoose')
       // const contact = await Contact.find({ userId: req.user.id });
       // console.log(req.user)
-      res.render("welcome.ejs", {meds: req.meds, user: req.user});
+      res.render("home.ejs", {meds: req.meds, user: req.user});
     } catch (err) {
       console.log(err); 
     }
@@ -46,6 +46,18 @@ module.exports = {
       res.render("med.ejs", { med: med, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
+    }
+  },
+  getEditMed: async (req, res) => {
+    const id = req.params.id
+    console.log(id)
+    try {
+      let mongoose = require('mongoose')
+      const meds = await Med.find();
+      console.log(req.body)
+      res.render("editMed.ejs", { meds: meds, user: req.user, idMed: id });
+    } catch (err) {
+      console.log(err); 
     }
   },
   createMed: async (req, res) => {
@@ -91,9 +103,37 @@ module.exports = {
       // Delete med from db
       await Med.remove({ _id: req.params.id });
       console.log("Deleted Med");
-      res.redirect("/dashboard");
+      res.redirect("/cabinet");
     } catch (err) {
-      res.redirect("/dashboard");
+      res.redirect("/cabinet");
     }
   },
+  createComment: async (req, res) => {
+    try {
+      await Comment.create({
+        comment: req.body.comment,
+        likes: 0,
+        post: req.params.id,
+      });
+      console.log("comment has been added!");
+      res.redirect("/med/id"+req.body);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+ 
+//   deleteMed: async (req, res)=>{
+//     try{
+//   // Find contact by id
+//    let med = await Med.findById({ _id: req.params.id });
+//   // Delete the med from the db
+//     await Med.remove({ _id: req.params.id });
+
+//         // console.log(_id)
+//         console.log('Deleted');
+//     res.redirect("/dashboard");
+// }catch(err){ 
+//     res.redirect("/dashboard");
+//     }
+// },
 };

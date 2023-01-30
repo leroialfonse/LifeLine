@@ -14,11 +14,12 @@ const commentRoutes = require("./routes/comments");
 const doctorRoutes = require("./routes/doctors");
 const bodyParser = require("body-parser");
 const contactRoutes = require("./routes/contacts");
-const welcomeRoutes = require("./routes/welcome");
+const homeRoutes = require("./routes/home");
 const dashboardRoutes = require("./routes/dashboard");
 const calendarRoutes = require("./routes/calendar");
 const directoryRoutes = require("./routes/directory");
 const editRoutes = require("./routes/edit");
+const editMedRoutes = require("./routes/editMed");
 const PORT = process.env.PORT || 8900
 
 
@@ -77,12 +78,12 @@ app.use("/med", medRoutes); //This is post routes for me.
 app.use("/comment", commentRoutes);
 app.use("/doctors", doctorRoutes);
 app.use("/contact", contactRoutes);
-app.use("/welcome", welcomeRoutes);
+app.use("/home", homeRoutes);
 app.use("/calendar", calendarRoutes);
-// app.use("/calendar", mainRoutes );
 app.use("/directory", directoryRoutes);
 app.use("/dashboard", dashboardRoutes);
 app.use("/edit", editRoutes);
+app.use("/editMed", editMedRoutes);
 
 
 

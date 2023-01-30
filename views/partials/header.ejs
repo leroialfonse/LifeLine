@@ -8,8 +8,8 @@
     <link
       rel="icon"
       type="image/jpg"
-      sizes="60x60"
-      href="/imgs/SmallHeart.png"
+      sizes="any"
+      href="/imgs/BigBacker.png"
     />
     <!-- Bootstrap CDNS -->
 
@@ -52,21 +52,25 @@
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Popper for Bootstrap
+<script></script>
+  <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2"> -->
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-xl navbar-custom ">
+      <nav class="navbar navbar-expand-xl navbar-custom">
         <div class="container-fluid">
-          <img class="fav" src="imgs/Smallish.png" alt="LifeLine Heart">
-        <a class="navbar-brand" href="/welcome">LifeLine</a>
+          
+        <a class="navbar-brand" href="/home"><img class="fav" src="\imgs\BigBacker.png" alt="LifeLine Heart">LifeLine</a>
         <!-- <span class="justify-content-left tagline">Organization for Peace of Mind</span> -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarWithDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mt-5  offset-md-3">
               <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/welcome">Home</a>
+                <a class="nav-link btn-outline-primary" href="/home">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link btn-outline-primary" href="/calendar">Your Calendar</a>
@@ -78,7 +82,23 @@
                 <a class="nav-link btn-outline-primary" href="/cabinet">Medicine Cabinet</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="/contact">Your Doctors</a>
+                <a href="/contact" class="nav-link btn-outline-primary">Your Doctors</a>
+              </li>
+              <li class="dropdown">
+                <!-- Trying a dropdown on this option. -->
+                <!-- <div class="dropdown"> -->
+                <li class="nav-item"><button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Doctors
+                  </button>
+                  <ul class="dropdown-menu col offset-md-4" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="/contact">Your Doctors</a></li>
+                    <li><a class="dropdown-item" href="/edit">Edit Contacts</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                <!-- </div> -->
+                <!-- Trying a dropdown on this option. -->
+                <!-- <a class="nav-link btn-outline-primary" href="/contact">Your Doctors</a> -->
+              </li>
               </li>
               <li class="nav-item"> 
                 <a class="nav-link btn-outline-primary" href="/signup">Create Account</a>

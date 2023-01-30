@@ -1,84 +1,47 @@
-/* ///// Calendar Styling /////  */
-/* 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-  }   */
-  
-  .over{
-    display:flex;
-    /* margin: 5px auto; */
-    width: 70vw;
-    height: 60vh;
-    flex-direction: row;
-    /* border: 5px solid red; */
-    padding: 20px;
-
-  }
-
-  /* main{
-    padding: 5px;
-  } */
-  .containerO {
-    position: relative;
-    top: 20px;
-    width: 80vw;
+.container {
+    width: 100%;
     height: 100vh;
     background-color: #12121f;
     color: #eee;
     display: flex;
-    /* justify-content: center;
+    justify-content: center;
     align-items: center;
-    align-self: center;
-
- 
   }
   
-   .calendar {
-    /* width: 45rem;
-    height: 52rem; */
-
-    height: 10px;
+  .calendar {
+    width: 45rem;
+    height: 52rem;
     background-color: #222227;
-    color: blue;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-    /* border: 5px solid purple; */
-
-  } 
- 
+  }
+  
   .month {
     width: 100%;
     height: 12rem;
-    background-color: blue;
+    background-color: #167e56;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
     text-align: center;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-
   }
   
   .month i {
     font-size: 2.5rem;
     cursor: pointer;
-
   }
-   
-   .month h1 {
+  
+  .month h1 {
     font-size: 3rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;
-
   }
   
   .month p {
     font-size: 1.6rem;
-
   }
   
   .weekdays {
@@ -116,28 +79,20 @@
     justify-content: center;
     align-items: center;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    /* transition: background-color 0.2s; */
-    border-radius: 6px;
+    transition: background-color 0.2s;
   }
   
-  /* .days div:hover:not(.today) {
+  .days div:hover:not(.today) {
     background-color: #262626;
     border: 0.2rem solid #777;
     cursor: pointer;
-  } */
+  }
   
   .prev-date,
   .next-date {
     opacity: 0.5;
   }
   
-  /* .today {
-    background-color: blue;
-  } */
-
-
-  section{
-    height: 40vh;
-    width: 30vw;
-    margin: auto;
+  .today {
+    background-color: #167e56;
   }

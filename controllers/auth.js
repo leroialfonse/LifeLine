@@ -39,7 +39,7 @@
 //         return next(err);
 //       }
 //       req.flash("success", { msg: "Success! You are logged in." });
-//       res.redirect(req.session.returnTo || "/welcome");
+//       res.redirect(req.session.returnTo || "/home");
 //     });
 //   })(req, res, next);
 // };
@@ -116,7 +116,7 @@
 //           if (err) {
 //             return next(err);
 //           }
-//           res.redirect("/welcome");
+//           res.redirect("/home");
 //         });
 //       });
 //     }
@@ -133,7 +133,7 @@ const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/welcome");
+    return res.redirect("/home");
   }
   res.render("login", {
     title: "Login",
@@ -168,7 +168,7 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/welcome");
+      res.redirect(req.session.returnTo || "/home");
     });
   })(req, res, next);
 };
@@ -243,7 +243,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/welcome");
+          res.redirect("/home");
         });
       });
     }

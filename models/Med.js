@@ -23,7 +23,7 @@ const MedSchema = new mongoose.Schema({
   },
   comment: {
     type: String,
-    required: false
+    required: false,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,

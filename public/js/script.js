@@ -1,71 +1,40 @@
-// ///////////// Delete for doctors??? /////////////////////////
+// // Bootstrap Modal
 
-// Get time since last meds check 
+// var myModal = document.getElementById('myModal')
+// var myInput = document.getElementById('myInput')
 
-let start = Date.now();
-  
-// Task for which we want to calculate the 
-// time taken / time elapsed from the start 
-// of the process to end of that process
-  
+// myModal.addEventListener('shown.bs.modal', function () {
+//   myInput.focus()
+// })
 
-function greeting(){
-    console.log("Hey Geeks");
-}
-greeting();
-  
-// get the end time
-let end = Date.now();
-  
-// elapsed time in milliseconds
-let elapsed = end - start;   
-  
-// converting milliseconds to seconds 
-// by dividing 1000
-console.log(elapsed/1000);
+// // Bootstrap Modal
 
-// MODAL from ALpine JS.
 
-function articleSearch() {
-  return {
-    isLoading: false,
-    isOpen: false,
-    articleSearch: 0,
-    url: "",
-    article: null,
-    fetchArticle() {
-      this.isLoading = true;
+let min = 0;
+let sec = 0;
 
-      fetch(`https://jsonplaceholder.typicode.com/posts/${this.articleSearch}`)
-        .then((response) => response.json())
-        .then((data) => {
-          // console.log(data)
-          this.isLoading = false;
-          this.article = data;
-
-          window.history.pushState("", "", this.url);
-        })
-        .catch((err) => console.log("ERROR", err));
-    },
-    closeArticle() {
-      window.history.back();
-      this.isOpen = false;
-      this.articleSearch = 0;
-      this.url = "";
-      this.article = null;
-    }
-  };
-}
-
- document.querySelector('.days').addEventListener('click', newEvent
- )
-
-// const modal = document.querySelector('#exampleModal');
-  function newEvent() { 
-    alert('now add the ability to store an event, bruh!')
-    document.querySelector('#notice').innerText = 
-    `${user.userName}`
+function myTimer() {
+  timer.innerHTML = `Last taken ${min}` + ` minutes` + ` and ${sec}` + ` seconds ago`;
+  sec++;
+  if (sec >= 60) {
+    sec = 0;
+    min++;
   }
+}
+
+
+//Start the timer
+document.addEventListener('click', () => {
+  setInterval(myTimer, 1000);
+}, { once: true });
+{/* <div id="timer">click somewhere</div> */}
+
+document.querySelector('.days').addEventListener('click', newEvent)
+function newEvent(){
+  alert('add a function')
+}
+
+
 
 
 // Call the Date object of javascript to get date time, etc.

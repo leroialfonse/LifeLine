@@ -33,21 +33,21 @@ createContact: async (req, res) => {
       console.log(err);
     }
   },
-  deleteContact: async (req, res)=>{
-    try{
-  // Find contact by id
-   let contact = await Contact.findById({ _id: req.params.id });
-  //  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
-  // Delete the contact from the db
-    await Contact.remove({ _id: req.params.id });
+//   deleteContact: async (req, res)=>{
+//     try{
+//   // Find contact by id
+//    let contact = await Contact.findById({ _id: req.params.id });
+//   //  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
+//   // Delete the contact from the db
+//     await Contact.remove({ _id: req.params.id });
 
-        // console.log(_id)
-        console.log('Deleted');
-    res.redirect("/contact");
-}catch(err){ 
-    res.redirect("/contact");
-    }
-},
+//         // console.log(_id)
+//         console.log('Deleted');
+//     res.redirect("/contact");
+// }catch(err){ 
+//     res.redirect("/contact");
+//     }
+// },
 deleteContact: async (req, res)=>{
   const id = req.params.id
       try{

@@ -6,7 +6,7 @@ const homeController = require("../controllers/home")
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/:id", ensureAuth, contactController.getContact);
-router.get("/welcome", ensureAuth, homeController.getHome);
+router.get("/home", ensureAuth, homeController.getHome);
 // router.post("/createContact", contactController.createContact);
 
 
