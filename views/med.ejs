@@ -7,7 +7,7 @@
       <img class="img-fluid" src="<%= med.image%>" />
       <div class="row justify-content-between">
         <%if(med.user == user.id){ %>
-        <form
+         <!-- <form
           action="/med/deleteMed/<%= med.id %>?_method=DELETE"
           method="POST"
           class="col-3"
@@ -15,21 +15,23 @@
           <button class="btn btn-primary fa fa-trash" type="submit"></button>
           <!-- edit button -->
 
-        </form>
-        <button class="btn btn-primary fa fa-edit col-9" type="submit"></button>
-        <a href="/deleteMed/<%= med._id%>">delteRun</a>
+        </form> -->
+        <!-- <button class="btn btn-primary fa fa-edit col-9" type="submit"></button> --> 
+        <!-- <a href="/deleteMed/<%= med._id%>">delteRun</a> -->
 
         <!-- <a href="/editMed/remove/<%= this._id %>"><button class="btn btn-secondary fa fa-trash" type="submit"></button></a> -->
-        <a href="/editMed/<%= med._id %>"> HERE !<button class="btn btn-primary fa fa-edit" type="submit"></button></a>
+        <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a>
+        <a href="/editMed/removeMed/<%= med._id %>"><button class="btn btn-primary fa fa-trash" type="submit"></button></a>
+        <a href="/editMed/remove/<%= med._id %>">Remove</a>
+
         <%}%>
       </div>
-    </div>
-    <div class="col-6 medInfo">
+    <!-- </div> -->
+    <div class="col medInfo">
       <ul>
       <label for="dosage" class="form-label">Dosage: <%= med.dosage %></label>
       <label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label>
-      <label for="comment" class="form-label">Notes: </label>
-      <p><%= med.comments %></p></n>
+      <label for="comment" class="form-label">Notes: <%= med.comment %> </label>
       </ul>
     </div>
 
@@ -39,7 +41,8 @@
       <form action="/comment/createComment/<%=med._id%>" method="POST">
         <div class="mb-3">
             <label for="comment" class="form-label">Add any notes about this medication, or questions you'd like to ask your doctor</label>
-            <input type="text" class="form-control" id="comment" name="comment">
+            <textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea>
+            <!-- <input type="textarea" class="form-control" id="comment" name="comment"> -->
         </div>
        
         <button type="submit" class="btn btn-primary">Add note</button>

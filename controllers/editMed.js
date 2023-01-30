@@ -48,10 +48,10 @@ module.exports = {
                     dosage: req.body.dosage,
                 },
                )
-               res.redirect('/med');
+               res.redirect('/dashboard');
             } catch (err) {
                 if (err) return res.status(500).send(err)
-                res.redirect('/med');
+                res.redirect('/dashboard');
             }
         }
     }

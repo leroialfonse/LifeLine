@@ -19,13 +19,18 @@ margin:  0 auto;
 }
 
 /* Wraps the Index Login in a container for sizing. */
-.box{
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
+ .box{
+  width: 100%;
+  border: 2px solid purple;
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  /* padding: 2rem; */
+
   /* margin: 20px auto; */
   /* height: 50vh; */
-}
+} */
 
 /* Contols the appearance of links */
 a,
@@ -54,22 +59,14 @@ body, .div, .container{
 */
 header{
 border-bottom: 2px solid  rgba(13,110,253,.5);
-width: 100%;
+/* width: 100%; */
 /* font-size: 1rem;*/
 
 }
 
-header > ul {
-  border: 2px solid orange; 
-}
-
-ul{
-  /* border: 2px solid green; */
-}
-
 .nav-item{
-  display: flex;
-  justify-content: flex-end;
+  /* display: flex;
+  justify-content: flex-end; */
 /* text-align: center; */
 /* width: fit-content; */
 /* padding: .1rem; */
@@ -80,17 +77,21 @@ ul{
 
 
 /* Sets the display of guide elements, so that they fit the page better. */
-/* .guide{
+  .guide{
   display: flex;
   flex-direction: row;
-
-} */
+  justify-self: center ;
+  padding: 1rem;
+}  
 
 
 .guide-card {
+  /* border: 2px solid blue; */
   margin: .5rem;
-  /* padding: 1.5rem; */
+  padding: 2rem;
+  /* width: 95vw; */
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
+  /* width: 100%; */
 
 } 
 
@@ -98,13 +99,19 @@ ul{
   /* border:rgb(34, 89, 178); */
 }
 /* Sets the size and display of the login card. */
-.login-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* margin-top: 60px; */
-  margin: 0 auto;
-}
+.login-card{
+  /* display: flex; 
+   align-items: center; 
+   justify-content: center; 
+  border-radius: 6px;
+  /* font-size: 1rem; */
+  /* width: 60%; */
+  width: 85%;
+  padding: 1rem;
+  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
+  margin: 100px auto;
+} 
+
 
 h1, h2, h3, h4, h5{
   font-weight: 700;
@@ -118,14 +125,15 @@ h1, h2{
 
 /* Sets a border for images in the med cabinet, to give more form to the page. */
 /* //////////// Come back to this. Trying to adjust the images in the med cabinet. ////////////// */
-/* .img-fluid{ */
-  /* border:  1px solid rgba(0, 0, 0, 0.5);
-  height: 10rem;
-  width: 12rem; */
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-shrink: 1; */
-/* } */
+.img-fluid{ 
+   /* border:  10px solid rgba(0, 0, 0, 0.5); */
+  /* height: 10rem;
+  width: 12rem;  */
+   /* display: flex;
+   flex-direction: row;  */
+   /* flex-shrink: 1;  */
+   padding: 1rem;
+}
 
 /* .col-6 > .row{
   height: 100vh;
@@ -143,7 +151,16 @@ h1, h2{
 .doc{
   margin: 20px auto;
   padding: 2rem;
+  /* border: 2px solid green; */
+}
 
+.doc ul li{
+  width: 100%;
+  /* border: 2px solid red; */
+}
+/* The box around the list of doctors on the edit page. */
+.docEdit{
+  /* border: 2px solid green; */
 }
 /* ///////////////////////////////////// */
 
@@ -160,15 +177,16 @@ border: 2px solid green;
 } 
 */
 
-.login-card{
-
-box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-border-radius: 6px;
-width: 85%;
-padding: .5em;
-margin: 0 auto;
-
-} 
+/* .login-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  width: 85%;
+  padding: .5em;
+  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
+  margin: 100px auto;
+}  */
 
 
 /* remember! em looks for font size of the container. If not found, defaults 16px, the default font size for browsers.  to  em = 16 * whatever em you want ( 5 in this case) = for 80px.   */
@@ -195,8 +213,9 @@ div, header, button {
   width: 80%; 
 } */
    .navbar-brand{
-  width: 1%;
-  padding-right: 1rem;
+    height: 80%;
+  /* width: 1%; */
+  /* padding-right: 1rem; */
   margin-right: 200px;
 } 
 
@@ -214,7 +233,6 @@ background-color: rgb(13,110,253);
 .medInfo {
 /* display: flex;
 flex-direction: row; */
-border : 2px solid green;
 padding: 2rem;
 }
 
@@ -258,7 +276,7 @@ div > .mt-5 {
 }
 
 .welcome{
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 /* */
@@ -269,17 +287,17 @@ div > .mt-5 {
 
 .tracker{
   width: 100%;
-  margin: 5px
+  /* margin: 5px */
 }
 
 .trackerList{
-  overflow: auto;
+  /* overflow: auto; */
 }
 /* .card-body {
   display: flex;
   flex-direction:  wrap;
    height: 80% ; 
-} */    
+} 
 
 /* .col-6 > li {
   border: 2px solid green;
@@ -448,29 +466,33 @@ padding: 1rem;
   /* background-color: rgb(4, 29, 54); */
   border: 5px solid rgb(72, 228, 16);
 }
-
+/* 
+.calDate{
+  padding: 200px;
+} */
 
 /* Media Queries */
 /* @media all and (max-width: 390px){
   div{
     display: flex;
     flex-direction: column;
-    /* align-content: center; 
+     align-content: center; 
   }
 
     .trackerImg {
     display: none;
 
-  } */
+  } 
 
-/* } */
+ } 
+*/ 
 
 @media all and (max-width: 600px){
 
   /* div{
     display: flex;
     flex-direction: column;
-    /* align-content: center; */
+    /* align-content: center; 
   } */
 
 
@@ -487,7 +509,7 @@ padding: 1rem;
 
   .guide-card{
     width: 100%;
-    justify-self: center;
+    /* justify-self: center; */
   }
 
   /* .over{
@@ -517,19 +539,22 @@ padding: 1rem;
     width: 1rem;
     } */
 
-    footer > nav{
+    /* footer > nav{
       display: none;
-    }
-/* } */
+    } */
+  } 
 
 
-@media (min-width: 601px)  {
+@media (max-width: 601px)  {
 
 
   .guide{
     display: flex;
-    flex-direction: row;
-  
+    flex-direction: column;
+  }
+
+  .guide-card{
+    width: 100%;
   }
 
   .container-fluid{
@@ -538,9 +563,7 @@ padding: 1rem;
     padding-top: 2rem;
     /* justify-content: space-evenly; */
     }
-    .calendly{
-      padding: 10rem;
-    }
+    
    /* .over > section{
     width: 70%;
   }  */
@@ -568,23 +591,23 @@ padding: 1rem;
 }
 
 @media all and (max-width: 1320px){
-  .over{
+  /* .over{
     /* width: 100%; */
-    /* height: 100vh; */
+    /* height: 100vh; 
 
-  }
-  section .calCard{
+  } */
+  /* section .calCard{
     display: none;
-  }
+  } */
 
   /* section
   .calendar, .contained{
   width: 100%;
   } */
 
-  .calDate{
+  /* .calDate{
     margin-top: 1rem;
-  }
+  } */
 }
 /*  */
 

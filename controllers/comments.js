@@ -9,7 +9,7 @@ module.exports = {
         post: req.params.id,
       });
       console.log("comment has been added!");
-      res.redirect("/med/"+req.params.id);
+      res.redirect("/med/"+req.body);
     } catch (err) {
       console.log(err);
     }

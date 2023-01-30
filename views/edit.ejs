@@ -4,7 +4,7 @@
   <div class="col-6 justify-content-center">
 
     <label for="ul"><h2>Edit Doctor Information</h2></label>
-      <ul class="row list-unstyled justify-content-between col-6 mt-5 docEdit">
+      <ul class="row list-unstyled justify-content-between col-4 mt-5 docEdit">
         <% if (contacts.length === 0) { %>
           <p> No doctors in your contacts. Please add one to save their information.</p>
           <%} else { %>
@@ -31,14 +31,13 @@
         <% } else { %>
                             <li>
 
-                                <div><%= el.title %></div>
-                                <div><%= el.address %></div>
-                                <div><%= el.phone %></div>
+                                <div>Name: <%= el.title %></div> <br>
+                                <div>Address: <%= el.address %></div> <br>
+                                <div>Phone: <%= el.phone %></div><br>
 
                                 <a href="/edit/<%= el._id %>">Edit</a>
                                 <a href="/edit/remove/<%= el._id %>">Remove</a>
                             </li>
-                            <br>
                             <% } %>
                     <% }) %>
                 </ul>
