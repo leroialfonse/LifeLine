@@ -137,7 +137,10 @@ h1, h2{
   color: rgb(13,110,253)
 }
 
-
+.focus{
+  color: rgb(13,110,253);
+  font-weight:700;
+}
 
 /* Sets a border for images in the med cabinet, to give more form to the page. */
 .img-fluid{ 

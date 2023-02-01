@@ -69,6 +69,7 @@ module.exports = {
         title: req.body.title,
         image: result.secure_url,
         cloudinaryId: result.public_id,
+        caption: req.body.caption,
         dosage: req.body.dosage,
         contact: req.body.contact,
         user: req.user.id,
@@ -113,10 +114,10 @@ module.exports = {
       await Comment.create({
         comment: req.body.comment,
         likes: 0,
-        post: req.params.id,
+        med: req.params.id,
       });
       console.log("comment has been added!");
-      res.redirect("/med/id"+req.body);
+      res.redirect("/med/id"+req.params.id);
     } catch (err) {
       console.log(err);
     }

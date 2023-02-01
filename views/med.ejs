@@ -23,18 +23,18 @@
       <ul class="row list-unstyled">
       <li><label for="dosage" class="form-label">Dosage: <%= med.dosage %></label></li>
       <li><label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label></li>
-      <li><label for="comment" class="form-label">Notes: <%= comments.comment %> </label></li>
+      <li><label for="comment" class="form-label">Notes: <p><%= med.caption %></p> </label></li>
       </ul>
     </div>
 
     
     <div>
       <h2>Add a note:</h2>
-      <form action="/comment/createComment/<%=med.id%>" method="POST">
+      <form action="/comment/createComment/<%=med._id%>" method="POST">
         <div class="mb-3">
             <label for="comment" class="form-label">Add any notes about this medication, or questions you'd like to ask your doctor</label>
-            <textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea>
-            <!-- <input type="textarea" class="form-control" id="comment" name="comment"> -->
+            <!-- <textarea name="comment" id="comment" cols="10" rows="5" class="form-control"></textarea> -->
+            <input type="text" class="form-control" id="comment" name="comment">
         </div>
        
         <button type="submit" class="btn btn-primary">Add note</button>

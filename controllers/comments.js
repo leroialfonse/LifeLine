@@ -6,10 +6,12 @@ module.exports = {
       await Comment.create({
         comment: req.body.comment,
         likes: 0,
-        post: req.params.id,
+        med: req.params.id,
       });
+      console.log(req.body)
+
       console.log("comment has been added!");
-      res.redirect("/med/"+req.body);
+      res.redirect("/med/"+req.params.id);
     } catch (err) {
       console.log(err);
     }
