@@ -1,6 +1,10 @@
 <%- include('partials/header') -%>
 
 <div class="container">
+<!--  -->
+
+
+  <!--   -->
   <!-- <div class="row justify-content-center mt-5 medImgBlock" > -->
     <div class="col mt-5">
       <h2><%= med.title %></h2>
@@ -21,17 +25,17 @@
 
         <!-- <a href="/editMed/remove/<%= this._id %>"><button class="btn btn-secondary fa fa-trash" type="submit"></button></a> -->
         <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a>
-        <a href="/editMed/removeMed/<%= med._id %>"><button class="btn btn-primary fa fa-trash" type="submit"></button></a>
+        <!-- <a href="/editMed/removeMed/<%= med._id %>"><button class="btn btn-primary fa fa-trash" type="submit"></button></a> -->
         <%}%>
-      </div>
     <!-- </div> -->
     <div class="col medInfo">
-      <ul>
-      <label for="dosage" class="form-label">Dosage: <%= med.dosage %></label>
-      <label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label>
-      <label for="comment" class="form-label">Notes: <%= med.comment %> </label>
+      <ul class="row list-unstyled">
+      <li><label for="dosage" class="form-label">Dosage: <%= med.dosage %></label></li>
+      <li><label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label></li>
+      <li><label for="comment" class="form-label">Notes: <%= med.comment %> </label></li>
       </ul>
     </div>
+  </div>
 
     
     <div class="mt-5">

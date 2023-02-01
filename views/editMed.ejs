@@ -21,7 +21,8 @@
               <label for="dosage">Adjust Dosage: </label>
               <input type="text" name="dosage" value="<%= el.dosage %>">
               <button btn-primary class="btn-primary fa fa-check" type="submit"></button>
-              <a href="back">Cancel</a>
+              <a href="/med/<%= el._id%>">Cancel</a>
+              <a href="/editMed/removeMed/<%= el._id %>">Remove</a>
             </form>
             <br>
           </li>

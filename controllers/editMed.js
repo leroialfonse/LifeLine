@@ -60,10 +60,10 @@ module.exports = {
                     dosage: req.body.dosage,
                 },
                )
-               res.redirect('/dashboard');
+               res.redirect('/back');
             } catch (err) {
                 if (err) return res.status(500).send(err)
-                res.redirect('/dashboard');
+                res.redirect('/back');
             }
         }
     }
