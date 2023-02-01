@@ -1,7 +1,6 @@
 <%- include('partials/header') -%>
 
-<div class="container">
-<!--  -->
+<div class="container-fluid">
 
 
   <!--   -->
@@ -10,37 +9,28 @@
       <h2><%= med.title %></h2>
       <img class="img-fluid" src="<%= med.image%>" />
       <div class="row justify-content-between">
-        <%if(med.user == user.id){ %>
-         <!-- <form
+        <!-- <%if(med.user == user.id){ %>
           action="/med/deleteMed/<%= med.id %>?_method=DELETE"
           method="POST"
           class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-          <!-- edit button 
+ -->
 
-        </form> -->
-        <!-- <button class="btn btn-primary fa fa-edit col-9" type="submit"></button> --> 
-        <!-- <a href="/deleteMed/<%= med._id%>">delteRun</a> -->
-
-        <!-- <a href="/editMed/remove/<%= this._id %>"><button class="btn btn-secondary fa fa-trash" type="submit"></button></a> -->
         <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a>
         <!-- <a href="/editMed/removeMed/<%= med._id %>"><button class="btn btn-primary fa fa-trash" type="submit"></button></a> -->
-        <%}%>
-    <!-- </div> -->
+        <!-- <%}%> -->
+      </div>
     <div class="col medInfo">
       <ul class="row list-unstyled">
       <li><label for="dosage" class="form-label">Dosage: <%= med.dosage %></label></li>
       <li><label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label></li>
-      <li><label for="comment" class="form-label">Notes: <%= med.comment %> </label></li>
+      <li><label for="comment" class="form-label">Notes: <%= comments.comment %> </label></li>
       </ul>
     </div>
-  </div>
 
     
-    <div class="mt-5">
+    <div>
       <h2>Add a note:</h2>
-      <form action="/comment/createComment/<%=med._id%>" method="POST">
+      <form action="/comment/createComment/<%=med.id%>" method="POST">
         <div class="mb-3">
             <label for="comment" class="form-label">Add any notes about this medication, or questions you'd like to ask your doctor</label>
             <textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea>
@@ -49,7 +39,6 @@
        
         <button type="submit" class="btn btn-primary">Add note</button>
       </form>
-    </div>
     <ul>
       <% for(var i=0; i<comments.length; i++) {%>
         <li class="col-6 justify-content-between mt-5 messges">
@@ -57,11 +46,8 @@
         </li>
       <% } %>
     </ul>
-    <!-- <div class="bottom-nav row justify-content-center mt-5">
-      <a class="btn btn-primary" href="/dashboard">Add a New Medication</a>
-      <a class="btn btn-outline-primary" href="/cabinet">Medicine Cabinet</a>
-    </div> -->
-  <!-- </div> -->
-</div>
+  </div>
+   
+<!-- </div> -->
 
 <%- include('partials/footer') -%>
