@@ -2,7 +2,7 @@
   <div class="container-fluid">
        <!-- <div class="row mt-5"> -->
            <!-- <div class="col-6"> -->
-               <div class="welcome">
+<div class="welcome">
 <h1>Welcome to LifeLine</h1>
 
   <h5><%= user.userName %>, Have You Taken Your Meds Today?</h5>
@@ -10,17 +10,15 @@
 
 
   <div class="guide-card tracker">
-    
-  <!-- Trying agin -->
-    <div class="card">
+        <!-- <div class="card"> -->
   <div class="row g-0">
-    <div class="col-5 col-sm-4">
-      <img src="imgs/medsPile.jpg" class="img-fluid w-100" alt="card-horizontal-image">
+    <div class="col-5 col-sm-4 trackerImg">
+      <img src="imgs/medsPile.jpg" class="img-fluid w-100" alt="medsPile">
     </div>
     <div class="col-7 col-sm-8">
       <div class="card-body">
         <h5 class="card-title">Today's Medications</h5>
-        <p class="card-text">Which medications are due due due to take today? Remember to check it off once you have taken it.</p>
+        <p class="card-text">Which medications are due to take today? Remember to check each one off after you have taken it.</p>
         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
         <ul class="row list-unstyled">
@@ -47,7 +45,7 @@
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
   </div>  
 
 <!-- Trying again -->
@@ -55,42 +53,27 @@
 
   <div class="container-fluid">
   <div class="guide">
-       <div class="guide-card col-6">
-            <img src="imgs/SmileDoc1.jpg" class="card-img-top" alt="card-img-top">
+       <div class="guide-card col">
+            <img src="imgs/SmileDoc1.jpg" class="card-img-top" alt="Add Doctors">
             <div class="card-body">
               <h5 class="card-title">Your Doctors</h5>
               <p class="card-text"><a href="/contact">Connect</a> with your care providers, or add a new one.</p>
-              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
             </div>
           </div>
-          <div class="guide-card col-6">
-            <img src="imgs/blisterMeds.png" class="card-img-top" alt="card-img-top">
+  
+          <div class="guide-card col">
+            <img src="imgs/blisterMeds.png" class="card-img-top" alt="Add Medications">
                  <div class="card-body">
               <h5 class="card-title">Your Medications</h5>
               <p class="card-text">View or update your current <a href="/dashboard">medications.</a></p>
-              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
             </div>
           </div>
+    </div>  
     </div>
     <!-- container div for the guide card. -->
   </div>
   
            </div>
        </div>
-<!-- <form action="welcome/getContact"  method="GET">
-<input type="text"
-       placeholder="Medication Name"
-       id=":id">
-<button>Search List</button>
-<button class="clear">Clear</button>
-</form> 
-<br>
-<br>
 
-<h3> Med Information:</h3>
-<br>
- <h4 id="medInformation"></h4> -->
-
-</div>
-</div>
 <%- include('partials/footer') -%>

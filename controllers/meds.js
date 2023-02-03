@@ -43,7 +43,7 @@ module.exports = {
     try {
       const med = await Med.findById(req.params.id);
       const comments = await Comment.find({med: req.params.id}).sort({ createdAt: "desc" }).lean();
-      res.render("med.ejs", { med: med, user: req.user, comments: comments });
+      res.render("med.ejs", { med: med, user: req.user, comments: comments, comment: comments });
     } catch (err) {
       console.log(err);
     }
@@ -109,19 +109,32 @@ module.exports = {
       res.redirect("/cabinet");
     }
   },
-  createComment: async (req, res) => {
+  deleteComment: async (req, res) => {
     try {
-      await Comment.create({
-        comment: req.body.comment,
-        likes: 0,
-        med: req.params.id,
+      // Find med by id
+     let comment = await Comment.findById({ 
+      _id: req.params.id
       });
-      console.log("comment has been added!");
-      res.redirect("/med/id"+req.params.id);
+      await Comment.remove({_id: req.params.id });
+      console.log("Deleted Med");
+      res.redirect("back");
     } catch (err) {
-      console.log(err);
+      res.redirect("back");
     }
   },
+  // createComment: async (req, res) => {
+  //   try {
+  //     await Comment.create({
+  //       comment: req.body.comment,
+  //       likes: 0,
+  //       med: req.params.id,
+  //     });
+  //     console.log("comment has been added!");
+  //     res.redirect("/med/id"+req.params.id);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
  
 //   deleteMed: async (req, res)=>{
 //     try{

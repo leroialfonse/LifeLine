@@ -1,33 +1,17 @@
 /* ///// General Styling ///// */
 
 *{
-    
   box-sizing: border-box;
   background-color: #fff;
   font-family: 'Inter', sans-serif;
-  /* Generalized sizing for responsiveness. */
-  /* font-size: 62.25%; */
-  /* font-size: 1rem; */
+
 } 
 
 
-/* Trying for elastics */
-/* html{
-  font-size: 62.5%;
-} */
-/* Trying for elastics */
-
-.container, 
-.container-fluid{
- /* border: 2px solid green;  */
-}
-
-
-/* May not be needed as of Sunday, 1/29/23 */
 /* Wraps the Index Login in a container for sizing. */
  .box{
-  width: 100%;
-  border: 2px solid purple;
+  /* width: 100%;
+  border: 2px solid purple; */
   /* display: flex; */
   /* flex-direction: column;
   justify-content: center;
@@ -36,16 +20,16 @@
 
   /* margin: 20px auto; */
   /* height: 50vh; */
-} */
+} 
 
 /* Contols the appearance of links */
 
+a{
+  text-decoration: none;
+}
 a:hover {
-  /* color:rgb(34, 89, 178);
-   */
-  color: purple;
-
-} 
+   color:rgb(34, 89, 178);
+}
 
 /* Sets the size of form elements, to better fit my planned asthetic. */
 .col-6 > form{
@@ -98,7 +82,7 @@ text-decoration: none;
   .guide{
   display: flex;
   flex-direction: row;
-  justify-self: center ;
+  /* justify-self: center ; */
   padding: 1rem;
 }  
 
@@ -142,7 +126,7 @@ h1, h2{
   font-weight:700;
 }
 
-/* Sets a border for images in the med cabinet, to give more form to the page. */
+/* Sets a padding for images */
 .img-fluid{ 
    padding: 1rem;
 }
@@ -198,10 +182,10 @@ footer {
  margin-top: 2rem;
 }
 
-aside{
+/* aside{
   border: 2px solid blue;
   width: 60%;
-}
+} */
 
 div > .mt-5 {
   padding-right: 50px;      
@@ -214,24 +198,24 @@ div > .mt-5 {
 
 /* */
 
-.welcome > p{
+/* .welcome > p{
   border: 0 1px 1px  solid gray;
-}
+} */
 
-.tracker{
+/* .tracker{
   width: 100%;
-}
+} */
 
 .trackerList{
   /* overflow: auto; ?? */
   /* Want to limit the numbr of meds that show here... come back. */
 }
 
-
+/* 
  .card-body {
   justify-self: center;
   align-self: center;
-} 
+}  */
 
 
 
@@ -285,41 +269,13 @@ padding: 2rem;
   display: flex;
    justify-content: center;
   align-items: center;
-  margin: 8rem;
-  /* padding: 20rem; */
+  margin: 4rem;
 }   
 
-/* Own personal calendar build */
-/* .calDate1{
-  height: 500px;
-  border: 2px solid blue;
-}
-
-table,
-td {
-    border: 1px solid #333;
-}
-
-thead,
-tfoot {
-    background-color: #333;
-    color: #fff;
-}
-
-
-.squares{
-  border: 2px solid black;
-  height: 30px;
-  width:30px;
-
-} */
-
-/* End of Personal calendar build ?? */
 
 .calItems{
   display:flex;
   flex: row;
-  
 }
 
    .calendar {
@@ -327,7 +283,6 @@ tfoot {
   height: 52em; 
   border-radius: 6px;
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-  border:2px solid green;
 }   
 
 .month {
@@ -385,6 +340,8 @@ tfoot {
    color: #eee; 
   /* justify-content: center;  */
 } 
+
+
  .weekdays div {
   font-size: 1.5rem;
   font-weight: 400;
@@ -399,11 +356,11 @@ tfoot {
 }
 
 .days {
-  width: 100%; 
+  /* width: 100%;  */
   /* mine  */
   display: flex;
   flex-wrap: wrap;
-  padding: 0.2rem; 
+  /* padding: 0.2rem;  */
   /* background-color: #8080FF; */
   /* mine */
   justify-content: center;
@@ -443,30 +400,34 @@ tfoot {
 } 
 
 .calDate{
-  /* margin: 20rem; */
-  border: 2px solid green;
 } 
 
 .calCard{
-  border: 2px solid orange;
   width: 30%;
 }
 
 /* Media Queries */
-@media all and (max-width: 320px){
-  div{
+
+@media all and (max-width: 400px){
+ .calItems{
     display: flex;
     flex-direction: column;
      align-content: center; 
   }
 
-  .container, .container-fluid{
-    width: 100%
+  .container, .container-fluid, .welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
-    .trackerImg {
+    .trackerImg, .calCard {
     display: none;
   } 
 
+  .backer{
+    margin: 15rem;
+  }
  
   /* .loginCardBody{
     width: 100%;
@@ -479,13 +440,7 @@ tfoot {
 
 
 
-@media all and (max-width: 600px){
-
-  /* div{
-    display: flex;
-    flex-direction: column;
-    /* align-content: center; 
-  } */
+@media (min-width: 401px) and (max-width: 535px){
 
   .login-card img{ 
     display: none;
@@ -496,19 +451,27 @@ tfoot {
     width: 100%;
   } */
 
-   .trackerImg {
+   /* .trackerImg {
     display: none;
 
-  } 
+  } */
+
+  .container-fluid{
+    display: flex;
+    flex-direction: column;
+  }
 
   .guide{
     display: flex;
-    align-content: space-between;
+    flex-direction: column;
+    padding: none;
+    margin: none;
   }
 
-  .guide-card{
+  .card, .guide-card, .guide{
     width: 100%;
-  }
+    padding: none;
+  } 
 
 
 
@@ -563,7 +526,11 @@ tfoot {
   }
   */
 
-
- 
+  /* @media all and (min-width: 1080px){
+    .calItems{
+      display:flex;
+      flex-direction: column;
+    }
+  } */
   }
 

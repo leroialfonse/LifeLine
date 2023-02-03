@@ -23,7 +23,24 @@
       <ul class="row list-unstyled">
       <li><label for="dosage" class="form-label">Dosage: <%= med.dosage %></label></li>
       <li><label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label></li>
-      <li><label for="comment" class="form-label">Notes: <p><%= med.caption %></p> </label></li>
+      <li><label for="comment" class="form-label">Notes:  
+         <ul class="list-unstyled  list-group-flush justify-content-left">
+        <% for(var i=0; i<comments.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5 list-group-item messges" data-id="<%=comment._id%>">
+           <%= comments[i].comment%>
+           <!-- trying to figure out deleteing the note. Handle on editMed page??  -->
+           <!-- <a href="/comment/deleteComment/?:comment._id">Delete</a> -->
+          <!-- <form
+          action="/comment/deleteComment/<%= comment._id %>?_method=DELETE"
+          method="POST"
+          class="col-3"
+        >
+          <button class="btn btn-primary fa fa-trash" type="submit"></button> -->
+        </li>
+
+        <% } %>
+      </ul>
+        <%= med.comments %> </label></li>
       </ul>
     </div>
 
@@ -39,13 +56,13 @@
        
         <button type="submit" class="btn btn-primary">Add note</button>
       </form>
-    <ul>
+    <!-- <ul>
       <% for(var i=0; i<comments.length; i++) {%>
         <li class="col-6 justify-content-between mt-5 messges">
          <%= comments[i].comment%>
         </li>
       <% } %>
-    </ul>
+    </ul> -->
   </div>
    
 <!-- </div> -->
