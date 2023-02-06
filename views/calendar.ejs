@@ -2,9 +2,9 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Launch static backdrop modal
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -62,20 +62,54 @@
 
 <!-- Modal -->
 
+<!-- Calendar Form -->
+<form action="/calendar/createAppointment"  method="POST">
+  <div class="mb-3">
+      <label for="appType" class="form-label">Event Type: </label>
+      <input type="text" class="form-control" id="appType" name="appType">
+  </div>
+  <div class="mb-3">
+    <label for="hour" class="form-label">Time: </label>
+    <input type="text" class="form-control" id="hour" name="hour">
+</div>
+
+<button type="submit" class="btn btn-primary" value="submit">Add Event</button>
+
+</form> 
+<div class="card guide-card calCard">
+  <img src="imgs/contemplate.jpg" class="card-img-top" alt="card-img-top">
+  <div class="card-body">
+    <h3 class="card-title">Maintain your Schedule</h3>
+    <p class="card-text"><p>Use the calendar To keep track of your upcoming appointments, or to track any event you need to. Just click on a day to add an event.</p>
+  </div>
+</div>
+
     <div class="container calItems">
 
-    <div class="card guide-card calCard">
-      <img src="imgs/contemplate.jpg" class="card-img-top" alt="card-img-top">
-      <div class="card-body">
-        <h3 class="card-title">Maintain your Schedule</h3>
-        <p class="card-text"><p>Use the calendar to keep track of your upcoming appointments, or to track any event you need to. Just click on a day to add an event.</p>
-      </div>
-    </div>
 
 
     <!-- older -->
      <!-- <div class="calDate container"> -->
       <div class="backer">
+
+        <!-- Appointements -->
+
+
+       
+
+            
+                <!-- Toying with the idea of using a modal popup to edit entries. Refer to my MedMinder for edits and searches. -->
+                  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Launch demo modal / future edit button.
+                  </button> -->
+              
+
+                </div>
+
+        <!-- Appointments -->
+
+
+
         <div class="calendar">
           <div class="month">
             <i class="fas fa-angle-left prev"></i>
@@ -95,13 +129,18 @@
           <div>Sat</div>
         </div>
         <div class="days">
-            <div class="prev-date">26</div>
+          <ul>
+          <% appointments.forEach( el => { %>  
+           
+            <li class="col-6 justify-content-between mt-5 row list-unstyled" data-id='<%el._id%>'>
+  
+            <div  class="prev-date">26</div>
             <div class="prev-date">27</div>
             <div class="prev-date">28</div>
             <div class="prev-date">29</div>
             <div class="prev-date">30</div>
-            <div id="1">1 <span></span></div>
-            <div id="2">2<span></span></div>
+            <div id="1">1<p class="appInfo" data-id="<% el._id%>"><%= el.appType %></p></div>
+            <div id="2">888<span class="appInfo"><%- el.appType %></span></div>
             <div id="3">3<span></span></div>
             <div id="4">4<span></span></div>
             <div id="5">5<span></span></div>
@@ -139,6 +178,10 @@
             <div class="next-date">6</div>
           </div>
 
+
+        </li>
+        <% })%>
+        </ul>
         </div>
       </div>
     <!-- </div>   -->

@@ -20,6 +20,8 @@
               <input type="text" name="title" value="<%= el.title %>">
               <label for="dosage">Adjust Dosage: </label>
               <input type="text" name="dosage" value="<%= el.dosage %>">
+              <label for="comment">Change Notes: </label>
+              <input type="text" name="comment" value="<%= el.caption %>">
               <button btn-primary class="btn-primary fa fa-check" type="submit"></button>
               <a href="/med/<%= el._id%>">Cancel</a>
               <a href="/editMed/removeMed/<%= el._id %>">Remove</a>

@@ -1,5 +1,6 @@
 const Med = require('../models/Med');
 const meds = require('./meds');
+const comments = require('./comments');
 
 module.exports = {
     // // remember: if you're talking to your db, pop an async to allow for the app to twait for responses.
@@ -58,12 +59,13 @@ module.exports = {
                 id, {
                     title: req.body.title,
                     dosage: req.body.dosage,
+                    caption: req.body.caption,
                 },
                )
-               res.redirect('/back');
+               res.redirect('/cabinet');
             } catch (err) {
                 if (err) return res.status(500).send(err)
-                res.redirect('/back');
+                res.redirect('/cabinet');
             }
         }
     }

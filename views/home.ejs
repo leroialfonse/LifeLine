@@ -30,7 +30,7 @@
         <% meds.forEach(( el, index) =>  {%>
             <div class="form-check trackerList">
               <input class="form-check-input" type="checkbox" value="<%el._id%>" data-id="<% el._id %>" id="formCheckDefault">
-              <label class="form-check-label" for="formCheckDefault"><a href="med/<%= meds._id %>"><%= el.title %></a></label>
+              <label class="form-check-label" for="formCheckDefault"><a href="/med/<%= el._id %>"><%= el.title %></a></label>
             </div>
           </li>
           <br>
@@ -39,8 +39,8 @@
         </ul>
           
 
-         <!-- <small><div id="timer"></div></small> nm    -->
-         <p class="card-text"><small class="text-muted"> <button class="btn btn-warning takenButton">Meds Taken</button><div id="timer"></div></small></p>
+         <!-- <small><div id="timer"></div></small>    -->
+         <div class="card-text"><small class="text-muted"> <button class="btn btn-warning takenButton">Meds Taken</button><p id="timer"></p></small></div>
         
       </div>
     </div>

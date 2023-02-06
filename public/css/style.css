@@ -110,7 +110,8 @@ text-decoration: none;
 } 
 
 /* .loginCardBody{
-  width: 50%;
+  display: flex;
+  justify-content: center;
 } */
 
 h1, h2, h3, h4, h5{
@@ -126,6 +127,10 @@ h1, h2{
   font-weight:700;
 }
 
+.appInfo{
+  color: purple;
+  font-weight: 700;
+}
 /* Sets a padding for images */
 .img-fluid{ 
    padding: 1rem;
@@ -265,7 +270,7 @@ padding: 2rem;
 .backer {
   width: 65%;
   height: 100vh;
-  color: #eee;
+  /* color: #eee; */
   display: flex;
    justify-content: center;
   align-items: center;
