@@ -127,10 +127,11 @@ h1, h2{
   font-weight:700;
 }
 
-.appInfo{
+/* .appInfo{
+  background-color: transparent;
   color: purple;
   font-weight: 700;
-}
+} */
 /* Sets a padding for images */
 .img-fluid{ 
    padding: 1rem;
@@ -269,7 +270,9 @@ padding: 2rem;
 
 .backer {
   width: 65%;
-  height: 100vh;
+  /* Try changing vh to 65% */
+  height: 65%;
+  /* height: 100vh; */
   /* color: #eee; */
   display: flex;
    justify-content: center;
@@ -318,10 +321,9 @@ padding: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem; 
   margin-bottom: 1rem;
-  /* mine */
   background-color: rgb(13,110,253);
- color: #eee; 
- margin: 0 auto;
+  color: #eee; 
+  margin: 0 auto;
 }
 
 .month p { 
@@ -329,7 +331,6 @@ padding: 2rem;
   color: #eee;
   background-color: rgb(13,110,253);
   font-size: 1.6rem; 
-  /* mine */
    margin: 0 auto;
 }
 
@@ -339,24 +340,22 @@ padding: 2rem;
   padding: 0 0.4rem;
   display: flex;
   align-items: center;
-  /* mine */
-    background-color: rgb(13,110,253);
-
-   color: #eee; 
-  /* justify-content: center;  */
+  background-color: rgb(13,110,253);
+  color: #eee; 
 } 
+
 
 
  .weekdays div {
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.1rem;
+  /* width is 1/7 of the entire width of the calendar, minus added paddings.  */
   width: calc(44.2rem / 7);
   display: flex;
   justify-content: center;
   align-items: center;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5); 
-  /* mine */
   background-color: rgb(13,110,253);
 }
 
@@ -365,10 +364,9 @@ padding: 2rem;
   /* mine  */
   display: flex;
   flex-wrap: wrap;
-  /* padding: 0.2rem;  */
-  /* background-color: #8080FF; */
+  padding: 0.2rem; 
   /* mine */
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .days div {
@@ -377,8 +375,8 @@ padding: 2rem;
   width: calc(40.2rem / 7);
   height: 5rem;
   display: flex;
-  justify-content: right;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
   transition: background-color .6s;
   background-color: rgb(13,110,253);
@@ -392,6 +390,8 @@ padding: 2rem;
   background-color: rgb(4, 29, 54);
   border: 0.2rem solid #eee;
   cursor: pointer;
+  z-index: 0;
+
 } 
 
 /* Fade out the days not in the current month */
@@ -402,9 +402,6 @@ padding: 2rem;
 
 .today {
   border: 5px solid rgb(72, 228, 16);
-} 
-
-.calDate{
 } 
 
 .calCard{
@@ -539,3 +536,136 @@ padding: 2rem;
   } */
   }
 
+/* Calendar stolen from COdeboxxx */
+
+/* (A) ENTIRE PAGE */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  padding: 10px; margin: 0;
+  overflow-x: hidden;
+}
+:root {
+  --bg-color-a: #3b39af; /* page header + form label */
+  --bg-color-b: #404040; /* calendar header */
+  --bg-color-c: #d73a3a; /* buttons */
+}
+.hide { display: none !important; }
+
+/* (B) PERIOD SELECTOR */
+#calPeriod {
+  padding: 15px;
+  background: var(--bg-color-a);
+}
+#calPeriod input, #calPeriod select {
+  font-size: 24px;
+  border: 0; outline: none;
+  color: #fff; background: 0;
+  cursor: pointer;
+}
+#calPeriod option { color: #000; }
+#calYear {
+  width: 100px;
+  margin-left: 10px;
+}
+
+/* (C) CALENDAR */
+/* (C1) SHARED */
+.calHead, .calRow { display: flex; }
+.calCell { width: 14.2857%; }
+
+/* (C2) HEADER - DAY NAMES */
+.calHead .calCell {
+  color: #fff; background: var(--bg-color-b);
+  font-weight: 700; text-align: center;
+  padding: 15px 0;
+}
+
+/* (C3) BODY - INDIVIDUAL DAYS */
+.calBlank { background: #eee; }
+.calToday { background: #feffd3; }
+.calToday .cellDate { color: #ff9b9b; }
+.calBody .calCell {
+  border: 1px solid #f5f5f5;
+  min-height: 80px;
+}
+.cellDate, .evt { padding: 5px; }
+.cellDate {
+  font-size: 14px;
+  font-weight: 700;
+  color: #b5b5b5;
+}
+.evt {
+  font-size: 14px;
+  white-space: nowrap; text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* (D) EVENT FORM */
+#calForm {
+  position: absolute; top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100%; min-height: 100vh;
+  padding: 0; margin: 0; border: 0;
+  background: rgba(0,0,0,0.5);
+}
+#calForm:is([open]) {
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center;
+}
+#calForm form {
+  position: relative;
+  width: 450px; padding: 15px;
+  border-radius: 10px;
+  background: #fff;
+}
+#evtClose {
+  position: absolute;
+  top: 0; right: 0;
+  padding: 10px;
+  color: #b12020;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#calForm h2 { margin: 0 0 15px 0; }
+#calForm label, #calForm input[type=text], #calForm textarea { width: 100%; }
+#calForm label {
+  color: #a1a1a1;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+#calForm input[type=text], #calForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  background: #f5f5f5;
+}
+#calForm textarea {
+  height: 100px;
+  resize: none;
+}
+#calForm input[type=button], #calForm input[type=submit] {
+  border: 0; padding: 10px; margin: 10px 2px 0 0;
+  color: #fff; background: var(--bg-color-c);
+  cursor: pointer;
+}
+
+/* (X) DOES NOT MATTER */
+#code-boxx {
+  font-weight: 600;
+  margin-top: 30px;
+}
+#code-boxx a {
+  display: inline-block;
+  border: 0;
+  padding: 5px;
+  text-decoration: none;
+  background: #b90a0a;
+  color: #fff;
+}

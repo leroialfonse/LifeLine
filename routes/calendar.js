@@ -6,8 +6,8 @@ const appointmentController = require("../controllers/appointment");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/", ensureAuth, calendarController.getCalendar);
-router.get("/:id", ensureAuth, appointmentController.getAppointment);
+// router.get("/:id", ensureAuth, appointmentController.getAppointment);
 
-router.post("/createAppointment", ensureAuth, appointmentController.createAppointment);
+// router.post("/createAppointment", ensureAuth, appointmentController.createAppointment);
 
 module.exports = router

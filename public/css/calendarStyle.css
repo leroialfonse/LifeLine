@@ -1,98 +1,154 @@
-.container {
-    width: 100%;
-    height: 100vh;
-    background-color: #12121f;
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .calendar {
-    width: 45rem;
-    height: 52rem;
-    background-color: #222227;
-    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-  }
-  
-  .month {
-    width: 100%;
-    height: 12rem;
-    background-color: #167e56;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    text-align: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  }
-  
-  .month i {
-    font-size: 2.5rem;
-    cursor: pointer;
-  }
-  
-  .month h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .month p {
-    font-size: 1.6rem;
-  }
-  
-  .weekdays {
-    width: 100%;
-    height: 5rem;
-    padding: 0 0.4rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  .weekdays div {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    width: calc(44.2rem / 7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  }
-  
-  .days {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.2rem;
-  }
-  
-  .days div {
-    font-size: 1.4rem;
-    margin: 0.3rem;
-    width: calc(40.2rem / 7);
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    transition: background-color 0.2s;
-  }
-  
-  .days div:hover:not(.today) {
-    background-color: #262626;
-    border: 0.2rem solid #777;
-    cursor: pointer;
-  }
-  
-  .prev-date,
-  .next-date {
-    opacity: 0.5;
-  }
-  
-  .today {
-    background-color: #167e56;
-  }
+/* (A) ENTIRE PAGE */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+header{
+border-bottom: 2px solid  rgba(13,110,253,.5);
+color: rgb(13,110,253)
+}
+
+
+.container, .container-fluid{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.guide-card {
+  margin: .5rem;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
+  height: 42rem;
+  width: 52rem;
+} 
+
+body {
+  position: relative;
+  padding: 10px; margin: 0;
+  overflow-x: hidden;
+}
+:root {
+  --bg-color-a: rgb(13,110,253); /* page header + form label */
+  --bg-color-b: rgb(13,110,253); /* calendar header */
+  --bg-color-c: #d73a3a; /* buttons */
+}
+.hide { display: none !important; }
+
+/* (B) PERIOD SELECTOR */
+#calPeriod {
+  padding: 15px;
+  background: var(--bg-color-a);
+}
+#calPeriod input, #calPeriod select {
+  font-size: 24px;
+  border: 0; outline: none;
+  color: rgb(255,255,255); background: 0;
+  cursor: pointer;
+}
+#calPeriod option { color: #000; }
+#calYear {
+  width: 100px;
+  margin-left: 10px;
+}
+
+/* (C) CALENDAR */
+/* (C1) SHARED */
+.calHead, .calRow { display: flex; }
+.calCell { width: 14.2857%; }
+
+/* (C2) HEADER - DAY NAMES */
+.calHead .calCell {
+  color: #fff; background: var(--bg-color-b);
+  font-weight: 700; text-align: center;
+  padding: 15px 0;
+}
+
+/* (C3) BODY - INDIVIDUAL DAYS */
+.calBlank { background: #eee; }
+.calToday { background: #feffd3; }
+.calToday .cellDate { color:#c60707; }
+.calBody .calCell {
+  border: 1px solid #f5f5f5;
+  min-height: 80px;
+}
+.cellDate, .evt { padding: 5px; }
+.cellDate {
+  font-size: 14px;
+  font-weight: 700;
+  color: #b5b5b5;
+}
+.evt {
+  font-size: 14px;
+  white-space: nowrap; text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* (D) EVENT FORM */
+#calForm {
+  position: absolute; top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100%; min-height: 100vh;
+  padding: 0; margin: 0; border: 0;
+  background: rgba(0,0,0,0.5);
+}
+#calForm:is([open]) {
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center;
+}
+#calForm form {
+  position: relative;
+  width: 450px; padding: 15px;
+  border-radius: 10px;
+  background: #fff;
+}
+#evtClose {
+  position: absolute;
+  top: 0; right: 0;
+  padding: 10px;
+  color: #b12020;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#calForm h2 { margin: 0 0 15px 0; }
+#calForm label, #calForm input[type=text], #calForm textarea { width: 100%; }
+#calForm label {
+  color: #a1a1a1;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+#calForm input[type=text], #calForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  background: #f5f5f5;
+}
+#calForm textarea {
+  height: 100px;
+  resize: none;
+}
+#calForm input[type=button], #calForm input[type=submit] {
+  border: 0; padding: 10px; margin: 10px 2px 0 0;
+  color: #fff; background: var(--bg-color-c);
+  cursor: pointer;
+}
+
+
+/* Source for this module!!  */
+/* (X) DOES NOT MATTER */
+#code-boxx {
+  font-weight: 600;
+  margin-top: 30px;
+}
+#code-boxx a {
+  display: inline-block;
+  border: 0;
+  padding: 5px;
+  text-decoration: none;
+  background: #b90a0a;
+  color: #fff;
+}
