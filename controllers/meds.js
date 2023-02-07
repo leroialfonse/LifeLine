@@ -24,7 +24,7 @@ module.exports = {
   },
   getCabinet: async (req, res) => {
     try {
-      const meds = await Med.find().sort({ createdAt: "desc" }).lean();
+      const meds = await Med.find( { userId: req.user.id }).sort({ createdAt: "desc" }).lean();
       res.render("cabinet.ejs", { meds: meds });
     } catch (err) {
       console.log(err);

@@ -208,9 +208,9 @@ div > .mt-5 {
   border: 0 1px 1px  solid gray;
 } */
 
-/* .tracker{
-  width: 100%;
-} */
+.tracker{
+ margin-top: 5rem;
+}
 
 .trackerList{
   /* overflow: auto; ?? */

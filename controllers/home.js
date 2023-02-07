@@ -13,7 +13,7 @@ module.exports = {
   getHome: async (req, res) => {
     try {
       let mongoose = require('mongoose')
-      const meds = await Med.find();
+      const meds = await Med.find( { userId: req.user.id });
       res.render("home.ejs", {meds: meds, med: meds, user: req.user});
     } catch (err) {
       console.log(err); 
