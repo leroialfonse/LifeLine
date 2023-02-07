@@ -3,30 +3,15 @@
 *{
   box-sizing: border-box;
   background-color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', Verdana, Tahoma, Arial, Helvetica,sans-serif;
 
-} 
-
-
-/* Wraps the Index Login in a container for sizing. */
- .box{
-  /* width: 100%;
-  border: 2px solid purple; */
-  /* display: flex; */
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  /* padding: 2rem; */
-
-  /* margin: 20px auto; */
-  /* height: 50vh; */
 } 
 
 /* Contols the appearance of links */
-
 a{
   text-decoration: none;
 }
+
 a:hover {
    color:rgb(34, 89, 178);
    text-decoration: none;
@@ -42,21 +27,10 @@ a:hover {
 .navbar{
   width: 100%;
 }
-/* html{
-  font-size: 62.5%;
-} */
 
-/* 
-body, .div, .container{
-  background-color: #F3EFF0;
-}
-*/
+
 header{
 border-bottom: 2px solid  rgba(13,110,253,.5);
-/* width: 100%; */
-/* font-size: 1rem;*/
-/* color: rgb(13,110,253); */
-
 }
 
 .tagline{
@@ -67,10 +41,7 @@ border-bottom: 2px solid  rgba(13,110,253,.5);
   margin: .5em;
   font-style: italic;
   }
-.navbar ul{
-  /* width: 100%;
-  border: 2px solid green; */
-}
+
 
 
 p > a, .card-body >a, 
@@ -84,7 +55,6 @@ text-decoration: none;
   .guide{
   display: flex;
   flex-direction: row;
-  /* justify-self: center ; */
   padding: 1rem;
 }  
 
@@ -97,9 +67,7 @@ text-decoration: none;
 
 
 /* Sets the size and display of the login . */
-
 .login-container{
-  /* height: 100vh;  */
   width: 50%;
 }
 
@@ -107,14 +75,10 @@ text-decoration: none;
   border-radius: 6px;
   padding: 2rem;
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-  margin: 100px auto;
+  margin: 5rem auto;
   width: 60%;
 } 
 
-/* .loginCardBody{
-  display: flex;
-  justify-content: center;
-} */
 
 h1, h2, h3, h4, h5{
   font-weight: 700;
@@ -129,51 +93,39 @@ h1, h2{
   font-weight:700;
 }
 
-/* .appInfo{
-  background-color: transparent;
-  color: purple;
-  font-weight: 700;
-} */
 /* Sets a padding for images */
 .img-fluid{ 
    padding: 1rem;
 }
 
-/* .col-6 > .row{
-  height: 100vh;
-} */
-
 
 .guide-card-edits{
-  /* margin: 20px auto; */
   padding: 2rem;
   width: 50%;
   margin-top: 3rem;
   box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-
-  /* border: 2px solid green; */
 }
 
 
 
 .doc ul li{
-  width: 100%;
+  width: 80%;
 }
-/* The box around the list of doctors on the edit page. */
-/* .docEdit{
-} */
-/* ///////////////////////////////////// */
-
 
 
 .navbar-brand{
   height: 80%;
-  margin-right: 150px;
+  margin-right: 180px;
 } 
 
 /* tab icon */
 .fav{
-  height: 80px;
+  height: 3rem;
+  align-self:flex-start;
+}
+
+.navbar-toggler{
+  align-self: flex-end;
 }
 
 /* infor about the meds on the meds page. */
@@ -196,10 +148,6 @@ footer {
  margin-top: 2rem;
 }
 
-/* aside{
-  border: 2px solid blue;
-  width: 60%;
-} */
 
 div > .mt-5 {
   padding-right: 50px;      
@@ -213,365 +161,133 @@ div > .mt-5 {
 .welcome > h1 {
   margin-bottom: 2rem;
 }
-/* */
 
-/* .welcome > p{
-  border: 0 1px 1px  solid gray;
-} */
 
 .tracker{
  margin-top: 5rem;
 }
 
-.trackerList{
-  /* overflow: auto; ?? */
-  /* Want to limit the numbr of meds that show here... come back. */
-}
-
-/* 
- .card-body {
-  justify-self: center;
-  align-self: center;
-}  */
-
-
-
-
-/* .col-6 > li {
-  border: 2px solid green;
-} */ul
 
 footer{
-
-  /* max-height: 20%; */
   margin-top: 100px;
-  /* border-top: 5px solid rgb(13,110,253); */
-  /* width: 100%; */
-
 }
 
 .footer-nav > ul{
-  border-top: 5px solid rgb(13,110,253);
+border-top: 5px solid rgb(13,110,253);
 display: flex;
 flex-direction: row;
 list-style: " | ";
 justify-content: space-between;
-/* font-size: .2rem; */
 padding: 2rem;
 } 
 
-
-
-/* ///// Calendar Styling /////  */
-
-.calDate{
-  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-}
-/* .over{
-  display:flex;
-  /* margin: 0 auto; */
-  /*
-  width: 90vw;
-  height: 90vh; */
-  /* flex-direction: row;
-  padding: 5rem; */
-  /* margin-top: 20px; 
-
-} */
-
-.backer {
-  width: 65%;
-  /* Try changing vh to 65% */
-  height: 65%;
-  /* height: 100vh; */
-  /* color: #eee; */
-  display: flex;
-   justify-content: center;
-  align-items: center;
-  margin: 4rem;
-}   
-
-
-.calItems{
-  display:flex;
-  flex: row;
-}
-
-   .calendar {
-  width: 45em;
-  height: 52em; 
-  border-radius: 6px;
-  box-shadow: 2px 2px 2px 2px  rgba(13,110,253,.5);
-}   
-
-.month {
-  width: 100%;
-  height: 12rem;
-  background-color: rgb(13,110,253);
-  display: flex; 
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  text-align: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-
-} 
-
-.month i {
-  font-size: 2.5rem;      
-  cursor: pointer;
-  background-color: rgb(13,110,253);
-  color: #eee;
-
-
-} 
- 
- .month h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem; 
-  margin-bottom: 1rem;
-  background-color: rgb(13,110,253);
-  color: #eee; 
-  margin: 0 auto;
-}
-
-.month p { 
-  /* mine */
-  color: #eee;
-  background-color: rgb(13,110,253);
-  font-size: 1.6rem; 
-   margin: 0 auto;
-}
-
-.weekdays { 
-   width: 100%; 
-   height: 5rem;
-  padding: 0 0.4rem;
-  display: flex;
-  align-items: center;
-  background-color: rgb(13,110,253);
-  color: #eee; 
-} 
-
-
-
- .weekdays div {
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  /* width is 1/7 of the entire width of the calendar, minus added paddings.  */
-  width: calc(44.2rem / 7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5); 
-  background-color: rgb(13,110,253);
-}
-
-.days {
-  /* width: 100%;  */
-  /* mine  */
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0.2rem; 
-  /* mine */
-  /* justify-content: center; */
-}
-
-.days div {
-  font-size: 1.4rem;
-  margin: 0.3rem;
-  width: calc(40.2rem / 7);
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  transition: background-color .6s;
-  background-color: rgb(13,110,253);
-  color: #eee;
-  
-
-} 
-
-/* Give the days a hover color. */
- .days div:hover {
-  background-color: rgb(4, 29, 54);
-  border: 0.2rem solid #eee;
-  cursor: pointer;
-  z-index: 0;
-
-} 
-
-/* Fade out the days not in the current month */
- .prev-date,
-.next-date {
-  opacity: 0.5;
-}
-
-.today {
-  border: 5px solid rgb(72, 228, 16);
-} 
-
-.calCard{
-  width: 30%;
-}
-
-/* Media Queries */
+/*////////////// Media Queries //////////////*/
 
 @media all and (max-width: 400px){
- .calItems{
-    display: flex;
-    flex-direction: column;
-     align-content: center; 
+
+  .lifeImg{
+    height: 10%;
+
   }
 
-  .container, .container-fluid, .welcome{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-    .trackerImg, .calCard {
-    display: none;
-  } 
-
-  .backer{
-    margin: 15rem;
-  }
+  .calItems{
+     display: flex;
+     flex-direction: column;
+      align-content: center; 
+   }
  
-  /* .loginCardBody{
+   .container, .container-fluid, .welcome{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     width: 100%;
+   }
+     .trackerImg, .calCard {
+     display: none;
+   } 
+ 
+   .backer{
+     margin: 15rem;
+   }
+  
+   .login-card{
     width: 100%;
-  } */
-
- footer > nav{
-      display: none;
-    }
- } 
-
-
-
-@media  all and (max-width: 600px){ 
-
-  .login-card img{ 
-    display: none;
-  }
-
-  .loginCardBody{
-    /* display:flex;
-    align-content: center; */
-    margin: 10px auto;
-  }
-  .guide-card-edits{
-    margin: 2rem auto;
-    width: 80%;
-    
-  }
-
-  /* .loginCardBody{
-    width: 100%;
-  } */
-
-   /* .trackerImg {
-    display: none;
-
-  } */
-
-  .container-fluid{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .guide{
-    display: flex;
-    flex-direction: column;
-    padding: none;
-    margin: none;
-  }
-
-  .card, .guide-card, .guide{
-    width: 100%;
-    padding: none;
+   }
+  
+ 
+  footer > nav{
+       display: none;
+     }
   } 
-
-
-
-  /* .calDate{
-    height: 1rem;
-    width: 100%;
+ 
+ 
+ 
+ @media  all and (max-width: 600px){ 
+ 
+   .login-card img{ 
+     display: none;
+   }
+ 
+   .loginCardBody{
+     margin: 10px auto;
+   }
+   .guide-card-edits{
+     margin: 2rem auto;
+     width: 80%;
+     
+   }
+ 
+  
+   .container-fluid{
+     display: flex;
+     flex-direction: column;
+   }
+ 
+   .guide{
+     display: flex;
+     flex-direction: column;
+     padding: none;
+     margin: none;
+   }
+ 
+   .card, .guide-card, .guide{
+     width: 100%;
+     padding: none;
+   } 
+ 
     
-  } */
-
-  /* .contained,
-  .calendar,
-  .month,
-  .month i,
-  .month h1,
-  .month p,
-  .weekdays,
-  .weekdays div,
-  .days,
-  .days div,
-  .prev-date,
-  .next-date{
-    height: 1rem;
-    width: 1rem;
-    } */
-
+   } 
+ 
+ 
+ @media (max-width: 601px)  {
+ 
    
-  } 
-
-
-@media (max-width: 601px)  {
-
+ 
+   .guide{
+     display: flex;
+     flex-direction: column;
+   }
+ 
+   .guide-card{
+     width: 100%;
+   }
+ 
+ 
+   .container-fluid{
+     display: flex;
+     flex-direction: row;
+     padding-top: 2rem;
+     }
   
-
-  .guide{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .guide-card{
-    width: 100%;
-  }
-
-
-  .container-fluid{
-    display: flex;
-    flex-direction: row;
-    padding-top: 2rem;
-    }
-  
-
-/* 
-  section .calCard {
-    width: 60%;
-  }
-  */
-
-  /* @media all and (min-width: 1080px){
-    .calItems{
-      display:flex;
-      flex-direction: column;
-    }
-  } */
-  }
-  @media all and (max-width: 800px){
-    .loginImg{
-      display: none;
-    }
-  }
-
+   }
+   
+   @media all and (max-width: 800px){
+     .loginImg{
+       display: none;
+     }
+   }
 
 /* Calendar module*/
-/* (A) ENTIRE PAGE */
-/* * {
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-} */
-
 header{
   border-bottom: 2px solid  rgba(13,110,253,.5);
   color: rgb(13,110,253)
@@ -646,7 +362,7 @@ header{
     font-size: 14px;
     font-weight: 700;
     /* color: #b5b5b5; */
-    color: rgb(4, 29, 54);
+    color: rgb(13, 110, 253);
 
   }
   .evt {
@@ -706,19 +422,3 @@ header{
     color: #fff; background: var(--bg-color-c);
     cursor: pointer;
   }
-  
-  
-  /* Source for this module!!  */
-  /* (X) DOES NOT MATTER */
-  /* #code-boxx {
-    font-weight: 600;
-    margin-top: 30px;
-  }
-  #code-boxx a {
-    display: inline-block;
-    border: 0;
-    padding: 5px;
-    text-decoration: none;
-    background: #b90a0a;
-    color: #fff;
-  } */

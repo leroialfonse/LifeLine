@@ -1,6 +1,5 @@
 const Contact = require("../models/Contact");
 const Comment = require("../models/Comment")
-const Doctor = require("../models/Doctor");
 const cloudinary = require("../middleware/cloudinary");
 
 
@@ -33,21 +32,6 @@ createContact: async (req, res) => {
       console.log(err);
     }
   },
-//   deleteContact: async (req, res)=>{
-//     try{
-//   // Find contact by id
-//    let contact = await Contact.findById({ _id: req.params.id });
-//   //  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
-//   // Delete the contact from the db
-//     await Contact.remove({ _id: req.params.id });
-
-//         // console.log(_id)
-//         console.log('Deleted');
-//     res.redirect("/contact");
-// }catch(err){ 
-//     res.redirect("/contact");
-//     }
-// },
 deleteContact: async (req, res)=>{
   const id = req.params.id
       try{
@@ -81,11 +65,6 @@ editContact: async (req, res)=>{
       address: req.body.address,
       phone: req.body.phone
     });
-//  await Contact.findByIdAndDelete({ _id: req.params.contactFromFile });
-// Delete the contact from the db
-  // /await Contact.updateOne({ _id: req.params.id });
-
-      // console.log(_id)
       console.log('Updated');
   res.redirect("/contact");
 }catch(err){ 

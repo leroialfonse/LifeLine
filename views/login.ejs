@@ -1,7 +1,6 @@
 <%- include('partials/header') -%>
-<!-- <div class="box"> -->
-<main class="container">
-  <div class="row justify-content-center">
+<div class="container-fluid">
+  <div class="row justify-content-center signLog">
     <section class="mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
@@ -35,5 +34,4 @@
       </form>
     </section>
   </div>
-</main>
-<!-- </div>  -->
+</div>

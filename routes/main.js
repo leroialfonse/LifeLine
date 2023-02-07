@@ -4,7 +4,6 @@ const app = express()
 const authController = require("../controllers/auth");
 const homeController = require("../controllers/home");
 const medsController = require("../controllers/meds");
-const doctorsController = require("../controllers/doctors");
 const contactController = require("../controllers/contacts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
@@ -20,7 +19,6 @@ router.get("/contact", ensureAuth, contactController.getContact);
 //Trying to get html calendar. Will need to move to EJS and give auth. All other routes have auth. 
 // app.get("/calendar", ensureAuth, authController.getCalendar);
 
-router.get("/doctor", ensureAuth, doctorsController.getDoctor);
 // router.get("/directory", ensureAuth, contactController.getDirectory);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);

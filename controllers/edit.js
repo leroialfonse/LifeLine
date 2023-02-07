@@ -2,17 +2,6 @@ const Contact = require('../models/Contact');
 const contacts = require('./contacts');
 
 module.exports = {
-    // // remember: if you're talking to your db, pop an async to allow for the app to twait for responses.
-    // getEdit : async (req,res) => {
-    //     const id= req.params.id
-    //     console.log(id)
-    //     try {
-    //         const contacts = await Contact.find()
-    //         res.render("edit.ejs", {contacts: contacts, idContact: id})
-    //     } catch (err) {
-    //         if (err) return res.status(500).send(err)
-    //     }
-    // },
     getEdit: async (req, res) => {
         const id = req.params.id
         console.log(id)

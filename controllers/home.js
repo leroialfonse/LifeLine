@@ -1,7 +1,3 @@
-
-// May not need. Considering the use of linking a username to Stuff that I'm doing in the app. 
-
-// const Contact = require('../models/Contact')
 const User = require('../models/User');
 const Med = require("../models/Med");
 
