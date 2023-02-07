@@ -62,6 +62,7 @@ module.exports = {
                     title: req.body.title,
                     dosage: req.body.dosage,
                     caption: req.body.caption,
+                    contact: req.body.contact,
                 },
                )
                res.redirect('/cabinet');
