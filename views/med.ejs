@@ -1,39 +1,57 @@
 <%- include('partials/header') -%>
 
-<div class="container">
+<div class="container-fluid">
+
+
+  <!--   -->
   <!-- <div class="row justify-content-center mt-5 medImgBlock" > -->
-    <div class="col mt-5">
+    <div class="mb-3 mt-5">
       <h2><%= med.title %></h2>
       <img class="img-fluid" src="<%= med.image%>" />
       <div class="row justify-content-between">
-        <%if(med.user == user.id){ %>
-         <!-- <form
+        <!-- <%if(med.user == user.id){ %>
           action="/med/deleteMed/<%= med.id %>?_method=DELETE"
           method="POST"
           class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-          <!-- edit button -->
+ -
 
-        </form> -->
-        <!-- <button class="btn btn-primary fa fa-edit col-9" type="submit"></button> --> 
-        <!-- <a href="/deleteMed/<%= med._id%>">delteRun</a> -->
-
-        <!-- <a href="/editMed/remove/<%= this._id %>"><button class="btn btn-secondary fa fa-trash" type="submit"></button></a> -->
-        <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a>
-        <a href="/editMed/removeMed/<%= med._id %>"><button class="btn btn-primary fa fa-trash" type="submit"></button></a>
-        <a href="/editMed/remove/<%= med._id %>">Remove</a>
-
-        <%}%>
+        <!-- <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a> -->
+        <!-- <a href="/editMed/removeMed/<%= med._id %>"><button class="btn btn-primary fa fa-trash" type="submit"></button></a> -->
+        <!-- <%}%> -->
       </div>
-    <!-- </div> -->
-    <div class="col medInfo">
-      <ul>
-      <label for="dosage" class="form-label">Dosage: <%= med.dosage %></label>
-      <label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label>
-      <label for="comment" class="form-label">Notes: <%= med.comment %> </label>
+    <div>
+    <ul class="row list-unstyled">
+     <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a>
+
+      <li><label for="dosage" class="form-label">Dosage: <%= med.dosage %></label></li>
+      <li><label for="contact" class="form-label">Prescribing Physician: <%= med.contact %></label></li>
+
+      <!-- <Some issue with my deleting notes on the meds right now. And I moved the section.Add it to Optimizations.  
+
+       <li><label for="comment" class="form-label">Notes:  
+         <ul class="list-unstyled">
+        <% for(var i=0; i<comments.length; i++) {%>
+          <li class="col justify-content-between messges" data-id="<%=comment._id%>">
+           <%= comments[i].comment%>
+
+        <!-- <form
+        action="/comment/deleteComment/<%=comment.id%>?_method=DELETE"
+        method="POST"
+        class="col-3"
+      >
+        <button class="btn btn-primary fa fa-times" type="submit"></button>
+      </form>
+           <a href="/comment/deleteComment/<%= comment.id%>"><button class="btn btn-danger fa fa-times" type="submit"></button></a> 
+
+        </li>
+
+        <% } %>
+        <%= med.caption %> </label></li>
+
+      </ul> -->
       </ul>
     </div>
+  </div>
 
     
     <div class="mt-5">
@@ -41,25 +59,45 @@
       <form action="/comment/createComment/<%=med._id%>" method="POST">
         <div class="mb-3">
             <label for="comment" class="form-label">Add any notes about this medication, or questions you'd like to ask your doctor</label>
-            <textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea>
-            <!-- <input type="textarea" class="form-control" id="comment" name="comment"> -->
+            <!-- <textarea name="comment" id="comment" cols="10" rows="5" class="form-control"></textarea> -->
+            <input type="text" class="form-control" id="comment" name="comment">
         </div>
        
         <button type="submit" class="btn btn-primary">Add note</button>
       </form>
-    </div>
-    <ul>
-      <% for(var i=0; i<comments.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5 messges">
-         <%= comments[i].comment%>
-        </li>
-      <% } %>
-    </ul>
-    <!-- <div class="bottom-nav row justify-content-center mt-5">
-      <a class="btn btn-primary" href="/dashboard">Add a New Medication</a>
-      <a class="btn btn-outline-primary" href="/cabinet">Medicine Cabinet</a>
-    </div> -->
-  <!-- </div> -->
-</div>
+
+      <!-- Putting the notes in a different place -->
+      <br>
+      <ul class="row list-unstyled">        
+         <li><label for="comment" class="form-label"><h5>Notes: </h5> 
+            <ul class="list-unstyled">
+           <% for(var i=0; i<comments.length; i++) {%>
+             <li class="col justify-content-between messges" data-id="<%=comment._id%>">
+              <%= comments[i].comment%>
+           <!-- Some issue with my deleting notes on the meds right now. Add it to Optimizations.  -->
+   
+           <!-- <form
+           action="/comment/deleteComment/<%=comment.id%>?_method=DELETE"
+           method="POST"
+           class="col-3"
+         >
+           <button class="btn btn-primary fa fa-times" type="submit"></button>
+         </form>
+              <a href="/comment/deleteComment/<%= comment.id%>"><button class="btn btn-danger fa fa-times" type="submit"></button></a> -->
+   
+           </li>
+   
+           <% } %>
+           <%= med.caption %> </label></li>
+   
+         </ul>
+         </ul>
+
+
+
+
+  </div>
+   
+      </div>
 
 <%- include('partials/footer') -%>

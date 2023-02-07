@@ -18,7 +18,7 @@ module.exports = {
         console.log(id)
         try {
           let mongoose = require('mongoose')
-          const contacts = await Contact.find();
+          const contacts = await Contact.find( { userId: req.user.id });
           console.log(req.body)
           res.render("edit.ejs", {  contacts: contacts, user: req.user, idContact: id });
         } catch (err) {

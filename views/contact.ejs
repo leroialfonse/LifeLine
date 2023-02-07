@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-<div class="container">
+<div class="container-fluid">
   <div class="row mt-5">
       <div class="col-6 guide-card">
 
@@ -44,7 +44,7 @@
         <% } %> 
 
              <% contacts.forEach( el => { %>  
-            <li class="col-6 justify-content-between mt-5 " data-id='<%el._id%>'>
+            <li class="col-6 justify-content-between mt-3" data-id='<%el._id%>'>
                     <p>Name:<span> <%= el.title %></span></p>
                     <p>Address:<span> <%= el.address %></span></p>
                     <p>Phone:<span> <%= el.phone %></span></p>

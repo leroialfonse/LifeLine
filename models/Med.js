@@ -13,6 +13,10 @@ const MedSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  caption: {
+    type: String,
+    require: true,
+  },
   dosage: {
     type: String,
     required: true,
@@ -20,10 +24,6 @@ const MedSchema = new mongoose.Schema({
   contact: {
     type: String,
     required: true,
-  },
-  comment: {
-    type: String,
-    required: false,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -33,7 +33,9 @@ const MedSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-})
+  
+
+  });
 
 // Puts the data into a model that includes the model name, the schema itself, and the collection being written to.  If you don't specify the collection name as the third variable, then mongo will just name the collection as a plurality of the model name. (becomes "meds."),
 module.exports = mongoose.model("Med", MedSchema);
