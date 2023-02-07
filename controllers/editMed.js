@@ -1,6 +1,7 @@
 const Med = require('../models/Med');
 const meds = require('./meds');
 const comments = require('./comments');
+const Comment = require('../models/Comment');
 
 module.exports = {
     // // remember: if you're talking to your db, pop an async to allow for the app to twait for responses.
@@ -19,9 +20,10 @@ module.exports = {
         console.log(id)
         try {
           let mongoose = require('mongoose')
-          const meds = await Med.find({userId: req.user.id});
+          const meds = await Med.find({user: req.user.id});
+          const comments = await Comment.find({user:req.user.id, _id: req.body.id});
           console.log(req.body)
-          res.render("editMed.ejs", { meds: meds, user: req.user, idMed: id });
+          res.render("editMed.ejs", { meds: meds, med: meds, user: req.user, idMed: id, comments: comments });
         } catch (err) {
           console.log(err); 
         }

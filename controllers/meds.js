@@ -24,7 +24,7 @@ module.exports = {
   },
   getCabinet: async (req, res) => {
     try {
-      const meds = await Med.find( { userId: req.user.id }).sort({ createdAt: "desc" }).lean();
+      const meds = await Med.find( { user: req.user }).sort({ createdAt: "desc" }).lean();
       res.render("cabinet.ejs", { meds: meds });
     } catch (err) {
       console.log(err);
@@ -42,7 +42,7 @@ module.exports = {
   getMed: async (req, res) => {
     try {
       const med = await Med.findById(req.params.id);
-      const comments = await Comment.find({med: req.params.id}).sort({ createdAt: "desc" }).lean();
+      const comments = await Comment.find({med: req.params.id, user: req.user}).sort({ createdAt: "desc" }).lean();
       res.render("med.ejs", { med: med, user: req.user, comments: comments, comment: comments });
     } catch (err) {
       console.log(err);
@@ -53,7 +53,7 @@ module.exports = {
     console.log(id)
     try {
       let mongoose = require('mongoose')
-      const meds = await Med.find();
+      const meds = await Med.find({user: req.user});
       console.log(req.body)
       res.render("editMed.ejs", { meds: meds, user: req.user, idMed: id });
     } catch (err) {
@@ -98,7 +98,7 @@ module.exports = {
   deleteMed: async (req, res) => {
     try {
       // Find med by id
-      let med = await Med.findById({ _id: req.params.id });
+      let med = await Med.findById({ _id: req.params.id , user: req.user});
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(med.cloudinaryId);
       // Delete med from db
@@ -115,7 +115,7 @@ module.exports = {
      let comment = await Comment.findById({ 
       _id: req.params.id
       });
-      await Comment.remove({_id: req.params.id });
+      await Comment.remove({_id: req.params.id, user: req.user });
       console.log("Deleted Med");
       res.redirect("back");
     } catch (err) {

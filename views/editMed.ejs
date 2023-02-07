@@ -1,10 +1,10 @@
 <%- include('partials/header') -%>
 
-<div class="doc">
+<div class="doc guide-card-edits">
   <div class="col-6 justify-content-center">
 
     <label for="ul"><h2>Edit Medication Information</h2></label>
-      <ul class="row list-unstyled justify-content-between col-6 mt-5 docEdit">
+      <ul class="row list-unstyled justify-content-between mt-5 docEdit">
         <% if (meds.length === 0) { %>
           <p> No medications in your cabinet. Please add one to save it.</p>
           <%} else { %>
@@ -20,8 +20,30 @@
               <input type="text" name="title" value="<%= el.title %>">
               <label for="dosage">Adjust Dosage: </label>
               <input type="text" name="dosage" value="<%= el.dosage %>">
-              <label for="comment">Change Notes: </label>
-              <input type="text" name="comment" value="<%= el.caption %>">
+              <!-- <label for="comment">Change Notes: 
+                <ul class="list-unstyled">
+                <% for(var i=0; i<comments.length; i++) {%>
+                  <li class="col justify-content-between messges" data-id="<%=comment._id%>">
+                   <%= comments[i].comment%>
+                <!-- Some issue with my deleting notes on the meds right now. Add it to Optimizations.  -->
+        
+                <!-- <form
+                action="/comment/deleteComment/<%=comment.id%>?_method=DELETE"
+                method="POST"
+                class="col-3"
+              >
+                <button class="btn btn-primary fa fa-times" type="submit"></button>
+              </form>
+                   <a href="/comment/deleteComment/<%= comment.id%>"><button class="btn btn-danger fa fa-times" type="submit"></button></a> -
+        
+                </li>
+        
+                <% } %>
+                <%= med.comment %> </label></li>
+        
+              </ul>
+               Confused about how to find the comments on the meds here. Probably because I'm tired. Optimization. -
+              <input type="text" name="comment" value="<%= el.caption %>"> -->
               <button btn-primary class="btn-primary fa fa-check" type="submit"></button>
               <a href="/med/<%= el._id%>">Cancel</a>
               <a href="/editMed/removeMed/<%= el._id %>">Remove</a>

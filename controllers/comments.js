@@ -7,6 +7,7 @@ module.exports = {
         comment: req.body.comment,
         likes: 0,
         med: req.params.id,
+        user: req.user.id
       });
       console.log(req.body)
 
@@ -18,12 +19,25 @@ module.exports = {
   },
   deleteComment: async (req, res) => {
     try {
+      // Find Comment by id
+      let comment = await Comment.findById({ _id: req.params.id });
+      // Delete Comment from db
+      await Comment.remove({ _id: req.params.id });
+      console.log("Deleted Comment");
+      res.redirect("back");
+    } catch (err) {
+      res.redirect("back");
+    }
+  },
+  deleteComment: async (req, res) => {
+    try {
       // Find med by id
+      console.log(req.params)
      let comment = await Comment.findById({ 
       _id: req.params.id
       });
       await Comment.remove({_id: req.params.id });
-      console.log("Deleted Med");
+      console.log("Deleted Comment");
       res.redirect("back");
     } catch (err) {
       res.redirect("back");
