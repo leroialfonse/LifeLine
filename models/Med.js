@@ -15,7 +15,7 @@ const MedSchema = new mongoose.Schema({
   },
   caption: {
     type: String,
-    require: true,
+    require: false,
   },
   dosage: {
     type: String,

@@ -17,5 +17,4 @@ router.get('/removeMed/:id', editMedController.deleteMed); //Deletes that select
 router.get("/deleteComment/:id", commentsController.deleteComment);
 
 router.delete("/deleteComment/:id", commentsController.deleteComment);
-
 module.exports = router;

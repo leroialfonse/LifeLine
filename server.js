@@ -28,7 +28,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database 
-// (When not using cyclic, just use connnect DB Remeber to re-enable when you are not using cyclic for hosting.)
+// (When not using cyclic, just use connnect DB  Remeber to re-enable when you are not using cyclic for hosting.)
 
 
 
