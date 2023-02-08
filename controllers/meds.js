@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const Med = require("../models/Med");
 const Comment = require("../models/Comment");
 const Contact = require("../models/Contact");
+const api_key = "467893172389164"
 
 module.exports = {
   getDashboard: async (req, res) => {
