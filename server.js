@@ -28,8 +28,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database 
-// (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
-// connectDB();
+// (When not using cyclic, just use connnect DB Remeber to re-enable when you are not using cyclic for hosting.)
 
 
 
@@ -87,7 +86,7 @@ app.use("/editMed", editMedRoutes);
  
 // Server Running (If not using cyclic.) Remeber to reenable if not using cyclic for hosting. 
 // app.listen(process.env.PORT, () => {
-//   console.log("Server is running, you better catch it!");
+//   console.log("Server is running, you betterr catch it!");
 // });
 
 
