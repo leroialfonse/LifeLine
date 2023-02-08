@@ -1,22 +1,22 @@
 
 
 
-//Start the timer
-document.addEventListener('click', () => {
-  setInterval(myTimer, 1000);
-}, { once: true });
+// //Start the timer
+// document.addEventListener('click', () => {
+//   setInterval(myTimer, 1000);
+// }, { once: true });
 
-let min = 0;
-let sec = 0;
+// let min = 0;
+// let sec = 0;
 
-function myTimer() {
-  document.querySelector('#timer').innerText = `Last taken ${min}` + ` minutes` + ` and ${sec}` + ` seconds ago`;
-  sec++;
-  if (sec >= 60) {
-    sec = 0;
-    min++;
-  }
-}
+// function myTimer() {
+//   document.querySelector('#timer').innerText = `Last taken ${min}` + ` minutes` + ` and ${sec}` + ` seconds ago`;
+//   sec++;
+//   if (sec >= 60) {
+//     sec = 0;
+//     min++;
+//   }
+// }
 
 // most recent steal cal
 var cal = {
