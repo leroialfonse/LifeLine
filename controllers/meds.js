@@ -2,6 +2,8 @@ const cloudinary = require("../middleware/cloudinary");
 const Med = require("../models/Med");
 const Comment = require("../models/Comment");
 const Contact = require("../models/Contact");
+const api_key = process.env.API_KEY
+
 
 module.exports = {
   getDashboard: async (req, res) => {
@@ -64,7 +66,6 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-      const api_key = process.env.API_KEY
 
 console.log(process.env.DB_STRING);
 console.log(process.env.CLOUD_NAME);
