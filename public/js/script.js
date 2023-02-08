@@ -1,3 +1,11 @@
+
+
+
+//Start the timer
+document.addEventListener('click', () => {
+  setInterval(myTimer, 1000);
+}, { once: true });
+
 let min = 0;
 let sec = 0;
 
@@ -9,14 +17,6 @@ function myTimer() {
     min++;
   }
 }
-
-
-//Start the timer
-document.addEventListener('click', () => {
-  setInterval(myTimer, 1000);
-}, { once: true });
-{/* <div id="timer">click somewhere</div> */}
-
 
 // most recent steal cal
 var cal = {
