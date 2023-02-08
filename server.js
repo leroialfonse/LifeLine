@@ -31,7 +31,7 @@ require("./config/passport")(passport);
 // (When not using cyclic. Remeber to re-enable when you are not using cyclic for hosting.)
 // connectDB();
 connectDB().then(() => {
-  app.listen(process.env.PORT, async () => {
+  app.listen(PORT, async () => {
       console.log("listening for requests!");
   })
 });
