@@ -2,7 +2,6 @@ const cloudinary = require("../middleware/cloudinary");
 const Med = require("../models/Med");
 const Comment = require("../models/Comment");
 const Contact = require("../models/Contact");
-const api_key = process.env.API_KEY
 
 
 module.exports = {
