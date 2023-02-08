@@ -14,12 +14,6 @@ router.get("/dashboard", ensureAuth, medsController.getDashboard);
 router.get("/meds", ensureAuth, medsController.getMed);
 router.get("/cabinet", ensureAuth, medsController.getCabinet);
 router.get("/contact", ensureAuth, contactController.getContact);
-
-// app.get("/calendar", ensureAuth, homeController.getCalendar);
-//Trying to get html calendar. Will need to move to EJS and give auth. All other routes have auth. 
-// app.get("/calendar", ensureAuth, authController.getCalendar);
-
-// router.get("/directory", ensureAuth, contactController.getDirectory);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
