@@ -65,6 +65,7 @@ module.exports = {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 console.log(process.env.DB_STRING);
+console.log(process.env.Cl)
 
       await Med.create({
         title: req.body.title,
