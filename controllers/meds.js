@@ -64,7 +64,7 @@ module.exports = {
   createMed: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.v2.uploader.upload(req.file.path);
+      const result = await cloudinary.uploader.upload(req.file.path);
 
 
       await Med.create({
