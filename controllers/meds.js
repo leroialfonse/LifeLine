@@ -64,7 +64,7 @@ module.exports = {
   createMed: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path, {timeout:60000});
+      const result = await cloudinary.uploader.upload(req.file.path, {timeout:60000}, q_auto).toHTML();
 
 console.log(process.env.DB_STRING);
 console.log(process.env.CLOUD_NAME);
@@ -110,6 +110,7 @@ console.log(process.env.CLOUD_NAME);
       // Delete med from db
       await Med.remove({ _id: req.params.id });
       console.log("Deleted Med");
+      console.log(med.cloudinaryId)
       res.redirect("/cabinet");
     } catch (err) {
       res.redirect("/cabinet");
