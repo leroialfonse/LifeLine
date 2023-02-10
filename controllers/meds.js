@@ -64,7 +64,10 @@ module.exports = {
   createMed: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(result.public_id, {timeout:60000});
+      const result = await cloudinary.uploader.upload(path);
+
+      var path = req.file.path
+
 
     await Med.create({
         title: req.body.title,
