@@ -64,7 +64,7 @@ module.exports = {
   createMed: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path, {timeout:60000}, q_auto).toHTML();
+      const result = await cloudinary.uploader.upload(req.file.path, {timeout:60000}).toHTML();
 
 console.log(process.env.DB_STRING);
 console.log(process.env.CLOUD_NAME);
