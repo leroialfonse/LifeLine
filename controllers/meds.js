@@ -79,7 +79,7 @@ module.exports = {
       console.log(result.secure_url)
       console.log(result.public_id)
       res.redirect("/dashboard");
-      res.send(req.body.image)
+      res.send(result.image)
     } catch (err) {
       console.log(err);
     }
