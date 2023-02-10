@@ -79,6 +79,8 @@ console.log(process.env.CLOUD_NAME);
         user: req.user.id,
       });
       console.log("Med has been added!");
+      console.log(result.secure_url)
+      console.log(result.public_id)
       res.redirect("/dashboard");
     } catch (err) {
       console.log(err);
