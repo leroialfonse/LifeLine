@@ -76,10 +76,11 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Med has been added!");
+      
       console.log(result.secure_url)
       console.log(result.public_id)
       res.redirect("/dashboard");
-      res.send(result.image)
+      res.send(req.params.image)
     } catch (err) {
       console.log(err);
     }

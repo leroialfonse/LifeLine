@@ -8,7 +8,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Med Routes - simplified for now
 router.get("/:id", ensureAuth, medsController.getMed);
 
-router.post("createMed", upload.single("file"), medsController.createMed);
+router.post("/createMed", upload.single("file"), medsController.createMed);
 
 // router.put("/likePost/:id", postsController.likePost);
 
