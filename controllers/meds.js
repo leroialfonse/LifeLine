@@ -64,10 +64,7 @@ module.exports = {
   createMed: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(path);
-
-      var path = req.file.path
-
+      const result = await cloudinary.uploader.upload(req.file.path);
 
     await Med.create({
         title: req.body.title,
@@ -82,6 +79,7 @@ module.exports = {
       console.log(result.secure_url)
       console.log(result.public_id)
       res.redirect("/dashboard");
+      res.send(req.body.image)
     } catch (err) {
       console.log(err);
     }
