@@ -42,7 +42,12 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Med has been added!");
-      res.redirect("/dashboard");
+      res.redirect("/dashboard")
+
+         // Checking that everything is going to the server correctly. It makes it ok... What am I missing to return it...?
+       console.log(result.secure_url)
+      console.log(result.public_id)
+
     } catch (err) {
       console.log(err);
     }

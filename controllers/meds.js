@@ -77,28 +77,14 @@ module.exports = {
       });
       console.log("Med has been added!");
       
-      console.log(result.secure_url)
-      console.log(result.public_id)
+      // Checking that everything is going to the server correctly. It makes it ok... What am I missing to return it...?
+      // console.log(result.secure_url)
+      // console.log(result.public_id)
+
       res.redirect("/dashboard");
-      res.send(req.params.image)
     } catch (err) {
       console.log(err);
     }
-  // },
-  // // Change to make a number of days taken/week counter
-  // likeMed: async (req, res) => {
-  //   try {
-  //     await Med.findOneAndUpdate(
-  //       { _id: req.params.id },
-  //       {
-  //         $inc: { likes: 1 },
-  //       }
-  //     );
-  //     console.log("Likes +1");
-  //     res.redirect(`/med/${req.params.id}`);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
   },
   deleteMed: async (req, res) => {
     try {
