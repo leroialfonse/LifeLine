@@ -8,15 +8,6 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
-// const connectDB = async () => {
-//   try {
-//     const conn = await mongoose.connect(process.env.DB_STRING);
-//     console.log(`MongoDB Connected: ${conn.connection.host}`);
-//   } catch (error) {
-//     console.log(error);
-//     process.exit(1);
-//   }
-// }
 const mainRoutes = require("./routes/main");
 const medRoutes = require("./routes/meds");
 const commentRoutes = require("./routes/comments");
@@ -35,10 +26,6 @@ require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
 require("./config/passport")(passport);
-
-//Connect To Database 
-// (When not using cyclic, just use connnect DB  Remeber to re-enable when you are not using cyclic for hosting.)
-
 
 
 //Using EJS for views
@@ -77,7 +64,7 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
-app.use("/med", medRoutes); //This is post routes for me. 
+app.use("/med", medRoutes); 
 app.use("/comment", commentRoutes);
 app.use("/contact", contactRoutes);
 app.use("/home", homeRoutes);
@@ -86,20 +73,7 @@ app.use("/dashboard", dashboardRoutes);
 app.use("/edit", editRoutes);
 app.use("/editMed", editMedRoutes);
 
-
-
-
-
-
-
- 
-// Server Running (If not using cyclic.) Remeber to reenable if not using cyclic for hosting. 
-// app.listen(process.env.PORT, () => {
-//   console.log("Server is running, you betterr catch it!");
-// });
-
-
-// Connecting to the DB for Cyclic
+// Connecting to the DB
 connectDB().then(() => {
   app.listen(PORT,  () => {
       console.log("listening for requests!");
