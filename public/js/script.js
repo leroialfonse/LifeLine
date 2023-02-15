@@ -10,7 +10,7 @@ let min = 0;
 let sec = 0;
 
 function myTimer() {
-  document.querySelector('#timer').innerText = `Last taken ${min}` + ` minutes` + ` and ${sec}` + ` seconds ago`;
+  document.querySelector('.takenButton').innerText = `Last taken ${min}` + ` minutes` + ` and ${sec}` + ` seconds ago`;
   sec++;
   if (sec >= 60) {
     sec = 0;
