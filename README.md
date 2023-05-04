@@ -13,7 +13,7 @@
 
 <h1 align="center">
   <a href="https://lifeline.cyclic.app/">
-    <img src="./public/imgs/LifeLineGithub.png" alt="LifeLine logo" width="140">
+    <img src="./public/imgs/LifeLineGitHub.png" alt="LifeLine logo" width="140">
   </a>
 </h1>
 
