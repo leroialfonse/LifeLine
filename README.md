@@ -44,7 +44,6 @@
 - [Getting Started](#-getting-started)
 - [Install](#-install)
 - [Contributions](#%EF%B8%8F-contributions)
-- [Acknowledgements](#-acknowledgements)
 
   </details>
 
