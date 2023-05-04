@@ -1,7 +1,5 @@
 # LifeLine
 
-# LifeLine
-
 <div align="center">
 
 <a href="https://github.com/leroialfonse/LifeLine/issues">
