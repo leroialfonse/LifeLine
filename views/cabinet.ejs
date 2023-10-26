@@ -5,12 +5,11 @@
   <h1>Your Cabinet</h1>
 <!-- </div> -->
     <!-- <div class="row justify-content-center mt-5"> -->
-      <!-- Add a line to display a message if there are no items in the list of meds.  -->
       <p>A look at all your current medications.</p>
       <ul class="row list-unstyled">
         <% if (meds.length === 0) { %>
-          <p> No medications found. Please add one to save it.</p>
-          <%} else { %>
+          <h4 class="notice-text"> No medications found. Please add one to save it.</h4>
+          <%} else { %> 
            <% } %> 
         <% for(var i=0; i<meds.length; i++) {%>
           <li class="cabinet col-6 mt-5">

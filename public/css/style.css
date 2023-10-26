@@ -84,8 +84,15 @@ h1, h2, h3, h4, h5{
   font-weight: 700;
 }
 
-h1, h2{
+h1, h2, h4{
   color: rgb(13,110,253)
+}
+
+.notice-text{
+  color:rgb(13, 110, 253);
+  font-style:italic;
+  margin: 10rem auto;
+  text-align: center;
 }
 
 .focus{
