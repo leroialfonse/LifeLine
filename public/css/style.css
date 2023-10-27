@@ -88,6 +88,13 @@ h1, h2{
   color: rgb(13,110,253)
 }
 
+.notice-text{
+  color:rgb(13, 110, 253);
+  font-style:italic;
+  margin: 10rem auto;
+  text-align: center;
+}
+
 .focus{
   color: rgb(13,110,253);
   font-weight:700;
@@ -107,7 +114,13 @@ h1, h2{
 }
 
 
-
+.main{
+display: flex;
+  background-image: url('/imgs/BackSplash(500x500px).png') ;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-origin:content-box;
+}
 .doc ul li{
   width: 80%;
 }
@@ -162,7 +175,9 @@ div > .mt-5 {
   margin-bottom: 2rem;
 }
 
-
+/* .spacer{
+  margin: 1rem auto;
+} */
 .tracker{
  margin-top: 5rem;
 }
@@ -232,9 +247,10 @@ padding: 2rem;
      margin: 10px auto;
    }
    .guide-card-edits{
+    /* justify-self: center; */
      margin: 2rem auto;
-     width: 80%;
-     
+     /* width: 80%; */
+     width: 85dvw;
    }
  
   

@@ -9,17 +9,32 @@
       <p>A look at all your current medications.</p>
       <ul class="row list-unstyled">
         <% if (meds.length === 0) { %>
-          <p> No medications found. Please add one to save it.</p>
+          <h4 class="notice-text"> No medications found. Please add one to save it.</h4>
+
           <%} else { %>
            <% } %> 
         <% for(var i=0; i<meds.length; i++) {%>
-          <li class="cabinet col-6 mt-5">
+<!--  -->
+          <li class="card">
+            <a href="/med/<%= meds[i]._id%>">
+              <img class="img-fluid" src="<%= meds[i].image%>">
+            </a>            <div class="card-body">
+         <!-- <p><%=meds[i].title%></p> -->
+
+         <a href="/med/<%= meds[i]._id%>"><h5 class="card-title"><%=meds[i].title%></h5></a>
+              <p class="card-text"><%=meds[i].dosage%></p>
+              <p class="card-text"><small class="text-muted">Added: <%=meds[i].createdAt%></small></p>
+            </div>
+          </li>
+
+          <!--  -->
+          <!-- <li class="cabinet col-6 mt-5">
             <a href="/med/<%= meds[i]._id%>">
               <img class="img-fluid" src="<%= meds[i].image%>">
             </a>
           <a href="/med/<%= meds[i]._id%>"><p><%=meds[i].title%></p></a>
 
-          </li>
+          </li> -->
         <% } %>
         </ul>
     </div>
