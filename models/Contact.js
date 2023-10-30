@@ -8,7 +8,8 @@ const ContactSchema = new mongoose.Schema({
     type: String
   },
   phone: {
-    type: String
+    type: String,
+    match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
   },
   // user: {
   //   type: mongoose.Schema.Types.ObjectId,
@@ -17,6 +18,8 @@ const ContactSchema = new mongoose.Schema({
   userId: {
     type: String,
   },
+  // TODO: Link the meds to the doctors with Ref.
+  // perscriptions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Med' }],
   createdAt: {
     type: Date,
     default: Date.now,

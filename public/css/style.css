@@ -42,7 +42,15 @@ border-bottom: 2px solid  rgba(13,110,253,.5);
   font-style: italic;
   }
 
-
+  /* Taken Button styles */
+  /*Work out the medquery for the button on smaller screens. */
+  .takenButton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: auto;
+    max-height: fit-content;
+  }
 
 p > a, .card-body >a, 
 .nav-item > a, .medInfo > a, li > a{
@@ -114,7 +122,13 @@ h1, h2, h4{
 }
 
 
-
+.main{
+display: flex;
+  background-image: url('/imgs/BackSplash(500x500px).png') ;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-origin:content-box;
+}
 .doc ul li{
   width: 80%;
 }
@@ -169,7 +183,9 @@ div > .mt-5 {
   margin-bottom: 2rem;
 }
 
-
+/* .spacer{
+  margin: 1rem auto;
+} */
 .tracker{
  margin-top: 5rem;
 }
@@ -240,8 +256,7 @@ padding: 2rem;
    }
    .guide-card-edits{
      margin: 2rem auto;
-     width: 80%;
-     
+     width: 85dvw;
    }
  
   

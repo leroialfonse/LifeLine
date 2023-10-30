@@ -9,19 +9,19 @@
             <form action="/med/createMed" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">Medication Name</label>
-                  <input type="text" class="form-control" id="title" name="title" required>
+                  <input type="text" class="form-control" id="title" name="title">
               </div>
               <div class="mb-3">
-                <label for="dosage" class="form-label" >Dosage and Notes</label>
-                <textarea class="form-control" id="dosage" name="dosage" required></textarea>
+                <label for="dosage" class="form-label">Dosage and Notes</label>
+                <textarea class="form-control" id="dosage" name="dosage"></textarea>
               </div>
               <div class="mb-3">
                 <label for="contact" class="form-label">Prescribing Physician</label>
-                <input type="text" class="form-control" id="contact" name="contact"required>
+                <input type="text" class="form-control" id="contact" name="contact">
               </div>
               <div class="mb-3">
                 <label for="imgUpload" class="form-label">Photo of Medication</label>
-                <input type="file" class="form-control" id="imageUpload" name="file" required>
+                <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
@@ -39,7 +39,6 @@
           <% if (meds.length === 0) { %>
             <p> No medications in your Cabinet. Please add one to save it.</p>
             <%} else { %>
-            <!-- <p> Not Allowed </p> -->
         <span>Click to View or Change:</span>
 
              <% } %>   

@@ -6,7 +6,8 @@
 
 <h1>Welcome to LifeLine</h1>
 
-  <h5><%= user.userName %>, Have You Taken Your Meds Today?</h5>
+  <h4><%= user.userName %>,</h4> 
+  <h5>Have You Taken Your Meds Today?</h5>
   <p>Being mindful and remembering to take your medications exactly as prescribed are the keys to maintaining your good health. If you haven't already, <span class="focus">please be sure</span> to take your medications today. When you're done, don't forget to update your <a href="/calendar">calendar!</a> You can also set or update your calendar to track your upcoming appointments.</p>    
 
 
@@ -14,7 +15,7 @@
         <!-- <div class="card"> -->
   <div class="row g-0">
     <div class="col-5 col-sm-4 trackerImg">
-      <img src="imgs/medsPile.jpg" class="img-fluid w-100" alt="medsPile">
+      <img src="imgs/medsPile50PER.jpg" class="img-fluid w-100" alt="medsPile">
     </div>
     <div class="col-7 col-sm-8">
       <div class="card-body">
@@ -40,9 +41,13 @@
           
 
          <!-- <small><div id="timer"></div></small>    -->
-         <div class="card-text"> <button class="btn btn-warning takenButton">Meds Taken</button></div>
+         <div class="card-text"> <button class="btn btn-warning takenButton">Meds Taken</button>
+        <button class="btn btn-danger clearButton">Reset</button>
+        </div>
           <br>
-         <div><small class="text-muted"><p id="timer"></p></small></div>
+          <!-- TODO: Fix the text overflow when the timer is running in smalller screens... -->
+         <div><p id="timer"></p></div>
+
         
       </div>
     </div>
