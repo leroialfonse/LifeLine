@@ -43,16 +43,13 @@ border-bottom: 2px solid  rgba(13,110,253,.5);
   }
 
   /* Taken Button styles */
+  /*Work out the medquery for the button on smaller screens. */
   .takenButton{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: auto;
     max-height: fit-content;
-  }
-
-  .takenButton > p{
-    max-width: 40%;
   }
 
 p > a, .card-body >a, 

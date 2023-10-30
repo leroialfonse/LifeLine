@@ -5,22 +5,36 @@ function toggleTimer() {
   if (timerRunning) {
     clearInterval(timer); // Stop the timer
     timerRunning = false;
-    document.querySelector('.takenButton').innerHTML = `Timer paused...`;
-
   } else {
     timer = setInterval(myTimer, 1000); // Start the timer
     timerRunning = true;
   }
 }
 
-// Add a click event listener to your "taken" element
-document.querySelector('.takenButton').addEventListener('click', toggleTimer);
+// Add a click event listener to your "taken" element to start/stop the timer
+document.querySelector('.takenButton').addEventListener('click', () => {
+  toggleTimer();
+  // // Change the button text to "Meds Taken" immediately
+  // document.querySelector('.takenButton').innerText = 'Meds Taken';
+
+  // Use setTimeout to revert the button text to "Meds Taken" after 3 seconds
+  setTimeout(() => {
+    document.querySelector('.takenButton').innerText = 'Meds Taken';
+    document.querySelector()
+  }, 3000); // 3000 milliseconds = 3 seconds
+});
+
+// // Add a click event listener to your "taken" element to start/stop the timer
+// document.querySelector('.takenButton').addEventListener('click', toggleTimer);
+
+// Add a click event listener to your "clear" button to clear the timer
+document.querySelector('.clearButton').addEventListener('click', clearTimer);
 
 let min = 0;
 let sec = 0;
 
 function myTimer() {
-  document.querySelector('.takenButton').innerText = `Last taken ${min} minutes and ${sec} seconds ago`;
+  document.querySelector('#timer').innerText = `Last taken ${min} minutes and ${sec} seconds ago`;
   sec++;
   if (sec >= 60) {
     sec = 0;
@@ -28,25 +42,16 @@ function myTimer() {
   }
 }
 
+function clearTimer() {
+  clearInterval(timer); // Clear the timer
+  timerRunning = false;
+  document.querySelector('.takenButton').innerText = 'Timer cleared';
+  document.querySelector('#timer').innerText = ''
+  min = 0;
+  sec = 0;
+}
 
-// //Start the timer
-// taken.addEventListener('click', () => {
-//   setInterval(myTimer, 1000);
-// }, { once: true });
 
-// let min = 0;
-// let sec = 0;
-
-// function myTimer() {
-//   document.querySelector('.takenButton').innerText = `Last taken ${min}` + ` minutes` + ` and ${sec}` + ` seconds ago`;
-//   sec++;
-//   if (sec >= 60) {
-//     sec = 0;
-//     min++;
-//   }
-// }
-
-// most recent steal cal
 var cal = {
   // (A) PROPERTIES
   // (A1) FLAGS & DATA
