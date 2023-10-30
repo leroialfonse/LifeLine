@@ -20,8 +20,8 @@ document.querySelector('.takenButton').addEventListener('click', () => {
   // Use setTimeout to revert the button text to "Meds Taken" after 3 seconds
   setTimeout(() => {
     document.querySelector('.takenButton').innerText = 'Meds Taken';
-    document.querySelector()
-  }, 3000); // 3000 milliseconds = 3 seconds
+    // document.querySelector()
+  }, 1000);
 });
 
 // // Add a click event listener to your "taken" element to start/stop the timer
