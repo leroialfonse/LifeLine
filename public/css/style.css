@@ -42,7 +42,18 @@ border-bottom: 2px solid  rgba(13,110,253,.5);
   font-style: italic;
   }
 
+  /* Taken Button styles */
+  .takenButton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: auto;
+    max-height: fit-content;
+  }
 
+  .takenButton > p{
+    max-width: 40%;
+  }
 
 p > a, .card-body >a, 
 .nav-item > a, .medInfo > a, li > a{
@@ -84,7 +95,7 @@ h1, h2, h3, h4, h5{
   font-weight: 700;
 }
 
-h1, h2{
+h1, h2, h4{
   color: rgb(13,110,253)
 }
 
@@ -247,9 +258,7 @@ padding: 2rem;
      margin: 10px auto;
    }
    .guide-card-edits{
-    /* justify-self: center; */
      margin: 2rem auto;
-     /* width: 80%; */
      width: 85dvw;
    }
  

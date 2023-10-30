@@ -18,6 +18,7 @@ const dashboardRoutes = require("./routes/dashboard");
 const calendarRoutes = require("./routes/calendar");
 const editRoutes = require("./routes/edit");
 const editMedRoutes = require("./routes/editMed");
+const User = require("./models/User");
 const PORT = process.env.PORT || 8900
 
 
@@ -63,8 +64,10 @@ app.use(passport.session());
 app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
-app.use("/", mainRoutes);
-app.use("/med", medRoutes); 
+app.use("/", mainRoutes, async (req, res) => {
+  const user = await User.find({})
+});
+app.use("/med", medRoutes);
 app.use("/comment", commentRoutes);
 app.use("/contact", contactRoutes);
 app.use("/home", homeRoutes);
@@ -73,10 +76,21 @@ app.use("/dashboard", dashboardRoutes);
 app.use("/edit", editRoutes);
 app.use("/editMed", editMedRoutes);
 
+
+// Getting the user info for login toggle...
+
+// app.get('/', async (req, res) => {
+//   // Query for the data from MongoDB
+//   const data = await quakeTable.find({});
+
+//   // Render the template with the data. You might need to change the path to 
+//   // the EJS file here depending on your file structure
+//   res.render('index', { details: data });
+// });
 // Connecting to the DB
 connectDB().then(() => {
-  app.listen(PORT,  () => {
-      console.log("listening for requests!");
+  app.listen(PORT, () => {
+    console.log("listening for requests!");
   })
 });
 

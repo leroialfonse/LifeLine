@@ -29,13 +29,15 @@ const MedSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  // TODO: link the doctors to the meds with Ref
+  // prescribedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Contact' }],
   createdAt: {
     type: Date,
     default: Date.now,
   },
-  
 
-  });
+
+});
 
 // Puts the data into a model that includes the model name, the schema itself, and the collection being written to.  If you don't specify the collection name as the third variable, then mongo will just name the collection as a plurality of the model name. (becomes "meds."),
 module.exports = mongoose.model("Med", MedSchema);
