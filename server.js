@@ -20,6 +20,8 @@ const editRoutes = require("./routes/edit");
 const editMedRoutes = require("./routes/editMed");
 const User = require("./models/User");
 const PORT = process.env.PORT || 8900
+// Figure out why posts arent working.
+
 
 
 //Use .env file in config folder
