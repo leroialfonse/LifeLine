@@ -19,7 +19,7 @@ const calendarRoutes = require("./routes/calendar");
 const editRoutes = require("./routes/edit");
 const editMedRoutes = require("./routes/editMed");
 const User = require("./models/User");
-const PORT = process.env.PORT || 8900
+const PORT = process.env.PORT || 8100
 
 
 //Use .env file in config folder
@@ -90,7 +90,7 @@ app.use("/editMed", editMedRoutes);
 // Connecting to the DB
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log("listening for requests!");
+    console.log(`listening for requests - connected on port: ${PORT}!`);
   })
 });
 
