@@ -22,7 +22,7 @@ module.exports = {
   getMed: async (req, res) => {
     try {
       const med = await Med.findById(req.params.id);
-      const comments = await Comment.find({med: req.params.id}).sort({ createdAt: "desc" }).lean();
+      const comments = await Comment.find({ med: req.params.id }).sort({ createdAt: "desc" }).lean();
       res.render("med.ejs", { med: med, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
@@ -44,8 +44,8 @@ module.exports = {
       console.log("Med has been added!");
       res.redirect("/dashboard")
 
-         // Checking that everything is going to the server correctly. It makes it ok... What am I missing to return it...?
-       console.log(result.secure_url)
+      // Checking that everything is going to the server correctly. It makes it ok... What am I missing to return it...?
+      console.log(result.secure_url)
       console.log(result.public_id)
 
     } catch (err) {

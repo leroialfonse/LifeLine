@@ -1,229 +1,229 @@
-let timer; // Timer variable
-let timerRunning = false; // Variable to track the timer state
+// /*let timer; // Timer variable
+// let timerRunning = false; // Variable to track the timer state
 
-function toggleTimer() {
-  if (timerRunning) {
-    clearInterval(timer); // Stop the timer
-    timerRunning = false;
-  } else {
-    timer = setInterval(myTimer, 1000); // Start the timer
-    timerRunning = true;
-  }
-}
-
-// Add a click event listener to your "taken" element to start/stop the timer
-document.querySelector('.takenButton').addEventListener('click', () => {
-  toggleTimer();
-  // // Change the button text to "Meds Taken" immediately
-  // document.querySelector('.takenButton').innerText = 'Meds Taken';
-
-  // Use setTimeout to revert the button text to "Meds Taken" after 3 seconds
-  setTimeout(() => {
-    document.querySelector('.takenButton').innerText = 'Meds Taken';
-    // document.querySelector()
-  }, 1000);
-});
+// function toggleTimer() {
+//   if (timerRunning) {
+//     clearInterval(timer); // Stop the timer
+//     timerRunning = false;
+//   } else {
+//     timer = setInterval(myTimer, 1000); // Start the timer
+//     timerRunning = true;
+//   }
+// }
 
 // // Add a click event listener to your "taken" element to start/stop the timer
-// document.querySelector('.takenButton').addEventListener('click', toggleTimer);
+// document.querySelector('.takenButton').addEventListener('click', () => {
+//   toggleTimer();
+//   // // Change the button text to "Meds Taken" immediately
+//   // document.querySelector('.takenButton').innerText = 'Meds Taken';
 
-// Add a click event listener to your "clear" button to clear the timer
-document.querySelector('.clearButton').addEventListener('click', clearTimer);
+//   // Use setTimeout to revert the button text to "Meds Taken" after 3 seconds
+//   setTimeout(() => {
+//     document.querySelector('.takenButton').innerText = 'Meds Taken';
+//     // document.querySelector()
+//   }, 1000);
+// });
 
-let min = 0;
-let sec = 0;
+// // // Add a click event listener to your "taken" element to start/stop the timer
+// // document.querySelector('.takenButton').addEventListener('click', toggleTimer);
 
-function myTimer() {
-  document.querySelector('#timer').innerText = `Last taken ${min} minutes and ${sec} seconds ago`;
-  sec++;
-  if (sec >= 60) {
-    sec = 0;
-    min++;
-  }
-}
+// // Add a click event listener to your "clear" button to clear the timer
+// document.querySelector('.clearButton').addEventListener('click', clearTimer);
 
-function clearTimer() {
-  clearInterval(timer); // Clear the timer
-  timerRunning = false;
-  document.querySelector('.takenButton').innerText = 'Timer cleared';
-  document.querySelector('#timer').innerText = ''
-  min = 0;
-  sec = 0;
-}
+// let min = 0;
+// let sec = 0;
 
+// function myTimer() {
+//   document.querySelector('#timer').innerText = `Last taken ${min} minutes and ${sec} seconds ago`;
+//   sec++;
+//   if (sec >= 60) {
+//     sec = 0;
+//     min++;
+//   }
+// }
 
-var cal = {
-  // (A) PROPERTIES
-  // (A1) FLAGS & DATA
-  sMon: false, // week start on monday
-  data: null, // events for selected period
-  sDay: 0, sMth: 0, sYear: 0, // selected day month year
+// function clearTimer() {
+//   clearInterval(timer); // Clear the timer
+//   timerRunning = false;
+//   document.querySelector('.takenButton').innerText = 'Timer cleared';
+//   document.querySelector('#timer').innerText = ''
+//   min = 0;
+//   sec = 0;
+// }
 
-  // (A2) MONTHS & DAY NAMES
-  months: [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ],
-  days: ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"],
+// */
+// var cal = {
+//   // (A) PROPERTIES
+//   // (A1) FLAGS & DATA
+//   sMon: false, // week start on monday
+//   data: null, // events for selected period
+//   sDay: 0, sMth: 0, sYear: 0, // selected day month year
 
-  // (A3) HTML ELEMENTS
-  hMth: null, hYear: null, // month/year selector
-  hWrap: null, // calendar wrapper
-  hFormWrap: null, hForm: null, // event form
-  hfDate: null, hfTxt: null, hfDel: null, // form fields
+//   // (A2) MONTHS & DAY NAMES
+//   months: [
+//     "January", "February", "March", "April", "May", "June",
+//     "July", "August", "September", "October", "November", "December"
+//   ],
+//   days: ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"],
 
-  // (B) INIT CALENDAR
-  init: () => {
-    // (B1) GET HTML ELEMENTS
-    cal.hMth = document.getElementById("calMonth");
-    cal.hYear = document.getElementById("calYear");
-    cal.hWrap = document.getElementById("calWrap");
-    cal.hFormWrap = document.getElementById("calForm");
-    cal.hForm = document.querySelector("form");
-    cal.hfDate = document.getElementById("evtDate");
-    cal.hfTxt = document.getElementById("evtTxt");
-    cal.hfDel = document.getElementById("evtDel");
+//   // (A3) HTML ELEMENTS
+//   hMth: null, hYear: null, // month/year selector
+//   hWrap: null, // calendar wrapper
+//   hFormWrap: null, hForm: null, // event form
+//   hfDate: null, hfTxt: null, hfDel: null, // form fields
 
-    // (B2) APPEND MONTHS/YEAR
-    let now = new Date(), nowMth = now.getMonth();
-    cal.hYear.value = parseInt(now.getFullYear());
-    for (let i = 0; i < 12; i++) {
-      let opt = document.createElement("option");
-      opt.value = i;
-      opt.innerHTML = cal.months[i];
-      if (i == nowMth) { opt.selected = true; }
-      cal.hMth.appendChild(opt);
-    }
+//   // (B) INIT CALENDAR
+//   init: () => {
+//     // (B1) GET HTML ELEMENTS
+//     cal.hMth = document.getElementById("calMonth");
+//     cal.hYear = document.getElementById("calYear");
+//     cal.hWrap = document.getElementById("calWrap");
+//     cal.hFormWrap = document.getElementById("calForm");
+//     cal.hForm = document.querySelector("form");
+//     cal.hfDate = document.getElementById("evtDate");
+//     cal.hfTxt = document.getElementById("evtTxt");
+//     cal.hfDel = document.getElementById("evtDel");
 
-    // (B3) ATTACH CONTROLS
-    cal.hMth.onchange = cal.draw;
-    cal.hYear.onchange = cal.draw;
-    cal.hForm.onsubmit = cal.save;
-    document.getElementById("evtClose").onclick = () => cal.hFormWrap.close();
-    cal.hfDel.onclick = cal.del;
+//     // (B2) APPEND MONTHS/YEAR
+//     let now = new Date(), nowMth = now.getMonth();
+//     cal.hYear.value = parseInt(now.getFullYear());
+//     for (let i = 0; i < 12; i++) {
+//       let opt = document.createElement("option");
+//       opt.value = i;
+//       opt.innerHTML = cal.months[i];
+//       if (i == nowMth) { opt.selected = true; }
+//       cal.hMth.appendChild(opt);
+//     }
 
-    // (B4) START - DRAW CALENDAR
-    if (cal.sMon) { cal.days.push(cal.days.shift()); }
-    cal.draw();
-  },
+//     // (B3) ATTACH CONTROLS
+//     cal.hMth.onchange = cal.draw;
+//     cal.hYear.onchange = cal.draw;
+//     cal.hForm.onsubmit = cal.save;
+//     document.getElementById("evtClose").onclick = () => cal.hFormWrap.close();
+//     cal.hfDel.onclick = cal.del;
 
-  // (C) DRAW CALENDAR FOR SELECTED MONTH
-  draw: () => {
-    // (C1) DAYS IN MONTH + START/END DAYS
-    // note - jan is 0 & dec is 11
-    // note - sun is 0 & sat is 6
-    cal.sMth = parseInt(cal.hMth.value); // selected month
-    cal.sYear = parseInt(cal.hYear.value); // selected year
-    let daysInMth = new Date(cal.sYear, cal.sMth + 1, 0).getDate(), // number of days in selected month
-      startDay = new Date(cal.sYear, cal.sMth, 1).getDay(), // first day of the month
-      endDay = new Date(cal.sYear, cal.sMth, daysInMth).getDay(), // last day of the month
-      now = new Date(), // current date
-      nowMth = now.getMonth(), // current month
-      nowYear = parseInt(now.getFullYear()), // current year
-      nowDay = cal.sMth == nowMth && cal.sYear == nowYear ? now.getDate() : null;
+//     // (B4) START - DRAW CALENDAR
+//     if (cal.sMon) { cal.days.push(cal.days.shift()); }
+//     cal.draw();
+//   },
 
-    // (C2) LOAD DATA FROM LOCALSTORAGE
-    cal.data = localStorage.getItem("cal-" + cal.sMth + "-" + cal.sYear);
-    if (cal.data == null) {
-      localStorage.setItem("cal-" + cal.sMth + "-" + cal.sYear, "{}");
-      cal.data = {};
-    } else { cal.data = JSON.parse(cal.data); }
+//   // (C) DRAW CALENDAR FOR SELECTED MONTH
+//   draw: () => {
+//     // (C1) DAYS IN MONTH + START/END DAYS
+//     // note - jan is 0 & dec is 11
+//     // note - sun is 0 & sat is 6
+//     cal.sMth = parseInt(cal.hMth.value); // selected month
+//     cal.sYear = parseInt(cal.hYear.value); // selected year
+//     let daysInMth = new Date(cal.sYear, cal.sMth + 1, 0).getDate(), // number of days in selected month
+//       startDay = new Date(cal.sYear, cal.sMth, 1).getDay(), // first day of the month
+//       endDay = new Date(cal.sYear, cal.sMth, daysInMth).getDay(), // last day of the month
+//       now = new Date(), // current date
+//       nowMth = now.getMonth(), // current month
+//       nowYear = parseInt(now.getFullYear()), // current year
+//       nowDay = cal.sMth == nowMth && cal.sYear == nowYear ? now.getDate() : null;
 
-    // (C3) DRAWING CALCULATIONS
-    // (C3-1) BLANK SQUARES BEFORE START OF MONTH
-    let squares = [];
-    if (cal.sMon && startDay != 1) {
-      let blanks = startDay == 0 ? 7 : startDay;
-      for (let i = 1; i < blanks; i++) { squares.push("b"); }
-    }
-    if (!cal.sMon && startDay != 0) {
-      for (let i = 0; i < startDay; i++) { squares.push("b"); }
-    }
+//     // (C2) LOAD DATA FROM LOCALSTORAGE
+//     cal.data = localStorage.getItem("cal-" + cal.sMth + "-" + cal.sYear);
+//     if (cal.data == null) {
+//       localStorage.setItem("cal-" + cal.sMth + "-" + cal.sYear, "{}");
+//       cal.data = {};
+//     } else { cal.data = JSON.parse(cal.data); }
 
-    // (C3-2) DAYS OF THE MONTH
-    for (let i = 1; i <= daysInMth; i++) { squares.push(i); }
+//     // (C3) DRAWING CALCULATIONS
+//     // (C3-1) BLANK SQUARES BEFORE START OF MONTH
+//     let squares = [];
+//     if (cal.sMon && startDay != 1) {
+//       let blanks = startDay == 0 ? 7 : startDay;
+//       for (let i = 1; i < blanks; i++) { squares.push("b"); }
+//     }
+//     if (!cal.sMon && startDay != 0) {
+//       for (let i = 0; i < startDay; i++) { squares.push("b"); }
+//     }
 
-    // (C3-3) BLANK SQUARES AFTER END OF MONTH
-    if (cal.sMon && endDay != 0) {
-      let blanks = endDay == 6 ? 1 : 7 - endDay;
-      for (let i = 0; i < blanks; i++) { squares.push("b"); }
-    }
-    if (!cal.sMon && endDay != 6) {
-      let blanks = endDay == 0 ? 6 : 6 - endDay;
-      for (let i = 0; i < blanks; i++) { squares.push("b"); }
-    }
+//     // (C3-2) DAYS OF THE MONTH
+//     for (let i = 1; i <= daysInMth; i++) { squares.push(i); }
 
-    // (C4) "RESET" CALENDAR
-    cal.hWrap.innerHTML = `<div class="calHead"></div>
-    <div class="calBody">
-      <div class="calRow"></div>
-    </div>`;
+//     // (C3-3) BLANK SQUARES AFTER END OF MONTH
+//     if (cal.sMon && endDay != 0) {
+//       let blanks = endDay == 6 ? 1 : 7 - endDay;
+//       for (let i = 0; i < blanks; i++) { squares.push("b"); }
+//     }
+//     if (!cal.sMon && endDay != 6) {
+//       let blanks = endDay == 0 ? 6 : 6 - endDay;
+//       for (let i = 0; i < blanks; i++) { squares.push("b"); }
+//     }
 
-    // (C5) CALENDAR HEADER - DAY NAMES
-    wrap = cal.hWrap.querySelector(".calHead");
-    for (let d of cal.days) {
-      let cell = document.createElement("div");
-      cell.className = "calCell";
-      cell.innerHTML = d;
-      wrap.appendChild(cell);
-    }
+//     // (C4) "RESET" CALENDAR
+//     cal.hWrap.innerHTML = `<div class="calHead"></div>
+//     <div class="calBody">
+//       <div class="calRow"></div>
+//     </div>`;
 
-    // (C6) CALENDAR BODY - INDIVIDUAL DAYS & EVENTS
-    wrap = cal.hWrap.querySelector(".calBody");
-    row = cal.hWrap.querySelector(".calRow");
-    for (let i = 0; i < squares.length; i++) {
-      // (C6-1) GENERATE CELL
-      let cell = document.createElement("div");
-      cell.className = "calCell";
-      if (nowDay == squares[i]) { cell.classList.add("calToday"); }
-      if (squares[i] == "b") { cell.classList.add("calBlank"); }
-      else {
-        cell.innerHTML = `<div class="cellDate">${squares[i]}</div>`;
-        if (cal.data[squares[i]]) {
-          cell.innerHTML += "<div class='evt'>" + cal.data[squares[i]] + "</div>";
-        }
-        cell.onclick = () => { cal.show(cell); };
-      }
-      row.appendChild(cell);
+//     // (C5) CALENDAR HEADER - DAY NAMES
+//     wrap = cal.hWrap.querySelector(".calHead");
+//     for (let d of cal.days) {
+//       let cell = document.createElement("div");
+//       cell.className = "calCell";
+//       cell.innerHTML = d;
+//       wrap.appendChild(cell);
+//     }
 
-      // (C6-2) NEXT ROW
-      if (i != (squares.length - 1) && i != 0 && (i + 1) % 7 == 0) {
-        row = document.createElement("div");
-        row.className = "calRow";
-        wrap.appendChild(row);
-      }
-    }
-  },
+//     // (C6) CALENDAR BODY - INDIVIDUAL DAYS & EVENTS
+//     wrap = cal.hWrap.querySelector(".calBody");
+//     row = cal.hWrap.querySelector(".calRow");
+//     for (let i = 0; i < squares.length; i++) {
+//       // (C6-1) GENERATE CELL
+//       let cell = document.createElement("div");
+//       cell.className = "calCell";
+//       if (nowDay == squares[i]) { cell.classList.add("calToday"); }
+//       if (squares[i] == "b") { cell.classList.add("calBlank"); }
+//       else {
+//         cell.innerHTML = `<div class="cellDate">${squares[i]}</div>`;
+//         if (cal.data[squares[i]]) {
+//           cell.innerHTML += "<div class='evt'>" + cal.data[squares[i]] + "</div>";
+//         }
+//         cell.onclick = () => { cal.show(cell); };
+//       }
+//       row.appendChild(cell);
 
-  // (D) SHOW EDIT EVENT DOCKET FOR SELECTED DAY
-  show: cell => {
-    cal.hForm.reset();
-    cal.sDay = cell.querySelector(".cellDate").innerHTML;
-    cal.hfDate.value = `${cal.sDay} ${cal.months[cal.sMth]} ${cal.sYear}`;
-    if (cal.data[cal.sDay] !== undefined) {
-      cal.hfTxt.value = cal.data[cal.sDay];
-      cal.hfDel.classList.remove("hide");
-    } else { cal.hfDel.classList.add("hide"); }
-    cal.hFormWrap.show();
-  },
+//       // (C6-2) NEXT ROW
+//       if (i != (squares.length - 1) && i != 0 && (i + 1) % 7 == 0) {
+//         row = document.createElement("div");
+//         row.className = "calRow";
+//         wrap.appendChild(row);
+//       }
+//     }
+//   },
 
-  // (E) SAVE EVENT
-  save: () => {
-    cal.data[cal.sDay] = cal.hfTxt.value;
-    localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
-    cal.draw();
-    cal.hFormWrap.close();
-    return false;
-  },
+//   // (D) SHOW EDIT EVENT DOCKET FOR SELECTED DAY
+//   show: cell => {
+//     cal.hForm.reset();
+//     cal.sDay = cell.querySelector(".cellDate").innerHTML;
+//     cal.hfDate.value = `${cal.sDay} ${cal.months[cal.sMth]} ${cal.sYear}`;
+//     if (cal.data[cal.sDay] !== undefined) {
+//       cal.hfTxt.value = cal.data[cal.sDay];
+//       cal.hfDel.classList.remove("hide");
+//     } else { cal.hfDel.classList.add("hide"); }
+//     cal.hFormWrap.show();
+//   },
 
-  // (F) DELETE EVENT FOR SELECTED DATE
-  del: () => {
-    if (confirm("Delete event?")) {
-      delete cal.data[cal.sDay];
-      localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
-      cal.draw();
-      cal.hFormWrap.close();
-    }
-  }
-};
-window.onload = cal.init;
+//   // (E) SAVE EVENT
+//   save: () => {
+//     cal.data[cal.sDay] = cal.hfTxt.value;
+//     localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
+//     cal.draw();
+//     cal.hFormWrap.close();
+//     return false;
+//   },
+
+//   // (F) DELETE EVENT FOR SELECTED DATE
+//   del: () => {
+//     if (confirm("Delete event?")) {
+//       delete cal.data[cal.sDay];
+//       localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
+//       cal.draw();
+//       cal.hFormWrap.close();
+//     }
+//   }
+// };
+// window.onload = cal.init;

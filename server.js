@@ -19,7 +19,7 @@ const calendarRoutes = require("./routes/calendar");
 const editRoutes = require("./routes/edit");
 const editMedRoutes = require("./routes/editMed");
 const User = require("./models/User");
-const PORT = process.env.PORT || 8900
+const PORT = process.env.PORT || 3001
 
 
 //Use .env file in config folder
@@ -49,7 +49,7 @@ app.use(methodOverride("_method"));
 // Setup Sessions - stored in MongoDB
 app.use(
   session({
-    secret: "taco cat",
+    secret: "racecar",
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
@@ -64,9 +64,13 @@ app.use(passport.session());
 app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
-app.use("/", mainRoutes, async (req, res) => {
-  const user = await User.find({})
-});
+
+// Original main route.
+// app.use("/", mainRoutes, async (req, res) => {
+//   const user = await User.find({})
+// });
+
+app.use("/", mainRoutes);
 app.use("/med", medRoutes);
 app.use("/comment", commentRoutes);
 app.use("/contact", contactRoutes);
@@ -90,7 +94,8 @@ app.use("/editMed", editMedRoutes);
 // Connecting to the DB
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log("listening for requests!");
+    console.log(`listening for requests!
+      Connected on port: ${PORT}`);
   })
 });
 

@@ -8,7 +8,7 @@ module.exports = {
   getDashboard: async (req, res) => {
     try {
       const meds = await Med.find({ user: req.user.id });
-      res.render("dashboard.ejs", { meds: meds});
+      res.render("dashboard.ejs", { meds: meds, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -18,32 +18,32 @@ module.exports = {
       let mongoose = require('mongoose')
       // const contact = await Contact.find({ userId: req.user.id });
       // console.log(req.user)
-      res.render("home.ejs", {meds: req.meds, user: req.user});
+      res.render("home.ejs", { meds: req.meds, user: req.user });
     } catch (err) {
-      console.log(err); 
+      console.log(err);
     }
   },
   getCabinet: async (req, res) => {
     try {
-      const meds = await Med.find( { user: req.user }).sort({ createdAt: "desc" }).lean();
+      const meds = await Med.find({ user: req.user }).sort({ createdAt: "desc" }).lean();
       res.render("cabinet.ejs", { meds: meds });
     } catch (err) {
       console.log(err);
     }
   },
-  getDirectory: async (req, res) => {
-    try {
-      const med = await Med.findById({med: req.params.id});
-      const contacts = await Contact.find().sort({ createdAt: "desc" }).lean();
-      res.render("directory.ejs", { med: med, contacts: contacts });
-    } catch (err) {
-      console.log(err);
-    }
-  },
+  // getDirectory: async (req, res) => {
+  //   try {
+  //     const med = await Med.findById({ med: req.params.id });
+  //     const contacts = await Contact.find().sort({ createdAt: "desc" }).lean();
+  //     res.render("directory.ejs", { med: med, contacts: contacts });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
   getMed: async (req, res) => {
     try {
       const med = await Med.findById(req.params.id);
-      const comments = await Comment.find({med: req.params.id, user: req.user}).sort({ createdAt: "desc" }).lean();
+      const comments = await Comment.find({ med: req.params.id, user: req.user }).sort({ createdAt: "desc" }).lean();
       res.render("med.ejs", { med: med, user: req.user, comments: comments, comment: comments });
     } catch (err) {
       console.log(err);
@@ -54,11 +54,11 @@ module.exports = {
     console.log(id)
     try {
       let mongoose = require('mongoose')
-      const meds = await Med.find({user: req.user});
+      const meds = await Med.find({ user: req.user });
       console.log(req.body)
       res.render("editMed.ejs", { meds: meds, user: req.user, idMed: id });
     } catch (err) {
-      console.log(err); 
+      console.log(err);
     }
   },
   createMed: async (req, res) => {
@@ -66,7 +66,7 @@ module.exports = {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
-    await Med.create({
+      await Med.create({
         title: req.body.title,
         image: result.secure_url,
         cloudinaryId: result.public_id,
@@ -76,11 +76,6 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Med has been added!");
-      
-      // Checking that everything is going to the server correctly. It makes it ok... What am I missing to return it...?
-      // console.log(result.secure_url)
-      // console.log(result.public_id)
-
       res.redirect("/dashboard");
     } catch (err) {
       console.log(err);
@@ -89,7 +84,7 @@ module.exports = {
   deleteMed: async (req, res) => {
     try {
       // Find med by id
-      let med = await Med.findById({ _id: req.params.id , user: req.user});
+      let med = await Med.findById({ _id: req.params.id, user: req.user });
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(med.cloudinaryId);
       // Delete med from db
@@ -104,10 +99,10 @@ module.exports = {
   deleteComment: async (req, res) => {
     try {
       // Find med by id
-     let comment = await Comment.findById({ 
-      _id: req.params.id
+      let comment = await Comment.findById({
+        _id: req.params.id
       });
-      await Comment.remove({_id: req.params.id, user: req.user });
+      await Comment.remove({ _id: req.params.id, user: req.user });
       console.log("Deleted Med");
       res.redirect("back");
     } catch (err) {
@@ -127,19 +122,19 @@ module.exports = {
   //     console.log(err);
   //   }
   // },
- 
-//   deleteMed: async (req, res)=>{
-//     try{
-//   // Find contact by id
-//    let med = await Med.findById({ _id: req.params.id });
-//   // Delete the med from the db
-//     await Med.remove({ _id: req.params.id });
 
-//         // console.log(_id)
-//         console.log('Deleted');
-//     res.redirect("/dashboard");
-// }catch(err){ 
-//     res.redirect("/dashboard");
-//     }
-// },
+  //   deleteMed: async (req, res)=>{
+  //     try{
+  //   // Find contact by id
+  //    let med = await Med.findById({ _id: req.params.id });
+  //   // Delete the med from the db
+  //     await Med.remove({ _id: req.params.id });
+
+  //         // console.log(_id)
+  //         console.log('Deleted');
+  //     res.redirect("/dashboard");
+  // }catch(err){ 
+  //     res.redirect("/dashboard");
+  //     }
+  // },
 };
