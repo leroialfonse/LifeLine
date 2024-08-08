@@ -22,6 +22,7 @@ const User = require("./models/User");
 const PORT = process.env.PORT || 3001
 
 
+
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
