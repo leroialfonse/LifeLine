@@ -3,16 +3,35 @@
 <div class="container-fluid">
 
 
-  <!--   -->
   <!-- <div class="row justify-content-center mt-5 medImgBlock" > -->
     <div class="mb-3 mt-5">
       <h2><%= med.title %></h2>
       <img class="img-fluid" src="<%= med.image%>" />
       <div class="row justify-content-between">
-        <!-- <%if(med.user == user.id){ %>
-          action="/med/deleteMed/<%= med.id %>?_method=DELETE"
+        <!-- MOving the delete and edit over from BUB -->
+        <div class="row justify-content-between">
+          <form
+            class="col-1"
+            action="/med/editMed/<%= med.id %>?_method=PUT"
+            method="POST"
+          >
+          </form>
+          <%if(med.user == user.id){ %>
+          <form
+            action="/med/deleteMed/<%= med.id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+          >
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          </form>
+          <%}%>
+        </div>
+
+        <!--  -->
+        <!-- <!-- <%if(med.user == user.id){ %> -->
+          <!-- action="/med/deleteMed/<%= med.id %>?_method=DELETE"
           method="POST"
-          class="col-3"
+          class="col-3" -->
  -
 
         <!-- <a href="/editMed/<%= med._id %>"><button class="btn btn-primary fa fa-edit" type="submit"></button></a> -->

@@ -2,19 +2,15 @@ const express = require("express");
 const router = express.Router();
 const upload = require("../middleware/multer");
 const medsController = require("../controllers/meds");
-const editMedController = require("../controllers/editMed");
-const commentsController = require("../controllers/comments");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Med Routes - simplified for now
+// Med Routes - simplified for now
 router.get("/:id", ensureAuth, medsController.getMed);
 
 router.post("/createMed", upload.single("file"), medsController.createMed);
 
-router.get("/deleteMed/:id", medsController.deleteMed);
-router.get('/removeMed/:id', editMedController.deleteMed); //Deletes that selected item. 
+// Should be edit med. Come back.
+// router.get("/deleteMed/:id", dashboardController.deleteMed);
 
-router.get("/deleteComment/:id", commentsController.deleteComment);
-
-router.delete("/deleteComment/:id", commentsController.deleteComment);
+router.delete('/deleteMed/:id', medsController.deleteMed); //Deletes that selected item. 
 module.exports = router;

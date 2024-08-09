@@ -28,30 +28,6 @@ module.exports = {
       console.log(err);
     }
   },
-  createMed: async (req, res) => {
-    try {
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
-
-      await Med.create({
-        title: req.body.title,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
-        dosage: req.body.dosage,
-        provider: req.body.provider,
-        user: req.user.id,
-      });
-      console.log("Med has been added!");
-      res.redirect("/dashboard")
-
-      // Checking that everything is going to the server correctly. It makes it ok... What am I missing to return it...?
-      console.log(result.secure_url)
-      console.log(result.public_id)
-
-    } catch (err) {
-      console.log(err);
-    }
-  },
   deleteMed: async (req, res) => {
     try {
       // Find med by id

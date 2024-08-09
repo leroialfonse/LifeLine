@@ -2,10 +2,10 @@
 
 *{
   box-sizing: border-box;
-  background-color: F5F5F5;
   font-family: 'Inter', Verdana, Tahoma, Arial, Helvetica,sans-serif;
 
 } 
+
 
 /* Contols the appearance of links */
 a{
@@ -172,7 +172,7 @@ justify-items: center;
   /* grid-template-columns:  1fr 1fr 1fr; */
 
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 20px;
   /* grid-auto-rows: minmax(40px, auto); */
 }
 

@@ -1,7 +1,8 @@
 const cloudinary = require("../middleware/cloudinary");
 const Med = require("../models/Med");
 const Comment = require("../models/Comment");
-const Contact = require("../models/Contact");
+// May not need this here.
+// const Contact = require("../models/Contact");
 
 
 module.exports = {
@@ -25,45 +26,24 @@ module.exports = {
   },
   getCabinet: async (req, res) => {
     try {
-      const meds = await Med.find({ user: req.user }).sort({ createdAt: "desc" }).lean();
+      const meds = await Med.find().sort({ createdAt: "desc" }).lean();
       res.render("cabinet.ejs", { meds: meds });
     } catch (err) {
       console.log(err);
     }
   },
-  // getDirectory: async (req, res) => {
-  //   try {
-  //     const med = await Med.findById({ med: req.params.id });
-  //     const contacts = await Contact.find().sort({ createdAt: "desc" }).lean();
-  //     res.render("directory.ejs", { med: med, contacts: contacts });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
   getMed: async (req, res) => {
     try {
       const med = await Med.findById(req.params.id);
-      const comments = await Comment.find({ med: req.params.id, user: req.user }).sort({ createdAt: "desc" }).lean();
+      const comments = await Comment.find({ med: req.params.id }).sort({ createdAt: "desc" }).lean();
       res.render("med.ejs", { med: med, user: req.user, comments: comments, comment: comments });
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  getEditMed: async (req, res) => {
-    const id = req.params.id
-    console.log(id)
-    try {
-      let mongoose = require('mongoose')
-      const meds = await Med.find({ user: req.user });
-      console.log(req.body)
-      res.render("editMed.ejs", { meds: meds, user: req.user, idMed: id });
     } catch (err) {
       console.log(err);
     }
   },
   createMed: async (req, res) => {
     try {
-      // Upload image to cloudinary
+      // Upload med image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
       await Med.create({
@@ -84,10 +64,10 @@ module.exports = {
   deleteMed: async (req, res) => {
     try {
       // Find med by id
-      let med = await Med.findById({ _id: req.params.id, user: req.user });
+      let med = await Med.findById({ _id: req.params.id });
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(med.cloudinaryId);
-      // Delete med from db
+      // Delete med from mogodb
       await Med.remove({ _id: req.params.id });
       console.log("Deleted Med");
       console.log(med.cloudinaryId)
